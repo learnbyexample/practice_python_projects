@@ -1,0 +1,268 @@
+<!DOCTYPE HTML><html lang=en class="sidebar-visible no-js rust"><head><meta charset=UTF-8><title>Python CLI application - Practice Python Projects</title><meta content="text/html; charset=utf-8"http-equiv=Content-Type><meta name=description content="Book on basic to intermediate level Python projects"><meta name=viewport content="width=device-width, initial-scale=1"><meta name=theme-color content=#ffffff><link rel=icon href=favicon.svg><link rel="shortcut icon"href=favicon.png><link rel=stylesheet href=css/variables.css><link rel=stylesheet href=css/general.css><link rel=stylesheet href=css/chrome.css><link rel=stylesheet href=FontAwesome/css/font-awesome.css><link rel=stylesheet href=fonts/fonts.css><link rel=stylesheet href=highlight.css><link rel=stylesheet href=tomorrow-night.css><link rel=stylesheet href=ayu-highlight.css><link rel=stylesheet href=style.css><body><script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script><script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script><script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script><script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script><nav id=sidebar class=sidebar aria-label="Table of contents"><div class=sidebar-scrollbox><ol class=chapter><li class="chapter-item expanded"><a href=preface.html><strong aria-hidden=true>1.</strong> Preface</a><li class="chapter-item expanded"><a href=calculator.html><strong aria-hidden=true>2.</strong> CLI Calculator</a><li><ol class=section><li class="chapter-item expanded"><a href=calc_bash_func.html><strong aria-hidden=true>2.1.</strong> Bash shortcuts</a><li class="chapter-item expanded"><a href=calc_py_cli.html class=active><strong aria-hidden=true>2.2.</strong> Python CLI application</a></ol></ol></div><div id=sidebar-resize-handle class=sidebar-resize-handle></div></nav><div id=page-wrapper class=page-wrapper><div class=page><div id=menu-bar-hover-placeholder></div><div id=menu-bar class="menu-bar sticky bordered"><div class=left-buttons><button id=sidebar-toggle class=icon-button type=button title="Toggle Table of Contents"aria-label="Toggle Table of Contents"aria-controls=sidebar><i class="fa fa-bars"></i></button><button id=theme-toggle class=icon-button type=button title="Change theme"aria-label="Change theme"aria-haspopup=true aria-expanded=false aria-controls=theme-list><i class="fa fa-paint-brush"></i></button><ul id=theme-list class=theme-popup aria-label=Themes role=menu><li role=none><button role=menuitem class=theme id=light>Light</button><li role=none><button role=menuitem class=theme id=rust>Rust (default)</button><li role=none><button role=menuitem class=theme id=coal>Coal</button><li role=none><button role=menuitem class=theme id=navy>Navy</button><li role=none><button role=menuitem class=theme id=ayu>Ayu</button></ul><button id=search-toggle class=icon-button type=button title="Search. (Shortkey: s)"aria-label="Toggle Searchbar"aria-expanded=false aria-keyshortcuts=S aria-controls=searchbar><i class="fa fa-search"></i></button></div><h1 class=menu-title>Practice Python Projects</h1><div class=right-buttons><a href=https://github.com/learnbyexample/practice_python_projects title="Git repository"aria-label="Git repository"> <i id=git-repository-button class="fa fa-github"></i> </a></div></div><div id=search-wrapper class=hidden><form id=searchbar-outer class=searchbar-outer><input type=search name=search id=searchbar name=searchbar placeholder="Search this book ..."aria-controls=searchresults-outer aria-describedby=searchresults-header></form><div id=searchresults-outer class="searchresults-outer hidden"><div id=searchresults-header class=searchresults-header></div><ul id=searchresults></ul></div></div><script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script><div id=content class=content><main><div class=sidetoc><nav class=pagetoc></nav></div><h1><a class=header href=#python-cli-application id=python-cli-application>Python CLI application</a></h1><p>In this section, you'll see how to implement a CLI application using Python features, instead of relying on shell features. First, you'll learn how to work with command line arguments using the <code>sys</code> module. Followed by <code>argparse</code> module, which is specifically designed for creating CLI applications.<h2><a class=header href=#sysargv id=sysargv>sys.argv</a></h2><p>Command line arguments passed when executing a Python program can be accessed using the <code>sys.argv</code> list. The first element (index <code>0</code>) contains the name of the Python script or <code>-c</code> or empty string, depending on how the interpreter was called. See <a href=https://docs.python.org/3/library/sys.html#sys.argv>docs.python: sys.argv</a> for details.<p>Rest of the elements will have the command line arguments, if any were passed along the script to be executed. The data type of <code>sys.argv</code> elements is <code>str</code> class. The <code>eval()</code> function allows to execute a string as a Python instruction. Here's an example:<pre><code class=language-bash>$ python3.9 -c 'import sys; print(eval(sys.argv[1]))' '23 ** 2'
+529
+
+# bash shortcut
+$ pc() { python3.9 -c 'import sys; print(eval(sys.argv[1]))' "$1" ; }
+$ pc '23 ** 2'
+529
+$ pc '0x2F'
+47
+</code></pre><blockquote><p><img src=images/warning.svg alt=warning> <img src=images/warning.svg alt=warning> Using <code>eval()</code> function isn't recommended if the input passed to it isn't under your control, for example an input typed by a user from a website application. The arbitrary code execution issue would apply to the <code>bash</code> shortcuts seen in previous section as well, because the input argument is interpreted without any sanity check. However, for the purpose of this calculator project, it is assumed that you are the sole user of the application. See <a href=https://stackoverflow.com/questions/2371436/evaluating-a-mathematical-expression-in-a-string>stackoverflow: evaluating a mathematical expression</a> for more details about the dangers of using <code>eval()</code> function and alternate ways to evaluate a string as mathematical expression.</blockquote><h2><a class=header href=#argparse id=argparse>argparse</a></h2><p>Quoting from <a href=https://docs.python.org/3/library/argparse.html>docs.python: argparse</a>:<blockquote><p>The <code>argparse</code> module makes it easy to write user-friendly command-line interfaces. The program defines what arguments it requires, and <code>argparse</code> will figure out how to parse those out of <code>sys.argv</code>. The <code>argparse</code> module also automatically generates help and usage messages and issues errors when users give the program invalid arguments.</blockquote><h3><a class=header href=#argparse-initialization id=argparse-initialization>argparse initialization</a></h3><p>If this is your first time using the <code>argparse</code> module, it is recommended to understand the initialization instructions and see the effect they provide by default. Quoting from <a href=https://docs.python.org/3/library/argparse.html>docs.python: argparse</a>:<blockquote><p>The <code>ArgumentParser</code> object will hold all the information necessary to parse the command line into Python data types.</blockquote><blockquote><p><code>ArgumentParser</code> parses arguments through the <code>parse_args()</code> method. This will inspect the command line, convert each argument to the appropriate type and then invoke the appropriate action.</blockquote><pre><code class=language-python># arg_help.py
+import argparse
+
+parser = argparse.ArgumentParser()
+args = parser.parse_args()
+</code></pre><p>The documentation for the CLI application is generated automatically based on the information passed to the parser. You can use help options (which is added automatically too) to view the content, as shown below:<pre><code class=language-bash>$ python3.9 arg_help.py -h
+usage: arg_help.py [-h]
+
+optional arguments:
+  -h, --help  show this help message and exit
+</code></pre><p>In addition, any option or argument that are not defined will generate an error.<pre><code class=language-bash>$ python3.9 arg_help.py -c
+usage: arg_help.py [-h]
+arg_help.py: error: unrecognized arguments: -c
+
+$ python3.9 arg_help.py '2 + 3'
+usage: arg_help.py [-h]
+arg_help.py: error: unrecognized arguments: 2 + 3
+</code></pre><p>A required argument wasn't declared in this program, so there's no error for the below usage.<pre><code class=language-bash>$ python3.9 arg_help.py
+</code></pre><blockquote><p><img src=images/info.svg alt=info> See also <a href=https://docs.python.org/3/howto/argparse.html>docs.python: Argparse Tutorial</a>.</blockquote><h3><a class=header href=#accepting-an-input-expression id=accepting-an-input-expression>Accepting an input expression</a></h3><pre><code class=language-python># single_arg.py
+import argparse, sys
+
+parser = argparse.ArgumentParser()
+parser.add_argument('ip_expr',
+                    help="input expression to be evaluated")
+args = parser.parse_args()
+
+try:
+    result = eval(args.ip_expr)
+    print(result)
+except (NameError, SyntaxError):
+    sys.exit("Error: Not a valid input expression")
+</code></pre><p>The <code>add_argument()</code> method allows you to add details about an option/argument for the CLI application. The first parameter names an argument or options (starts with <code>-</code>). The optional <code>help</code> parameter lets you add documentation for that particular option/argument. See <a href=https://docs.python.org/3/library/argparse.html#argparse.ArgumentParser.add_argument>docs.python: add_argument</a> for documentation and details about other parameters.<p>The value for <code>ip_expr</code> passed by the user will be available as an attribute of <code>args</code>, which stores the object returned by the <code>parse_args()</code> method. The default data type for arguments is <code>str</code>, which is good enough here for <code>eval()</code>.<p>The help documentation for this script is shown below:<pre><code class=language-bash>$ python3.9 single_arg.py -h
+usage: single_arg.py [-h] ip_expr
+
+positional arguments:
+  ip_expr     input expression to be evaluated
+
+optional arguments:
+  -h, --help  show this help message and exit
+</code></pre><p>Note that the script uses <code>try-except</code> block to give user friendly feedback for some of the common issues. Passing a string to <code>sys.exit()</code> gets printed to the <code>stderr</code> stream and sets the exit status as <code>1</code> to indicate something has gone wrong. See <a href=https://docs.python.org/3/library/sys.html#sys.exit>docs.python: sys.exit</a> for documentation. Here's some usage examples:<pre><code class=language-bash>$ python3.9 single_arg.py '40 + 2'
+42
+
+# if no argument is passed to the script
+$ python3.9 single_arg.py
+usage: single_arg.py [-h] ip_expr
+single_arg.py: error: the following arguments are required: ip_expr
+$ echo $?
+2
+
+# SyntaxError
+$ python3.9 single_arg.py '5 \ 2'
+Error: Not a valid input expression
+$ echo $?
+1
+
+# NameError
+$ python3.9 single_arg.py '5 + num'
+Error: Not a valid input expression
+</code></pre><h3><a class=header href=#adding-optional-flags id=adding-optional-flags>Adding optional flags</a></h3><p>To add an option, use <code>-&LTchar></code> for short option and <code>--&LTname></code> for long option. You can add both as well, <code>'-v', '--verbose'</code> for example. If you use both short and long options, the attribute name will be whichever option is the latest. For the CLI application, five short options have been added, as shown below.<pre><code class=language-python># options.py
+import argparse, sys
+
+parser = argparse.ArgumentParser()
+parser.add_argument('ip_expr',
+                    help="input expression to be evaluated")
+parser.add_argument('-f', type=int,
+                    help="specify floating point output precision")
+parser.add_argument('-b', action="store_true",
+                    help="output in binary format")
+parser.add_argument('-o', action="store_true",
+                    help="output in octal format")
+parser.add_argument('-x', action="store_true",
+                    help="output in hexadecimal format")
+parser.add_argument('-v', action="store_true",
+                    help="verbose mode, shows both input and output")
+args = parser.parse_args()
+
+try:
+    result = eval(args.ip_expr)
+
+    if args.f:
+        result = f'{result:.{args.f}f}'
+    elif args.b:
+        result = f'{int(result):#b}'
+    elif args.o:
+        result = f'{int(result):#o}'
+    elif args.x:
+        result = f'{int(result):#x}'
+
+    if args.v:
+        print(f'{args.ip_expr} = {result}')
+    else:
+        print(result)
+except (NameError, SyntaxError):
+    sys.exit("Error: Not a valid input expression")
+</code></pre><p>The <code>type</code> parameter for <code>add_argument()</code> method allows you to specify what data type should be applied for that option. The <code>-f</code> option is used here to set the precision for floating-point output. The code doesn't actually check if the output is floating-point type, that is left as an exercise for you (see <a href=./calculator.html#exercises>Exercises</a> section).<p>The <code>-b</code>, <code>-o</code>, <code>-x</code> and <code>-v</code> options are intended as boolean data type. Using <code>action="store_true"</code> indicates that the associated attribute should be set to <code>False</code> as their default value. When the option is used from the command line, their value will be set to <code>True</code>. The <code>-b</code>, <code>-o</code> and <code>-x</code> options are used here to get the output in binary, octal and hexadecimal formats respectively. The <code>-v</code> option will print both the input expression and the evaluated result.<p>The help documentation for this script is shown below. By default, uppercase of the option name will be used to describe the value expected for that option. Which is why you see <code>-f F</code> here. You can use <code>metavar='precision'</code> to change it to <code>-f precision</code> instead.<pre><code class=language-bash>$ python3.9 options.py -h
+usage: options.py [-h] [-f F] [-b] [-o] [-x] [-v] ip_expr
+
+positional arguments:
+  ip_expr     input expression to be evaluated
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -f F        specify floating point output precision
+  -b          output in binary format
+  -o          output in octal format
+  -x          output in hexadecimal format
+  -v          verbose mode, shows both input and output
+</code></pre><p>Here's some usage examples:<pre><code class=language-bash>$ python3.9 options.py '22 / 7'
+3.142857142857143
+$ python3.9 options.py -f3 '22 / 7'
+3.143
+$ python3.9 options.py -f2 '32 ** 2'
+1024.00
+
+$ python3.9 options.py -bv '543 * 2'
+543 * 2 = 0b10000111110
+
+$ python3.9 options.py -x '0x1F * 0xA'
+0x136
+
+$ python3.9 options.py -o '0xdeadbeef'
+0o33653337357
+</code></pre><p>Since <code>-f</code> option expects an <code>int</code> value, you'll get an error if you don't pass a value or if the value passed isn't a valid integer.<pre><code class=language-bash>$ python3.9 options.py -fa '22 / 7'
+usage: options.py [-h] [-f F] [-b] [-o] [-x] [-v] ip_expr
+options.py: error: argument -f: invalid int value: 'a'
+
+$ python3.9 options.py -f
+usage: options.py [-h] [-f F] [-b] [-o] [-x] [-v] ip_expr
+options.py: error: argument -f: expected one argument
+
+$ python3.9 options.py -f '22 / 7'
+usage: options.py [-h] [-f F] [-b] [-o] [-x] [-v] ip_expr
+options.py: error: argument -f: invalid int value: '22 / 7'
+
+$ python3.9 options.py -f '22'
+usage: options.py [-h] [-f F] [-b] [-o] [-x] [-v] ip_expr
+options.py: error: the following arguments are required: ip_expr
+</code></pre><h3><a class=header href=#accepting-stdin id=accepting-stdin>Accepting stdin</a></h3><p>The final feature to be added is the ability to accept both <code>stdin</code> and argument value as the input expression. The modified script is shown below.<pre><code class=language-python># py_calc.py
+import argparse, sys, fileinput
+
+parser = argparse.ArgumentParser()
+parser.add_argument('ip_expr', nargs='?',
+                    help="input expression to be evaluated")
+parser.add_argument('-f', type=int,
+                    help="specify floating point output precision")
+parser.add_argument('-b', action="store_true",
+                    help="output in binary format")
+parser.add_argument('-o', action="store_true",
+                    help="output in octal format")
+parser.add_argument('-x', action="store_true",
+                    help="output in hexadecimal format")
+parser.add_argument('-v', action="store_true",
+                    help="verbose mode, shows both input and output")
+args = parser.parse_args()
+
+if args.ip_expr in (None, '-'):
+    del sys.argv[1:]
+    args.ip_expr = fileinput.input().readline().strip()
+
+try:
+    result = eval(args.ip_expr)
+
+    if args.f:
+        result = f'{result:.{args.f}f}'
+    elif args.b:
+        result = f'{int(result):#b}'
+    elif args.o:
+        result = f'{int(result):#o}'
+    elif args.x:
+        result = f'{int(result):#x}'
+
+    if args.v:
+        print(f'{args.ip_expr} = {result}')
+    else:
+        print(result)
+except (NameError, SyntaxError):
+    sys.exit("Error: Not a valid input expression")
+</code></pre><p>The <code>nargs</code> parameter allows to specify how many arguments can be accepted with a single action. You can use an integer value to get that many arguments as a list or use specific regular expression like metacharacter to indicate varying number of arguments. The <code>ip_expr</code> argument is made optional here by setting <code>nargs</code> to <code>?</code>. If <code>ip_expr</code> isn't passed as an argument by the user, the attribute will get <code>None</code> as the value. The <code>-</code> character is often used to indicate <code>stdin</code> as the input data. So, if <code>ip_expr</code> is <code>None</code> or <code>-</code>, the code will try to read a line from <code>stdin</code> as the input expression.<p>Quoting from <a href=https://docs.python.org/3/library/fileinput.html>docs.python: fileinput</a>:<blockquote><p>... iterates over the lines of all files listed in <code>sys.argv[1:]</code>, defaulting to <code>sys.stdin</code> if the list is empty.</blockquote><p>To ensure the list is empty and options like <code>-f</code> doesn't get treated as filename, <code>del sys.argv[1:]</code> is used here. Since <code>parse_args()</code> has already processed <code>sys.argv</code> values, this is a safe choice to make. The <code>strip()</code> string method is applied to the <code>stdin</code> data to prevent newlines from messing up the output for <code>-v</code> option. Rest of the code is the same as seen before.<p>The help documentation for this script is shown below. The only difference is that the input expression is now optional as indicated by <code>[ip_expr]</code>.<pre><code class=language-bash>$ python3.9 py_calc.py -h
+usage: py_calc.py [-h] [-f F] [-b] [-o] [-x] [-v] [ip_expr]
+
+positional arguments:
+  ip_expr     input expression to be evaluated
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -f F        specify floating point output precision
+  -b          output in binary format
+  -o          output in octal format
+  -x          output in hexadecimal format
+  -v          verbose mode, shows both input and output
+</code></pre><p>Here's some usage examples:<pre><code class=language-bash># stdin from output of another command
+$ echo '40 + 2' | python3.9 py_calc.py
+42
+
+# manual stdin data after pressing enter key
+$ python3.9 py_calc.py
+43 / 5
+8.6
+
+# expression passed as argument, works the same as seen before
+$ python3.9 py_calc.py '5 % 2'
+1
+</code></pre><p>Without <code>del sys.argv[1:]</code>, the below examples would have failed as the options would have been treated as filenames by the <code>fileinput</code> module.<pre><code class=language-bash>$ echo '0b101 + 3' | python3.9 py_calc.py -vx
+0b101 + 3 = 0x8
+
+$ echo '0b101 + 3' | python3.9 py_calc.py -vx -
+0b101 + 3 = 0x8
+</code></pre><h3><a class=header href=#shortcuts id=shortcuts>Shortcuts</a></h3><p>To simplify calling the Python CLI calculator, you can create an alias or an executable Python script.<p>Use absolute path of the script to create the alias and add it to <code>.bashrc</code>, so that it will work from any working directory. The path used below would differ for you.<pre><code class=language-bash>alias pc='python3.9 /home/learnbyexample/python_projs/py_calc.py'
+</code></pre><p>To create an executable, you'll have to first add a <a href=https://en.wikipedia.org/wiki/Shebang_(Unix)>shebang</a> as the first line of the Python script. You can use <code>type</code> built-in command to get the path of the Python interpreter.<pre><code class=language-bash>$ type python3.9
+python3.9 is /usr/local/bin/python3.9
+</code></pre><p>So, the <code>shebang</code> for this case will be <code>#!/usr/local/bin/python3.9</code>. After adding execute permission, copy the file to one of the <code>PATH</code> directories. I have <code>~/cbin/</code> as one of the paths. See <a href=https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path>unix.stackexchange: How to correctly modify PATH variable</a> for more details about the <code>PATH</code> environment variable.<pre><code class=language-bash>$ chmod +x py_calc.py
+
+$ cp py_calc.py ~/cbin/pc
+
+$ pc '40 + 2'
+42
+</code></pre><p>With that, the lessons for this project comes to an end. See <a href=./calculator.html#exercises>Exercises</a> section for practice problems.</main><nav class=nav-wrapper aria-label="Page navigation"><a rel=prev href=calc_bash_func.html class="mobile-nav-chapters previous"title="Previous chapter"aria-label="Previous chapter"aria-keyshortcuts=Left> <i class="fa fa-angle-left"></i> </a><div style="clear: both"></div></nav></div></div><nav class=nav-wide-wrapper aria-label="Page navigation"><a rel=prev href=calc_bash_func.html class="nav-chapters previous"title="Previous chapter"aria-label="Previous chapter"aria-keyshortcuts=Left> <i class="fa fa-angle-left"></i> </a></nav></div><script>
+            window.playground_copyable = true;
+        </script><script src=elasticlunr.min.js charset=utf-8></script><script src=mark.min.js charset=utf-8></script><script src=searcher.js charset=utf-8></script><script src=clipboard.min.js charset=utf-8></script><script src=highlight.js charset=utf-8></script><script src=book.js charset=utf-8></script><script src=sidebar.js></script>
