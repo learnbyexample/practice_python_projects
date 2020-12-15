@@ -184,8 +184,8 @@ options.py: error: argument -f: invalid int value: '22 / 7'
 $ python3.9 options.py -f '22'
 usage: options.py [-h] [-f F] [-b] [-o] [-x] [-v] ip_expr
 options.py: error: the following arguments are required: ip_expr
-</code></pre><h3><a class=header href=#accepting-stdin id=accepting-stdin>Accepting stdin</a></h3><p>The final feature to be added is the ability to accept both <code>stdin</code> and argument value as the input expression. The modified script is shown below.<pre><code class=language-python># py_calc.py
-import argparse, sys, fileinput
+</code></pre><h3><a class=header href=#accepting-stdin id=accepting-stdin>Accepting stdin</a></h3><p>The final feature to be added is the ability to accept both <code>stdin</code> and argument value as the input expression. The <code>sys.stdin</code> filehandle can be used to read <code>stdin</code> data. The modified script is shown below.<pre><code class=language-python># py_calc.py
+import argparse, sys
 
 parser = argparse.ArgumentParser()
 parser.add_argument('ip_expr', nargs='?',
@@ -203,8 +203,7 @@ parser.add_argument('-v', action="store_true",
 args = parser.parse_args()
 
 if args.ip_expr in (None, '-'):
-    del sys.argv[1:]
-    args.ip_expr = fileinput.input().readline().strip()
+    args.ip_expr = sys.stdin.readline().strip()
 
 try:
     result = eval(args.ip_expr)
@@ -224,7 +223,7 @@ try:
         print(result)
 except (NameError, SyntaxError):
     sys.exit("Error: Not a valid input expression")
-</code></pre><p>The <code>nargs</code> parameter allows to specify how many arguments can be accepted with a single action. You can use an integer value to get that many arguments as a list or use specific regular expression like metacharacter to indicate varying number of arguments. The <code>ip_expr</code> argument is made optional here by setting <code>nargs</code> to <code>?</code>. If <code>ip_expr</code> isn't passed as an argument by the user, the attribute will get <code>None</code> as the value. The <code>-</code> character is often used to indicate <code>stdin</code> as the input data. So, if <code>ip_expr</code> is <code>None</code> or <code>-</code>, the code will try to read a line from <code>stdin</code> as the input expression.<p>Quoting from <a href=https://docs.python.org/3/library/fileinput.html>docs.python: fileinput</a>:<blockquote><p>... iterates over the lines of all files listed in <code>sys.argv[1:]</code>, defaulting to <code>sys.stdin</code> if the list is empty.</blockquote><p>To ensure the list is empty and options like <code>-f</code> doesn't get treated as filename, <code>del sys.argv[1:]</code> is used here. Since <code>parse_args()</code> has already processed <code>sys.argv</code> values, this is a safe choice to make. The <code>strip()</code> string method is applied to the <code>stdin</code> data to prevent newlines from messing up the output for <code>-v</code> option. Rest of the code is the same as seen before.<p>The help documentation for this script is shown below. The only difference is that the input expression is now optional as indicated by <code>[ip_expr]</code>.<pre><code class=language-bash>$ python3.9 py_calc.py -h
+</code></pre><p>The <code>nargs</code> parameter allows to specify how many arguments can be accepted with a single action. You can use an integer value to get that many arguments as a list or use specific regular expression like metacharacter to indicate varying number of arguments. The <code>ip_expr</code> argument is made optional here by setting <code>nargs</code> to <code>?</code>.<p>If <code>ip_expr</code> isn't passed as an argument by the user, the attribute will get <code>None</code> as the value. The <code>-</code> character is often used to indicate <code>stdin</code> as the input data. So, if <code>ip_expr</code> is <code>None</code> or <code>-</code>, the code will try to read a line from <code>stdin</code> as the input expression. The <code>strip()</code> string method is applied to the <code>stdin</code> data mainly to prevent newline from messing up the output for <code>-v</code> option. Rest of the code is the same as seen before.<p>The help documentation for this script is shown below. The only difference is that the input expression is now optional as indicated by <code>[ip_expr]</code>.<pre><code class=language-bash>$ python3.9 py_calc.py -h
 usage: py_calc.py [-h] [-f F] [-b] [-o] [-x] [-v] [ip_expr]
 
 positional arguments:
@@ -246,14 +245,16 @@ $ python3.9 py_calc.py
 43 / 5
 8.6
 
-# expression passed as argument, works the same as seen before
-$ python3.9 py_calc.py '5 % 2'
-1
-</code></pre><p>Without <code>del sys.argv[1:]</code>, the below examples would have failed as the options would have been treated as filenames by the <code>fileinput</code> module.<pre><code class=language-bash>$ echo '0b101 + 3' | python3.9 py_calc.py -vx
+# strip() will remove whitespace from start/end of string
+$ echo ' 0b101 + 3' | python3.9 py_calc.py -vx
 0b101 + 3 = 0x8
 
 $ echo '0b101 + 3' | python3.9 py_calc.py -vx -
 0b101 + 3 = 0x8
+
+# expression passed as argument, works the same as seen before
+$ python3.9 py_calc.py '5 % 2'
+1
 </code></pre><h3><a class=header href=#shortcuts id=shortcuts>Shortcuts</a></h3><p>To simplify calling the Python CLI calculator, you can create an alias or an executable Python script.<p>Use absolute path of the script to create the alias and add it to <code>.bashrc</code>, so that it will work from any working directory. The path used below would differ for you.<pre><code class=language-bash>alias pc='python3.9 /home/learnbyexample/python_projs/py_calc.py'
 </code></pre><p>To create an executable, you'll have to first add a <a href=https://en.wikipedia.org/wiki/Shebang_(Unix)>shebang</a> as the first line of the Python script. You can use <code>type</code> built-in command to get the path of the Python interpreter.<pre><code class=language-bash>$ type python3.9
 python3.9 is /usr/local/bin/python3.9
