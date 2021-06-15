@@ -1,0 +1,67 @@
+<!DOCTYPE HTML><html lang=en class="sidebar-visible no-js rust"><head><meta charset=UTF-8><title>Displaying results - Practice Python Projects</title><meta content="text/html; charset=utf-8"http-equiv=Content-Type><meta name=description content="Book on basic to intermediate level Python projects"><meta name=viewport content="width=device-width, initial-scale=1"><meta name=theme-color content=#ffffff><link rel=icon href=../favicon.svg><link rel="shortcut icon"href=../favicon.png><link rel=stylesheet href=../css/variables.css><link rel=stylesheet href=../css/general.css><link rel=stylesheet href=../css/chrome.css><link rel=stylesheet href=../FontAwesome/css/font-awesome.css><link rel=stylesheet href=../fonts/fonts.css><link rel=stylesheet href=../highlight.css><link rel=stylesheet href=../tomorrow-night.css><link rel=stylesheet href=../ayu-highlight.css><link rel=stylesheet href=../style.css><body><script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script><script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script><script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script><script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script><nav id=sidebar class=sidebar aria-label="Table of contents"><div class=sidebar-scrollbox><ol class=chapter><li class="chapter-item expanded affix"><a href=../preface.html>Preface</a><li class="chapter-item expanded"><a href=../calculator/calculator.html><strong aria-hidden=true>1.</strong> CLI Calculator</a><li><ol class=section><li class="chapter-item expanded"><a href=../calculator/calc_bash_func.html><strong aria-hidden=true>1.1.</strong> Bash shortcuts</a><li class="chapter-item expanded"><a href=../calculator/calc_py_cli.html><strong aria-hidden=true>1.2.</strong> Python CLI application</a></ol><li class="chapter-item expanded"><a href=../poll_data_analysis/poll_data_analysis.html><strong aria-hidden=true>2.</strong> Analyzing poll data</a><li><ol class=section><li class="chapter-item expanded"><a href=../poll_data_analysis/praw.html><strong aria-hidden=true>2.1.</strong> Getting Reddit comments using praw</a><li class="chapter-item expanded"><a href=../poll_data_analysis/data_cleansing.html><strong aria-hidden=true>2.2.</strong> Data cleansing</a><li class="chapter-item expanded"><a href=../poll_data_analysis/data_similarity.html><strong aria-hidden=true>2.3.</strong> Data similarity</a><li class="chapter-item expanded"><a href=../poll_data_analysis/data_results.html class=active><strong aria-hidden=true>2.4.</strong> Displaying results</a></ol></li><br><hr><li class="chapter-item expanded"><i id=git-repository-button class="fa fa-github"></i><a href=https://github.com/learnbyexample/practice_python_projects>   Source code</a><li class="chapter-item expanded"><i id=home-button class="fa fa-home"></i><a href=https://learnbyexample.github.io/>   My Blog</a><li class="chapter-item expanded"><i id=book-button class="fa fa-book"></i><a href=https://learnbyexample.github.io/books/>   My Books</a></ol></div><div id=sidebar-resize-handle class=sidebar-resize-handle></div></nav><div id=page-wrapper class=page-wrapper><div class=page><div id=menu-bar-hover-placeholder></div><div id=menu-bar class="menu-bar sticky bordered"><div class=left-buttons><button id=sidebar-toggle class=icon-button type=button title="Toggle Table of Contents"aria-label="Toggle Table of Contents"aria-controls=sidebar><i class="fa fa-bars"></i></button><button id=theme-toggle class=icon-button type=button title="Change theme"aria-label="Change theme"aria-haspopup=true aria-expanded=false aria-controls=theme-list><i class="fa fa-paint-brush"></i></button><ul id=theme-list class=theme-popup aria-label=Themes role=menu><li role=none><button role=menuitem class=theme id=light>Light</button><li role=none><button role=menuitem class=theme id=rust>Rust (default)</button><li role=none><button role=menuitem class=theme id=coal>Coal</button><li role=none><button role=menuitem class=theme id=navy>Navy</button><li role=none><button role=menuitem class=theme id=ayu>Ayu</button></ul><button id=search-toggle class=icon-button type=button title="Search. (Shortkey: s)"aria-label="Toggle Searchbar"aria-expanded=false aria-keyshortcuts=S aria-controls=searchbar><i class="fa fa-search"></i></button></div><h1 class=menu-title>Practice Python Projects</h1><div class=right-buttons><a href=https://learnbyexample.github.io title=Blog aria-label=Blog> <i id=home-button class="fa fa-home"></i> </a><a href=https://github.com/learnbyexample/practice_python_projects title="Git repository"aria-label="Git repository"> <i id=git-repository-button class="fa fa-github"></i> </a></div></div><div id=search-wrapper class=hidden><form id=searchbar-outer class=searchbar-outer><input type=search name=search id=searchbar name=searchbar placeholder="Search this book ..."aria-controls=searchresults-outer aria-describedby=searchresults-header></form><div id=searchresults-outer class="searchresults-outer hidden"><div id=searchresults-header class=searchresults-header></div><ul id=searchresults></ul></div></div><script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script><div id=content class=content><main><div class=sidetoc><nav class=pagetoc></nav></div><h1 id=displaying-results><a class=header href=#displaying-results>Displaying results</a></h1><p>The final task is to show the results. The <code>csv</code> files generated in the previous section is good enough for most cases, but sometimes a visual display can be more appealing. In this section, you'll see how to use the <code>stylecloud</code> module for generating word clouds.<p>From <a href=https://pypi.org/project/stylecloud/>pypi: stylecloud</a>:<blockquote><p>Python package + CLI to generate stylistic wordclouds, including gradients and icon shapes!<p><code>stylecloud</code> is a Python package that leverages the popular <a href=https://github.com/amueller/word_cloud>word_cloud</a> package, adding useful features to create truly unique word clouds!</blockquote><pre><code class=language-bash># virtual environment
+$ pip install stylecloud
+
+# if you don't want to use virtual environment
+# use py instead of python3.9 for Windows
+$ python3.9 -m pip install --user stylecloud
+</code></pre><blockquote><p><img src=../images/info.svg alt=info> Note that the <code>stylecloud</code> module depends on many other modules, so don't be surprised if you see them getting installed.</blockquote><pre><code class=language-bash>$ pip show stylecloud | grep '^Requires:'
+Requires: wordcloud, icon-font-to-png, palettable, fire, matplotlib
+
+# wordcloud in turn depends on other modules and so on
+$ pip show wordcloud | grep '^Requires:'
+Requires: numpy, pillow, matplotlib
+</code></pre><h2 id=word-cloud><a class=header href=#word-cloud>Word cloud</a></h2><p>The program below is based on examples provided in the <a href=https://github.com/minimaxir/stylecloud>stylecloud GitHub repo</a>. The <code>csv</code> files generated earlier can be directly passed to the <code>file_path</code> argument. The second column with number of votes will be considered as <strong>weights</strong> for the first column data. The shape of the word cloud image generated can be specified using the <code>icon_name</code> argument. One of the <em>book</em> icons listed in the <a href=https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free>free Font Awesome icons list</a> is used here.<p>Rest of the arguments are self explanatory. See the GitHub repo linked above for more details and customization options.<pre><code class=language-python># author_cloud.py
+import stylecloud
+
+ip_files = ('top_authors_2019.csv', 'top_authors_2021.csv')
+op_files = ('top_authors_2019.png', 'top_authors_2021.png')
+
+for ip_file, op_file in zip(ip_files, op_files):
+    stylecloud.gen_stylecloud(file_path=ip_file,
+                              icon_name='fas fa-book-open',
+                              background_color='black',
+                              gradient='horizontal',
+                              output_name=op_file)
+</code></pre><p>Here's the result for <strong>2019</strong> poll:<p align=center><img src=../images/top_authors_2019.png alt="Word cloud for 2019 women author poll"><p>Here's the result for <strong>2021</strong> poll:<p align=center><img src=../images/top_authors_2021.png alt="Word cloud for 2021 women author poll"></main><nav class=nav-wrapper aria-label="Page navigation"><a rel=prev href=../poll_data_analysis/data_similarity.html class="mobile-nav-chapters previous"title="Previous chapter"aria-label="Previous chapter"aria-keyshortcuts=Left> <i class="fa fa-angle-left"></i> </a><div style="clear: both"></div></nav></div></div><nav class=nav-wide-wrapper aria-label="Page navigation"><a rel=prev href=../poll_data_analysis/data_similarity.html class="nav-chapters previous"title="Previous chapter"aria-label="Previous chapter"aria-keyshortcuts=Left> <i class="fa fa-angle-left"></i> </a></nav></div><script>
+            window.playground_copyable = true;
+        </script><script src=../elasticlunr.min.js charset=utf-8></script><script src=../mark.min.js charset=utf-8></script><script src=../searcher.js charset=utf-8></script><script src=../clipboard.min.js charset=utf-8></script><script src=../highlight.js charset=utf-8></script><script src=../book.js charset=utf-8></script><script src=../sidebar.js></script>
