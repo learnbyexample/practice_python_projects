@@ -2,13 +2,15 @@
 
 This is a **work-in-progress** book on basic to intermediate level Python projects.
 
-`Python version 3.9` and `GNU bash version 4.3.48` are used for the projects discussed in this book.
+`Python version 3.9` and `GNU bash version 5.0.17` are used for the projects discussed in this book.
 
 <br>
 
 ## Project list
 
 * [Enhance your CLI experience with a custom Python calculator](https://learnbyexample.github.io/practice_python_projects/calculator.html)
+* [Analyzing poll data from a Reddit comment thread](./poll_data_analysis/poll_data_analysis.md)
+* [Evaluating multiple choice questions](./mcq/multiple_choice_questions.md)
 
 *More to come*
 
@@ -26,7 +28,7 @@ For web version of the book, visit https://learnbyexample.github.io/practice_pyt
 
 Please open an [issue](https://github.com/learnbyexample/practice_python_projects/issues) if you spot any typo/errors.
 
-Please do not submit pull requests.
+**Please do not submit pull requests.**
 
 I'd also highly appreciate your feedback about the book.
 
