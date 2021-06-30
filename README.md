@@ -8,9 +8,9 @@ This is a **work-in-progress** book on basic to intermediate level Python projec
 
 ## Project list
 
-* [Enhance your CLI experience with a custom Python calculator](https://learnbyexample.github.io/practice_python_projects/calculator.html)
-* [Analyzing poll data from a Reddit comment thread](./poll_data_analysis/poll_data_analysis.md)
-* [Evaluating multiple choice questions](./mcq/multiple_choice_questions.md)
+* [Enhance your CLI experience with a custom Python calculator](https://learnbyexample.github.io/practice_python_projects/calculator/calculator.html)
+* [Analyzing poll data from a Reddit comment thread](https://learnbyexample.github.io/practice_python_projects/poll_data_analysis/poll_data_analysis.html)
+* [Evaluating multiple choice questions](https://learnbyexample.github.io/practice_python_projects/mcq/multiple_choice_questions.html)
 
 *More to come*
 
