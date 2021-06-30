@@ -1,0 +1,146 @@
+<!DOCTYPE HTML><html lang=en class="sidebar-visible no-js rust"><head><meta charset=UTF-8><title>Using input function - Practice Python Projects</title><meta content="text/html; charset=utf-8"http-equiv=Content-Type><meta name=description content="Book on basic to intermediate level Python projects"><meta name=viewport content="width=device-width, initial-scale=1"><meta name=theme-color content=#ffffff><link rel=icon href=../favicon.svg><link rel="shortcut icon"href=../favicon.png><link rel=stylesheet href=../css/variables.css><link rel=stylesheet href=../css/general.css><link rel=stylesheet href=../css/chrome.css><link rel=stylesheet href=../FontAwesome/css/font-awesome.css><link rel=stylesheet href=../fonts/fonts.css><link rel=stylesheet href=../highlight.css><link rel=stylesheet href=../tomorrow-night.css><link rel=stylesheet href=../ayu-highlight.css><link rel=stylesheet href=../style.css><body><script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script><script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script><script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script><script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script><nav id=sidebar class=sidebar aria-label="Table of contents"><div class=sidebar-scrollbox><ol class=chapter><li class="chapter-item expanded affix"><a href=../preface.html>Preface</a><li class="chapter-item expanded"><a href=../calculator/calculator.html><strong aria-hidden=true>1.</strong> CLI Calculator</a><li><ol class=section><li class="chapter-item expanded"><a href=../calculator/calc_bash_func.html><strong aria-hidden=true>1.1.</strong> Bash shortcuts</a><li class="chapter-item expanded"><a href=../calculator/calc_py_cli.html><strong aria-hidden=true>1.2.</strong> Python CLI application</a></ol><li class="chapter-item expanded"><a href=../poll_data_analysis/poll_data_analysis.html><strong aria-hidden=true>2.</strong> Analyzing poll data</a><li><ol class=section><li class="chapter-item expanded"><a href=../poll_data_analysis/praw.html><strong aria-hidden=true>2.1.</strong> Getting Reddit comments using praw</a><li class="chapter-item expanded"><a href=../poll_data_analysis/data_cleansing.html><strong aria-hidden=true>2.2.</strong> Data cleansing</a><li class="chapter-item expanded"><a href=../poll_data_analysis/data_similarity.html><strong aria-hidden=true>2.3.</strong> Data similarity</a><li class="chapter-item expanded"><a href=../poll_data_analysis/data_results.html><strong aria-hidden=true>2.4.</strong> Displaying results</a></ol><li class="chapter-item expanded"><a href=../mcq/multiple_choice_questions.html><strong aria-hidden=true>3.</strong> Multiple choice questions</a><li><ol class=section><li class="chapter-item expanded"><a href=../mcq/input_mcq.html class=active><strong aria-hidden=true>3.1.</strong> Using input function</a><li class="chapter-item expanded"><a href=../mcq/tkinter_intro.html><strong aria-hidden=true>3.2.</strong> Tkinter introduction</a><li class="chapter-item expanded"><a href=../mcq/gui_mcq.html><strong aria-hidden=true>3.3.</strong> MCQ GUI</a></ol></li><br><hr><li class="chapter-item expanded"><i id=git-repository-button class="fa fa-github"></i><a href=https://github.com/learnbyexample/practice_python_projects>   Source code</a><li class="chapter-item expanded"><i id=home-button class="fa fa-home"></i><a href=https://learnbyexample.github.io/>   My Blog</a><li class="chapter-item expanded"><i id=book-button class="fa fa-book"></i><a href=https://learnbyexample.github.io/books/>   My Books</a></ol></div><div id=sidebar-resize-handle class=sidebar-resize-handle></div></nav><div id=page-wrapper class=page-wrapper><div class=page><div id=menu-bar-hover-placeholder></div><div id=menu-bar class="menu-bar sticky bordered"><div class=left-buttons><button id=sidebar-toggle class=icon-button type=button title="Toggle Table of Contents"aria-label="Toggle Table of Contents"aria-controls=sidebar><i class="fa fa-bars"></i></button><button id=theme-toggle class=icon-button type=button title="Change theme"aria-label="Change theme"aria-haspopup=true aria-expanded=false aria-controls=theme-list><i class="fa fa-paint-brush"></i></button><ul id=theme-list class=theme-popup aria-label=Themes role=menu><li role=none><button role=menuitem class=theme id=light>Light</button><li role=none><button role=menuitem class=theme id=rust>Rust (default)</button><li role=none><button role=menuitem class=theme id=coal>Coal</button><li role=none><button role=menuitem class=theme id=navy>Navy</button><li role=none><button role=menuitem class=theme id=ayu>Ayu</button></ul><button id=search-toggle class=icon-button type=button title="Search. (Shortkey: s)"aria-label="Toggle Searchbar"aria-expanded=false aria-keyshortcuts=S aria-controls=searchbar><i class="fa fa-search"></i></button></div><h1 class=menu-title>Practice Python Projects</h1><div class=right-buttons><a href=https://learnbyexample.github.io title=Blog aria-label=Blog> <i id=home-button class="fa fa-home"></i> </a><a href=https://github.com/learnbyexample/practice_python_projects title="Git repository"aria-label="Git repository"> <i id=git-repository-button class="fa fa-github"></i> </a></div></div><div id=search-wrapper class=hidden><form id=searchbar-outer class=searchbar-outer><input type=search name=search id=searchbar name=searchbar placeholder="Search this book ..."aria-controls=searchresults-outer aria-describedby=searchresults-header></form><div id=searchresults-outer class="searchresults-outer hidden"><div id=searchresults-header class=searchresults-header></div><ul id=searchresults></ul></div></div><script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script><div id=content class=content><main><div class=sidetoc><nav class=pagetoc></nav></div><h1 id=using-input-function><a class=header href=#using-input-function>Using input function</a></h1><p>In this section, you'll see how to read a file containing questions, choices and the answer. Then using these details, you'll use <code>input()</code> function to interactively accept user's choice for each question. At the end, you'll display how many questions were correctly answered.<p>Two solutions are presented in this section. First one follows the same order as present in the input file and the second one randomizes the order of questions and choices.<h2 id=file-format><a class=header href=#file-format>File format</a></h2><p>To be able to parse the text file, a consistent format is needed to separate out questions, choices and the correct answer for that particular question. Here's one possible structure:<pre><code class=language-bash># only first two question blocks are shown here
+# there are total five such blocks
+$ cat question_and_answers.txt
+1) Which of these programming paradigms does Python support?
+a) structured
+b) object-oriented
+c) functional
+--> d) all of these choices
+
+2) How would you specify literal characters { and } in f-strings?
+--> a) {{ and }} respectively
+b) \{ and \} respectively
+
+</code></pre><p>Each block starts with a number, followed by <code>)</code>, a space and then the entire question in a single line. This is followed by two or more choices, with each choice on its own line. The choices start with an alphabet, followed by <code>)</code>, a space and then the text for that choice. There's only one possible answer for this implementation, marked by <code>--> </code> at the beginning of a choice.<p>Exactly one empty line marks the end of a question block (including the final question block).<h2 id=linear-implementation><a class=header href=#linear-implementation>Linear implementation</a></h2><p>Here's one possible implementation that maintains the same order of questions and choices.<pre><code class=language-python># mcq_input.py
+print('When prompted for an answer, type only the alphabet\n')
+
+ip_file = 'question_and_answers.txt'
+total_questions = 0
+correct_answers = 0
+with open(ip_file) as ipf:
+    for line in ipf:
+        if line.startswith('--> '):
+            answer = line[4]
+            line = line[4:]
+            total_questions += 1
+        print(line, end='')
+
+        if line == '\n':
+            usr_ip = input('Enter you answer: ')
+            if usr_ip == answer:
+                correct_answers += 1
+                print('Correct answer!')
+            else:
+                print(f'Oops! The right choice is: {answer}')
+            print('-' * 50 + '\n')
+
+print(f'You answered {correct_answers}/{total_questions} correctly.\n')
+</code></pre><p>Here's an overview of the logic used in the above program:<ul><li>First, inform the user that only the alphabet of the choices presented is required when prompted to answer a question<li>The variables <code>total_questions</code> and <code>correct_answers</code> track how many question blocks are present in the given input file and the correct answers provided by the user respectively<li>If a line starts with <code>--> </code> <ul><li>store the answer alphabet<li>remove this indicator<li>increment the question counter</ul><li>If a line is empty, <ul><li>ask for user's choice using the <code>input()</code> function<li>compare the user input against the answer saved earlier<li>increment the answer counter if user's choice is correct<li>also, inform the user whether the choice was correct or not</ul><li>Finally, give a summary of correct answers and total questions</ul><p>Here's a sample program execution. The string <code>...</code> indicates portion that has been excluded from the output shown.<pre><code class=language-bash>$ python3.9 mcq_input.py
+When prompted for an answer, type only the alphabet
+
+1) Which of these programming paradigms does Python support?
+a) structured
+b) object-oriented
+c) functional
+d) all of these choices
+
+Enter you answer: d
+Correct answer!
+--------------------------------------------------
+
+2) How would you specify literal characters { and } in f-strings?
+a) {{ and }} respectively
+b) \{ and \} respectively
+
+Enter you answer: b
+Oops! The right choice is: a
+--------------------------------------------------
+
+...
+
+You answered 4/5 correctly.
+</code></pre><h2 id=randomizing-questions-and-choices><a class=header href=#randomizing-questions-and-choices>Randomizing questions and choices</a></h2><p>The <code>random</code> module will be used here to shuffle the order of the questions and choices.<pre><code class=language-python># mcq_random.py
+import random
+
+print('When prompted for an answer, type only the alphabet\n')
+
+ip_file = 'question_and_answers.txt'
+question_blocks = open(ip_file).read().rstrip().split('\n\n')
+random.shuffle(question_blocks)
+
+total_questions = 0
+correct_answers = 0
+for block in question_blocks:
+    total_questions += 1
+    question, *choices = block.split('\n')
+    random.shuffle(choices)
+    print(f'{total_questions}) {question[question.find(" ")+1:]}')
+    for choice, option in zip(choices, 'abcdefghij'):
+        if choice.startswith('--> '):
+            choice = choice[4:]
+            answer = option
+        print(f'{option}) {choice[choice.find(" ")+1:]}')
+
+    usr_ip = input('\nEnter you answer: ')
+    if usr_ip == answer:
+        correct_answers += 1
+        print('Correct answer!')
+    else:
+        print(f'Oops! The right choice is: {answer}')
+    print('-' * 50 + '\n')
+
+print(f'You answered {correct_answers}/{total_questions} correctly.\n')
+</code></pre><p>Here's an overview of the logic used in the above program:<ul><li>The input file is assumed to be small enough to be processed as a single string <ul><li><code>rstrip()</code> method is used to remove excess whitespaces at the end of the file<li><code>split('\n\n')</code> consecutive newlines is used to get the question blocks<li>these question blocks are then randomized using <code>random.shuffle()</code></ul><li>Each question block has the question followed by choices. This is separated out by splitting on <code>\n</code> character <ul><li>sequence unpacking is used to save the question in a string variable and choices as a list of strings<li>choice list is then randomized</ul><li>Since the questions and choices are randomized, already present question number and choice alphabet cannot be used <ul><li>these are removed by finding the index of first space character and slicing syntax</ul><li><code>total_questions</code> already tracks the number of questions, so this is used in place of the deleted question number<li>The <code>zip()</code> function is used on the list of choices and a string of first 10 alphabets (assuming max of 10 choices) to get the choice alphabet <ul><li><code>zip()</code> will quit when either of the sequence reaches the end</ul></ul><p>Here's part of the output for one of the sample runs. Note that both the question and choices have been randomized.<pre><code class=language-bash>$ python3.9 mcq_random.py
+When prompted for an answer, type only the alphabet
+
+1) How would you specify literal characters { and } in f-strings?
+a) \{ and \} respectively
+b) {{ and }} respectively
+
+Enter you answer: b
+Correct answer!
+--------------------------------------------------
+
+</code></pre></main><nav class=nav-wrapper aria-label="Page navigation"><a rel=prev href=../mcq/multiple_choice_questions.html class="mobile-nav-chapters previous"title="Previous chapter"aria-label="Previous chapter"aria-keyshortcuts=Left> <i class="fa fa-angle-left"></i> </a><a rel=next href=../mcq/tkinter_intro.html class="mobile-nav-chapters next"title="Next chapter"aria-label="Next chapter"aria-keyshortcuts=Right> <i class="fa fa-angle-right"></i> </a><div style="clear: both"></div></nav></div></div><nav class=nav-wide-wrapper aria-label="Page navigation"><a rel=prev href=../mcq/multiple_choice_questions.html class="nav-chapters previous"title="Previous chapter"aria-label="Previous chapter"aria-keyshortcuts=Left> <i class="fa fa-angle-left"></i> </a><a rel=next href=../mcq/tkinter_intro.html class="nav-chapters next"title="Next chapter"aria-label="Next chapter"aria-keyshortcuts=Right> <i class="fa fa-angle-right"></i> </a></nav></div><script>
+            window.playground_copyable = true;
+        </script><script src=../elasticlunr.min.js charset=utf-8></script><script src=../mark.min.js charset=utf-8></script><script src=../searcher.js charset=utf-8></script><script src=../clipboard.min.js charset=utf-8></script><script src=../highlight.js charset=utf-8></script><script src=../book.js charset=utf-8></script><script src=../sidebar.js></script>

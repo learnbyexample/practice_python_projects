@@ -1,0 +1,173 @@
+<!DOCTYPE HTML><html lang=en class="sidebar-visible no-js rust"><head><meta charset=UTF-8><title>Tkinter introduction - Practice Python Projects</title><meta content="text/html; charset=utf-8"http-equiv=Content-Type><meta name=description content="Book on basic to intermediate level Python projects"><meta name=viewport content="width=device-width, initial-scale=1"><meta name=theme-color content=#ffffff><link rel=icon href=../favicon.svg><link rel="shortcut icon"href=../favicon.png><link rel=stylesheet href=../css/variables.css><link rel=stylesheet href=../css/general.css><link rel=stylesheet href=../css/chrome.css><link rel=stylesheet href=../FontAwesome/css/font-awesome.css><link rel=stylesheet href=../fonts/fonts.css><link rel=stylesheet href=../highlight.css><link rel=stylesheet href=../tomorrow-night.css><link rel=stylesheet href=../ayu-highlight.css><link rel=stylesheet href=../style.css><body><script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script><script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script><script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script><script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script><nav id=sidebar class=sidebar aria-label="Table of contents"><div class=sidebar-scrollbox><ol class=chapter><li class="chapter-item expanded affix"><a href=../preface.html>Preface</a><li class="chapter-item expanded"><a href=../calculator/calculator.html><strong aria-hidden=true>1.</strong> CLI Calculator</a><li><ol class=section><li class="chapter-item expanded"><a href=../calculator/calc_bash_func.html><strong aria-hidden=true>1.1.</strong> Bash shortcuts</a><li class="chapter-item expanded"><a href=../calculator/calc_py_cli.html><strong aria-hidden=true>1.2.</strong> Python CLI application</a></ol><li class="chapter-item expanded"><a href=../poll_data_analysis/poll_data_analysis.html><strong aria-hidden=true>2.</strong> Analyzing poll data</a><li><ol class=section><li class="chapter-item expanded"><a href=../poll_data_analysis/praw.html><strong aria-hidden=true>2.1.</strong> Getting Reddit comments using praw</a><li class="chapter-item expanded"><a href=../poll_data_analysis/data_cleansing.html><strong aria-hidden=true>2.2.</strong> Data cleansing</a><li class="chapter-item expanded"><a href=../poll_data_analysis/data_similarity.html><strong aria-hidden=true>2.3.</strong> Data similarity</a><li class="chapter-item expanded"><a href=../poll_data_analysis/data_results.html><strong aria-hidden=true>2.4.</strong> Displaying results</a></ol><li class="chapter-item expanded"><a href=../mcq/multiple_choice_questions.html><strong aria-hidden=true>3.</strong> Multiple choice questions</a><li><ol class=section><li class="chapter-item expanded"><a href=../mcq/input_mcq.html><strong aria-hidden=true>3.1.</strong> Using input function</a><li class="chapter-item expanded"><a href=../mcq/tkinter_intro.html class=active><strong aria-hidden=true>3.2.</strong> Tkinter introduction</a><li class="chapter-item expanded"><a href=../mcq/gui_mcq.html><strong aria-hidden=true>3.3.</strong> MCQ GUI</a></ol></li><br><hr><li class="chapter-item expanded"><i id=git-repository-button class="fa fa-github"></i><a href=https://github.com/learnbyexample/practice_python_projects>   Source code</a><li class="chapter-item expanded"><i id=home-button class="fa fa-home"></i><a href=https://learnbyexample.github.io/>   My Blog</a><li class="chapter-item expanded"><i id=book-button class="fa fa-book"></i><a href=https://learnbyexample.github.io/books/>   My Books</a></ol></div><div id=sidebar-resize-handle class=sidebar-resize-handle></div></nav><div id=page-wrapper class=page-wrapper><div class=page><div id=menu-bar-hover-placeholder></div><div id=menu-bar class="menu-bar sticky bordered"><div class=left-buttons><button id=sidebar-toggle class=icon-button type=button title="Toggle Table of Contents"aria-label="Toggle Table of Contents"aria-controls=sidebar><i class="fa fa-bars"></i></button><button id=theme-toggle class=icon-button type=button title="Change theme"aria-label="Change theme"aria-haspopup=true aria-expanded=false aria-controls=theme-list><i class="fa fa-paint-brush"></i></button><ul id=theme-list class=theme-popup aria-label=Themes role=menu><li role=none><button role=menuitem class=theme id=light>Light</button><li role=none><button role=menuitem class=theme id=rust>Rust (default)</button><li role=none><button role=menuitem class=theme id=coal>Coal</button><li role=none><button role=menuitem class=theme id=navy>Navy</button><li role=none><button role=menuitem class=theme id=ayu>Ayu</button></ul><button id=search-toggle class=icon-button type=button title="Search. (Shortkey: s)"aria-label="Toggle Searchbar"aria-expanded=false aria-keyshortcuts=S aria-controls=searchbar><i class="fa fa-search"></i></button></div><h1 class=menu-title>Practice Python Projects</h1><div class=right-buttons><a href=https://learnbyexample.github.io title=Blog aria-label=Blog> <i id=home-button class="fa fa-home"></i> </a><a href=https://github.com/learnbyexample/practice_python_projects title="Git repository"aria-label="Git repository"> <i id=git-repository-button class="fa fa-github"></i> </a></div></div><div id=search-wrapper class=hidden><form id=searchbar-outer class=searchbar-outer><input type=search name=search id=searchbar name=searchbar placeholder="Search this book ..."aria-controls=searchresults-outer aria-describedby=searchresults-header></form><div id=searchresults-outer class="searchresults-outer hidden"><div id=searchresults-header class=searchresults-header></div><ul id=searchresults></ul></div></div><script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script><div id=content class=content><main><div class=sidetoc><nav class=pagetoc></nav></div><h1 id=tkinter-introduction><a class=header href=#tkinter-introduction>Tkinter introduction</a></h1><p>From <a href=https://docs.python.org/3/library/tk.html>docs.python: Graphical User Interfaces with Tk</a>:<blockquote><p>Tk/Tcl has long been an integral part of Python. It provides a robust and platform independent windowing toolkit, that is available to Python programmers using the tkinter package<p>tkinter is a set of wrappers that implement the Tk widgets as Python classes</blockquote><p>In this section, you'll see examples of <strong>Button</strong>, <strong>Label</strong> and <strong>Radiobutton</strong> widgets. You'll also learn how to customize some of the widget parameters and use <strong>Frame</strong> for organizing your widgets.<blockquote><p><img src=../images/info.svg alt=info> Did you know? <a href=https://docs.python.org/3/library/idle.html>IDLE</a> is coded using the <code>tkinter</code> module.</blockquote><blockquote><p><img src=../images/info.svg alt=info> The screenshots shown here is from a Linux distribution. The appearance can vary for you, especially on Windows and MacOS.</blockquote><h2 id=built-in-example><a class=header href=#built-in-example>Built-in example</a></h2><p>If you invoke the <code>tkinter</code> module from the command line, a sample GUI will be presented.<pre><code class=language-bash>$ python3.9 -m tkinter
+</code></pre><p align=center><img src=../images/mcq/tkinter_builtin_example.png alt="Built-in example"><p>You can resize the window if you want to:<p align=center><img src=../images/mcq/tkinter_window_resize.png alt="Window resize"><p>Go ahead, click the buttons and see what happens!<h2 id=a-single-button-example><a class=header href=#a-single-button-example>A single Button example</a></h2><p>Here's a small program to get started with coding a GUI with <code>tkinter</code>:<pre><code class=language-python># button.py
+import tkinter as tk
+
+def button_click():
+    print('Button clicked!')
+
+root = tk.Tk()
+root.title('Button Click')
+root.geometry('400x300')
+
+button = tk.Button(text='Click this', command=button_click)
+button.pack()
+
+root.mainloop()
+</code></pre><p>The main window is usually named as <code>root</code>. The <code>title()</code> method lets you set a name for the window (default is <strong>tk</strong> as seen in the previous example). The <code>geometry()</code> method accepts the window dimensions of the form <code>widthxheight+x+y</code> where <code>x</code> and <code>y</code> are co-ordinates. Leaving out <code>x</code> and <code>y</code> will usually place the window at the center of your screen.<p>The <code>tk.Button()</code> method helps you create a button. The <code>command</code> parameter lets you define the action to be taken when that particular button is clicked. In this example, the function simply prints something to your normal <code>stdout</code> screen.<p align=center><img src=../images/mcq/button_click.png alt="Button click example"><pre><code class=language-bash>$ python3.9 button.py
+Button clicked!
+Button clicked!
+</code></pre><p>After creating the button, you can use methods like <code>pack()</code> and <code>grid()</code> to control its placement. More details will be discussed later.<p>The <code>mainloop()</code> method is the preferred way to block the Python program from exiting (see what happens if you don't have this line). The user can then interact with the window as needed. Note that this example doesn't explicitly provide a widget to exit the window. Depending on your OS and desktop environment, you can use the window close options (usually on the top left and/or top right).<blockquote><p><img src=../images/info.svg alt=info> You can also pass <a href=https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions>lambda expressions</a> to the <code>command</code> parameter. <code>lambda</code> is also helpful if the function to be called requires arguments.</blockquote><blockquote><p><img src=../images/info.svg alt=info> See <a href=https://stackoverflow.com/q/29158220/4082052>this stackoverflow Q&A thread</a> for more details about the <code>mainloop()</code> method.</blockquote><h2 id=adding-a-label><a class=header href=#adding-a-label>Adding a Label</a></h2><p>The below program extends the previous example by adding two more widgets:<ul><li>a Label widget to display information on the window itself<li>a Button widget to exit the window</ul><pre><code class=language-python># buttons_and_labels.py
+import tkinter as tk
+
+def button_click():
+    label['text'] = 'Button clicked!'
+    label['fg'] = 'blue'
+
+def quit_program():
+    root.destroy()
+
+root = tk.Tk()
+root.title('Buttons and Labels')
+root.geometry('400x300')
+
+label = tk.Label(text='Click the button', pady=10)
+label.pack()
+
+button = tk.Button(text='Click this', command=button_click)
+button.pack(side=tk.LEFT)
+
+quit = tk.Button(text='Quit', command=quit_program)
+quit.pack(side=tk.RIGHT)
+
+root.mainloop()
+</code></pre><p>The two buttons are placed next to each by using the <code>side</code> parameter. By default, they would have been stacked vertically (as is the case here for the Label widget). As seen in the screenshot below, the layout is bad though. You'll see how Frame helps in a later example.<p>You can change the parameters using <code>dict</code> syntax on the variable that points to the widget object. <code>fg</code> parameter controls the foreground color. <code>pady</code> parameter controls the vertical spacing around the widget.<p>The <code>destroy()</code> method can be called on any widget, including the main window. In addition to the quit button, the user can still use window close options mentioned earlier. See this <a href=https://stackoverflow.com/q/111155/4082052>stackoverflow thread</a> if you want to handle those window close events yourself.<p align=center><img src=../images/mcq/buttons_and_labels.png alt="Buttons and Labels example"><p align=center><img src=../images/mcq/buttons_and_labels_after_click.png alt="Label updated after button clicked"><p>But first, this program will be re-written using <code>class</code> instead of using functions and global variables. A GUI program usually requires widgets to refer to each other, which gets difficult to handle without using <code>class</code>.<pre><code class=language-python># class_example.py
+import tkinter as tk
+
+class Root(tk.Tk):
+    def __init__(self):
+        super().__init__()
+
+        self.title('Buttons and Labels')
+        self.geometry('400x300')
+
+        self.label = tk.Label(text='Click the button', pady=10)
+        self.label.pack()
+
+        self.button = tk.Button(text='Click this', command=self.button_click)
+        self.button.pack(side=tk.LEFT)
+
+        self.quit = tk.Button(text='Quit', command=self.quit_program)
+        self.quit.pack(side=tk.RIGHT)
+
+    def button_click(self):
+        self.label['text'] = 'Button clicked!'
+        self.label['fg'] = 'blue'
+
+    def quit_program(self):
+        self.destroy()
+
+root = Root()
+root.mainloop()
+</code></pre><h2 id=frame><a class=header href=#frame>Frame</a></h2><p>To improve the layout of the previous example, here's a modified version with Frame:<pre><code class=language-python># frames.py
+import tkinter as tk
+
+class Root(tk.Tk):
+    def __init__(self):
+        super().__init__()
+
+        self.title('Frames')
+        self.geometry('400x300')
+
+        self.frame = tk.Frame()
+        self.frame.pack(expand=True)
+
+        self.label = tk.Label(self.frame, text='Click the button', pady=10)
+        self.label.pack()
+
+        self.button = tk.Button(self.frame, text='Click this',
+                                command=self.button_click)
+        self.button.pack(side=tk.LEFT)
+
+        self.quit = tk.Button(self.frame, text='Quit',
+                              command=self.quit_program)
+        self.quit.pack(side=tk.RIGHT)
+
+    def button_click(self):
+        self.label['text'] = 'Button clicked!'
+        self.label['fg'] = 'blue'
+
+    def quit_program(self):
+        self.destroy()
+
+if __name__ == '__main__':
+    root = Root()
+    root.mainloop()
+</code></pre><p>To add a widget to a particular Frame instead of the main window, pass the frame variable when you create that widget. The <code>expand=True</code> parameter for packing will give unassigned window area to the frame, thus resulting in centered buttons and labels in this particular example.<p align=center><img src=../images/mcq/frame.png alt="Frame example"><blockquote><p><img src=../images/info.svg alt=info> See <a href=https://stackoverflow.com/q/28089942/4082052>this stackoverflow Q&A thread</a> for more details about <code>expand</code> and <code>fill</code> parameters.</blockquote><h2 id=radio-buttons><a class=header href=#radio-buttons>Radio buttons</a></h2><p>The final example in this introduction section uses Radiobutton widget.<pre><code class=language-python># radio_buttons.py
+import tkinter as tk
+
+class Root(tk.Tk):
+    def __init__(self):
+        super().__init__()
+
+        self.title('Radio Buttons')
+        self.geometry('400x300')
+
+        self.frame = tk.Frame()
+        self.frame.pack(expand=True)
+
+        self.label = tk.Label(self.frame, pady=10)
+        self.label.pack()
+
+        rb = tk.IntVar()
+        choices = (('False', 1), ('True', 2))
+        for choice, idx in choices:
+            tk.Radiobutton(self.frame, text=choice, value=idx, variable=rb,
+                           command=lambda: self.label.config(text=rb.get()),
+                          ).pack(anchor=tk.W)
+
+if __name__ == '__main__':
+    root = Root()
+    root.mainloop()
+</code></pre><p>The <code>value</code> parameter for the Radiobutton here assigns an integer for that particular choice. This integer value associated with a choice will be assigned to the variable that you pass to the <code>variable</code> parameter. Integer value is used in this example, so you need to pass a <code>IntVar()</code> object.<p>The <code>anchor</code> parameter here places the radio buttons on the west side of the frame (default is center) relative to other widgets. This effect will be more visible in the multiple choice GUI presented in the next section.<p>When the user selects a choice, the integer associated with that choice is fetched using the <code>get()</code> method. The <code>config()</code> method is another way to change a widget's parameters, helpful when you are using <code>lambda</code> expressions. In this case, the label's <code>text</code> parameter is modified.<p align=center><img src=../images/mcq/radio_buttons.png alt="Radio buttons example"><blockquote><p><img src=../images/info.svg alt=info> See <a href=https://tkdocs.com/shipman/control-variables.html>tkdocs: Control variables</a> and <a href=https://tkdocs.com/shipman/anchors.html>tkdocs: anchors</a> for more details about <code>IntVar()</code> and <code>anchor</code> parameter respectively.</blockquote></main><nav class=nav-wrapper aria-label="Page navigation"><a rel=prev href=../mcq/input_mcq.html class="mobile-nav-chapters previous"title="Previous chapter"aria-label="Previous chapter"aria-keyshortcuts=Left> <i class="fa fa-angle-left"></i> </a><a rel=next href=../mcq/gui_mcq.html class="mobile-nav-chapters next"title="Next chapter"aria-label="Next chapter"aria-keyshortcuts=Right> <i class="fa fa-angle-right"></i> </a><div style="clear: both"></div></nav></div></div><nav class=nav-wide-wrapper aria-label="Page navigation"><a rel=prev href=../mcq/input_mcq.html class="nav-chapters previous"title="Previous chapter"aria-label="Previous chapter"aria-keyshortcuts=Left> <i class="fa fa-angle-left"></i> </a><a rel=next href=../mcq/gui_mcq.html class="nav-chapters next"title="Next chapter"aria-label="Next chapter"aria-keyshortcuts=Right> <i class="fa fa-angle-right"></i> </a></nav></div><script>
+            window.playground_copyable = true;
+        </script><script src=../elasticlunr.min.js charset=utf-8></script><script src=../mark.min.js charset=utf-8></script><script src=../searcher.js charset=utf-8></script><script src=../clipboard.min.js charset=utf-8></script><script src=../highlight.js charset=utf-8></script><script src=../book.js charset=utf-8></script><script src=../sidebar.js></script>
