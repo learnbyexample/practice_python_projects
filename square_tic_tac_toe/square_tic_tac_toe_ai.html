@@ -1,0 +1,288 @@
+<!DOCTYPE HTML><html lang=en class="sidebar-visible no-js rust"><head><meta charset=UTF-8><title>Square Tic Tac Toe AI - Practice Python Projects</title><meta content="text/html; charset=utf-8"http-equiv=Content-Type><meta name=description content="Book on basic to intermediate level Python projects"><meta name=viewport content="width=device-width, initial-scale=1"><meta name=theme-color content=#ffffff><link rel=icon href=../favicon.svg><link rel="shortcut icon"href=../favicon.png><link rel=stylesheet href=../css/variables.css><link rel=stylesheet href=../css/general.css><link rel=stylesheet href=../css/chrome.css><link rel=stylesheet href=../FontAwesome/css/font-awesome.css><link rel=stylesheet href=../fonts/fonts.css><link rel=stylesheet href=../highlight.css><link rel=stylesheet href=../tomorrow-night.css><link rel=stylesheet href=../ayu-highlight.css><link rel=stylesheet href=../style.css><body><script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script><script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script><script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script><script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script><nav id=sidebar class=sidebar aria-label="Table of contents"><div class=sidebar-scrollbox><ol class=chapter><li class="chapter-item expanded affix"><a href=../preface.html>Preface</a><li class="chapter-item expanded"><a href=../calculator/calculator.html><strong aria-hidden=true>1.</strong> CLI Calculator</a><li><ol class=section><li class="chapter-item expanded"><a href=../calculator/calc_bash_func.html><strong aria-hidden=true>1.1.</strong> Bash shortcuts</a><li class="chapter-item expanded"><a href=../calculator/calc_py_cli.html><strong aria-hidden=true>1.2.</strong> Python CLI application</a></ol><li class="chapter-item expanded"><a href=../poll_data_analysis/poll_data_analysis.html><strong aria-hidden=true>2.</strong> Analyzing poll data</a><li><ol class=section><li class="chapter-item expanded"><a href=../poll_data_analysis/praw.html><strong aria-hidden=true>2.1.</strong> Getting Reddit comments using praw</a><li class="chapter-item expanded"><a href=../poll_data_analysis/data_cleansing.html><strong aria-hidden=true>2.2.</strong> Data cleansing</a><li class="chapter-item expanded"><a href=../poll_data_analysis/data_similarity.html><strong aria-hidden=true>2.3.</strong> Data similarity</a><li class="chapter-item expanded"><a href=../poll_data_analysis/data_results.html><strong aria-hidden=true>2.4.</strong> Displaying results</a></ol><li class="chapter-item expanded"><a href=../mcq/multiple_choice_questions.html><strong aria-hidden=true>3.</strong> Multiple choice questions</a><li><ol class=section><li class="chapter-item expanded"><a href=../mcq/input_mcq.html><strong aria-hidden=true>3.1.</strong> Using input function</a><li class="chapter-item expanded"><a href=../mcq/tkinter_intro.html><strong aria-hidden=true>3.2.</strong> Tkinter introduction</a><li class="chapter-item expanded"><a href=../mcq/gui_mcq.html><strong aria-hidden=true>3.3.</strong> MCQ GUI</a></ol><li class="chapter-item expanded"><a href=../square_tic_tac_toe/square_tic_tac_toe.html><strong aria-hidden=true>4.</strong> Square Tic Tac Toe</a><li><ol class=section><li class="chapter-item expanded"><a href=../square_tic_tac_toe/grid_and_images.html><strong aria-hidden=true>4.1.</strong> Grid layout and images</a><li class="chapter-item expanded"><a href=../square_tic_tac_toe/tic_tac_toe_gui.html><strong aria-hidden=true>4.2.</strong> Tic Tac Toe GUI</a><li class="chapter-item expanded"><a href=../square_tic_tac_toe/square_tic_tac_toe_gui.html><strong aria-hidden=true>4.3.</strong> Square Tic Tac Toe GUI</a><li class="chapter-item expanded"><a href=../square_tic_tac_toe/square_tic_tac_toe_ai.html class=active><strong aria-hidden=true>4.4.</strong> Square Tic Tac Toe AI</a></ol></li><br><hr><li class="chapter-item expanded"><i id=git-repository-button class="fa fa-github"></i><a href=https://github.com/learnbyexample/practice_python_projects>   Source code</a><li class="chapter-item expanded"><i id=home-button class="fa fa-home"></i><a href=https://learnbyexample.github.io/>   My Blog</a><li class="chapter-item expanded"><i id=book-button class="fa fa-book"></i><a href=https://learnbyexample.github.io/books/>   My Books</a></ol></div><div id=sidebar-resize-handle class=sidebar-resize-handle></div></nav><div id=page-wrapper class=page-wrapper><div class=page><div id=menu-bar-hover-placeholder></div><div id=menu-bar class="menu-bar sticky bordered"><div class=left-buttons><button id=sidebar-toggle class=icon-button type=button title="Toggle Table of Contents"aria-label="Toggle Table of Contents"aria-controls=sidebar><i class="fa fa-bars"></i></button><button id=theme-toggle class=icon-button type=button title="Change theme"aria-label="Change theme"aria-haspopup=true aria-expanded=false aria-controls=theme-list><i class="fa fa-paint-brush"></i></button><ul id=theme-list class=theme-popup aria-label=Themes role=menu><li role=none><button role=menuitem class=theme id=light>Light</button><li role=none><button role=menuitem class=theme id=rust>Rust (default)</button><li role=none><button role=menuitem class=theme id=coal>Coal</button><li role=none><button role=menuitem class=theme id=navy>Navy</button><li role=none><button role=menuitem class=theme id=ayu>Ayu</button></ul><button id=search-toggle class=icon-button type=button title="Search. (Shortkey: s)"aria-label="Toggle Searchbar"aria-expanded=false aria-keyshortcuts=S aria-controls=searchbar><i class="fa fa-search"></i></button></div><h1 class=menu-title>Practice Python Projects</h1><div class=right-buttons><a href=https://learnbyexample.github.io title=Blog aria-label=Blog> <i id=home-button class="fa fa-home"></i> </a><a href=https://github.com/learnbyexample/practice_python_projects title="Git repository"aria-label="Git repository"> <i id=git-repository-button class="fa fa-github"></i> </a></div></div><div id=search-wrapper class=hidden><form id=searchbar-outer class=searchbar-outer><input type=search name=search id=searchbar name=searchbar placeholder="Search this book ..."aria-controls=searchresults-outer aria-describedby=searchresults-header></form><div id=searchresults-outer class="searchresults-outer hidden"><div id=searchresults-header class=searchresults-header></div><ul id=searchresults></ul></div></div><script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script><div id=content class=content><main><div class=sidetoc><nav class=pagetoc></nav></div><h1 id=square-tic-tac-toe-ai><a class=header href=#square-tic-tac-toe-ai>Square Tic Tac Toe AI</a></h1><p>In this final section, you'll see how to code a smarter computer move. Another big difference is that the game logic and GUI are separated into different classes. Benefits include easier unit testing and extending the GUI to handle multiple games, etc.<p>There are various approaches you can follow to code an intelligent computer player depending upon the requirements, see <a href=https://en.wikipedia.org/wiki/Category:Game_artificial_intelligence>wikipedia: Game artificial intelligence</a> for examples. A weight based solution is presented here.<p>Quoting from <a href=https://en.wikipedia.org/wiki/Artificial_intelligence_in_video_games>wikipedia: Artificial intelligence in video games</a>:<blockquote><p>AI in video games is a distinct subfield and differs from academic AI. It serves to improve the game-player experience rather than machine learning or decision making.<p>However, "game AI" does not, in general, as might be thought and sometimes is depicted to be the case, mean a realization of an artificial person corresponding to an NPC, in the manner of say, the Turing test or an artificial general intelligence.</blockquote><h2 id=weight-based-algorithm><a class=header href=#weight-based-algorithm>Weight based algorithm</a></h2><p>Minimax is one of the popular algorithms to implement an AI for Tic Tac Toe. Here's some resources to get started:<ul><li><a href=https://en.wikipedia.org/wiki/Minimax>wikipedia: Minimax</a><li><a href=https://github.com/Cledersonbc/tic-tac-toe-minimax>Tic Tac Toe implementation in Python using Minimax</a><li><a href=https://towardsdatascience.com/how-a-chess-playing-computer-thinks-about-its-next-move-8f028bd0e7b1>The Minimax Algorithm Explained</a></ul><p>The algorithm presented here borrows a few things from Minimax, but decisions are based on current state of the game alone. So, there's no need for recursive calculations and other complexities related to the number of future moves. Here's a rough explanation of the algorithm:<ul><li>Loop over all the valid squares, which is 20 squares for a 4x4 board.<li>If all the corners of a square are empty, each empty cell gets <code>1</code> weight for both the players.<li>If a particular square has moves from both the user and the AI, the empty cells (if any) won't get any weight addition.<li>If a particular square has moves only from one player, find the total (<code>t</code>) number of moves (possible values <code>1</code> to <code>3</code>), square this total and add <code>1</code> more. This value gets added to each empty cell of this square for that particular player only. <ul><li><code>t * t + 1</code> will thus work for all corners empty case as well.<li>I wanted to use a formula that grows exponentially with number of moves already made. Squaring fits thematically with the game name and seems to work well enough for this game.</ul></ul><p>Here's the initial weights for all the cells. Since no player has made a move yet, this will apply for both the players. Also, the numbers will be exactly equal to the number of possible squares from that particular cell.<pre><code class=language-nohighlight>3  5  5  3
+5  7  7  5
+5  7  7  5
+3  5  5  3
+</code></pre><p>Here's a screenshot where the user has made 3 moves, and the AI has to make the next move. The user and AI weights for all the empty cells are also shown for reference.<p align=center><img src=../images/square_tic_tac_toe/user_ai_weights.png alt="User and AI weights example"><p>Here's some weight calculations for two of the empty cells:<ul><li><strong>User at index 4</strong> <ul><li>As seen from initial weight matrix, there are total <code>5</code> possible squares from index <code>4</code>.<li>For the given game situation, <code>(4, 5, 8, 9)</code> has mixed moves, user at index <code>5</code> and AI at index <code>9</code>. Similarly, <code>(1, 4, 6, 9)</code> has user at index <code>1</code> and AI at index <code>9</code>.<li>The three remaining squares that the user can possibly form are — <code>(0, 1, 4, 5)</code>, <code>(4, 6, 12, 14)</code> and <code>(2, 4, 11, 13)</code>.<li><code>(0, 1, 4, 5)</code> has two moves already made, so weight to add is <code>2 * 2 + 1</code>.<li><code>(4, 6, 12, 14)</code> has one move already made, so weight to add is <code>1 * 1 + 1</code>.<li><code>(2, 4, 11, 13)</code> has no moves so far, so weight to add is <code>0 * 0 + 1</code>.<li>Hence, the total user weight for index <code>4</code> is <code>5 + 2 + 1</code> which is <code>8</code>.</ul><li><strong>AI at index 4</strong> <ul><li>Only one square <code>(2, 4, 11, 13)</code> is possible for the AI, so the total AI weight for index 4 is <code>1</code>.</ul><li><strong>User at index 2</strong> <ul><li>Winning possibilities — <code>(1, 2, 5, 6)</code>, <code>(2, 3, 6, 7)</code> and <code>(2, 4, 11, 13)</code>.<li>User weights, respectively — <code>2 * 2 + 1</code>, <code>0 * 0 + 1</code> and <code>0 * 0 + 1</code> which comes to <code>7</code> in total.</ul><li><strong>AI at index 2</strong> <ul><li>Winning possibilities — <code>(0, 2, 8, 10)</code>, <code>(2, 3, 6, 7)</code> and <code>(2, 4, 11, 13)</code>.<li>AI weights, respectively — <code>1 * 1 + 1</code>, <code>0 * 0 + 1</code> and <code>0 * 0 + 1</code> which comes to <code>4</code> in total.</ul></ul><p>The full decision algorithm will be explained later. In this particular game situation:<ul><li>As seen from the illustration above, user has maximum weight of <code>8</code> at index <code>4</code>, <code>6</code> and <code>7</code>.<li>AI has maximum weight of <code>4</code> at index <code>2</code> and <code>8</code>.<li>AI will need to choose among the three indexes with maximum user weights. AI will try to maximize its own chances. AI weights are <code>1</code>, <code>3</code> and <code>3</code> for those three user indexes respectively. So, the final choice will be randomly picked between indexes <code>6</code> and <code>7</code>.</ul><h2 id=code><a class=header href=#code>Code</a></h2><p>First, the GUI portion, which is also the main program.<pre><code class=language-python># square_gui.py
+from square_ai import Square
+import tkinter as tk
+
+class Root(tk.Tk):
+    def __init__(self):
+        super().__init__()
+
+        self.title('Square Tic Tac Toe')
+        self.geometry('500x450')
+
+        self.char_x = tk.PhotoImage(file='./char_x.png')
+        self.char_o = tk.PhotoImage(file='./char_o.png')
+        self.empty = tk.PhotoImage()
+
+        self.ai = {'bg': 'orange', 'image': self.char_x}
+        self.user = {'bg': 'grey', 'image': self.char_o}
+        self.board_bg = 'white'
+
+        self.sq = Square()
+        self.create_first_move_frame()
+        self.create_difficulty_frame()
+        self.create_control_frame()
+
+    def create_first_move_frame(self):
+        self.radio_frame = tk.Frame()
+        self.radio_frame.pack(side=tk.TOP, pady=5)
+
+        tk.Label(self.radio_frame, text='First Move').pack(side=tk.LEFT)
+        self.move_choice = tk.IntVar()
+        self.move_choice.set(self.sq.user['value'])
+        tk.Radiobutton(self.radio_frame, text='Computer',
+                       variable=self.move_choice, value=self.sq.ai['value']
+                      ).pack(side=tk.LEFT)
+        tk.Radiobutton(self.radio_frame, text='User',
+                       variable=self.move_choice, value=self.sq.user['value']
+                      ).pack(side=tk.RIGHT)
+
+    def create_difficulty_frame(self):
+        self.difficulty_frame = tk.Frame()
+        self.difficulty_frame.pack(side=tk.TOP, pady=5)
+
+        tk.Label(self.difficulty_frame, text='Difficulty').pack(side=tk.LEFT)
+        self.difficulty_choice = tk.IntVar()
+        self.difficulty_choice.set(self.sq.easy)
+        tk.Radiobutton(self.difficulty_frame, text='Easy',
+                       variable=self.difficulty_choice, value=self.sq.easy
+                      ).pack(side=tk.LEFT)
+        tk.Radiobutton(self.difficulty_frame, text='Hard',
+                       variable=self.difficulty_choice, value=self.sq.hard
+                      ).pack(side=tk.RIGHT)
+
+    def create_control_frame(self):
+        self.control_frame = tk.Frame()
+        self.control_frame.pack(side=tk.TOP, pady=5)
+
+        self.b_quit = tk.Button(self.control_frame, text='Quit',
+                                command=self.quit)
+        self.b_quit.pack(side=tk.LEFT)
+
+        self.b_play = tk.Button(self.control_frame, text='Play',
+                                command=self.play)
+        self.b_play.pack(side=tk.RIGHT)
+
+    def create_status_frame(self):
+        self.status_frame = tk.Frame()
+        self.status_frame.pack(expand=True)
+
+        tk.Label(self.status_frame, text='Status: ').pack(side=tk.LEFT)
+        self.l_status = tk.Label(self.status_frame)
+        self.l_status.pack(side=tk.RIGHT)
+
+    def create_board_frame(self):
+        self.board_frame = tk.Frame()
+        self.board_frame.pack(expand=True)
+
+        self.sq.reset_board(self.difficulty_choice.get())
+        self.cell = [None] * self.sq.total_cells
+        for i in range(self.sq.total_cells):
+            self.cell[i] = tk.Label(self.board_frame, highlightthickness=1,
+                                    width=60, height=60, bg=self.board_bg,
+                                    image=self.empty)
+            self.cell[i].bind('&LTButton-1>',
+                              lambda e, move=i: self.user_click(e, move))
+            r, c = divmod(i, self.sq.corners)
+            self.cell[i].grid(row=r, column=c)
+
+    def play(self):
+        self.b_play['state'] = 'disabled'
+        if self.b_play['text'] == 'Play':
+            self.create_status_frame()
+            self.b_play['text'] = 'Play Again'
+        else:
+            self.board_frame.destroy()
+        self.create_board_frame()
+        self.l_status['text'] = self.sq.active
+        self.last_click = 0
+        if self.move_choice.get() == self.sq.ai['value']:
+            self.ai_click()
+
+    def quit(self):
+        self.destroy()
+
+    def user_click(self, e, user_move):
+        if self.sq.board[user_move] != 0 or self.sq.state != self.sq.active:
+            return
+        self.sq.set_user_move(user_move)
+        self.update_cell(self.user, user_move)
+        if self.sq.state == self.sq.active:
+            self.ai_click()
+
+    def ai_click(self):
+        ai_move = self.sq.get_ai_move()
+        self.update_cell(self.ai, ai_move)
+
+    def update_cell(self, player, move):
+        self.cell[self.last_click]['bg'] = self.board_bg
+        self.last_click = move
+        self.cell[move]['image'] = player['image']
+        self.cell[move]['bg'] = player['bg']
+        self.l_status['text'] = self.sq.state
+        if self.sq.state != self.sq.active:
+            self.b_play['state'] = 'normal'
+            if self.sq.state != 'TIE':
+                self.highlight_winning_squares(player)
+
+    def highlight_winning_squares(self, player):
+        for square in self.sq.winning_squares:
+            for i in square:
+                self.cell[i]['bg'] = player['bg']
+
+if __name__ == '__main__':
+    root = Root()
+    root.mainloop()
+</code></pre><p>And here's the class which implements the game logic:<pre><code class=language-python># square_ai.py
+import random
+
+class Square():
+    def __init__(self):
+        self.active = 'GAME ACTIVE'
+        self.total_cells = 16
+        self.corners = 4
+        self.easy, self.hard = (0, 1)
+        self.ai = {'value': 1, 'win': 'AI WINS'}
+        self.user = {'value': self.corners+1, 'win': 'USER WINS'}
+        self.max_ai_sum = (self.corners-1) * self.ai['value']
+        self.max_user_sum = (self.corners-1) * self.user['value']
+        self.all_squares = ((0, 1, 4, 5), (1, 2, 5, 6), (2, 3, 6, 7),
+                            (4, 5, 8, 9), (5, 6, 9, 10), (6, 7, 10, 11),
+                            (8, 9, 12, 13), (9, 10, 13, 14), (10, 11, 14, 15),
+                            (0, 2, 8, 10), (1, 3, 9, 11), (4, 6, 12, 14),
+                            (5, 7, 13, 15), (0, 3, 12, 15), (1, 4, 6, 9),
+                            (2, 5, 7, 10), (5, 8, 10, 13), (6, 9, 11, 14),
+                            (1, 7, 8, 14), (2, 4, 11, 13))
+
+    def reset_board(self, difficulty):
+        self.board = [0] * self.total_cells
+        self.remaining_moves = list(range(self.total_cells))
+        self.state = self.active
+        self.difficulty = difficulty
+
+    def set_user_move(self, move):
+        self.update_board(self.user, move)
+
+    def get_ai_move(self):
+        if self.difficulty == self.easy:
+            move = random.choice(self.remaining_moves)
+        else:
+            move = self.ai_hard_move()
+        self.update_board(self.ai, move)
+        return move
+
+    def update_board(self, player, move):
+        self.board[move] = player['value']
+        self.remaining_moves.remove(move)
+        self.update_status(player)
+
+    def update_status(self, player):
+        winner_sum = self.corners * player['value']
+        self.winning_squares = []
+        for square in self.all_squares:
+            if sum(self.board[i] for i in square) == winner_sum:
+                self.state = player['win']
+                self.winning_squares.append(square)
+        if self.state == self.active and not self.remaining_moves:
+            self.state = 'TIE'
+
+    def ai_hard_move(self):
+        self.update_weights()
+
+        # making a winning move or block a winning move
+        if self.ai_winning_indexes:
+            return random.choice(self.ai_winning_indexes)
+        elif self.user_winning_indexes:
+            return random.choice(self.user_winning_indexes)
+
+        # if there are no possible squares left, return a random move
+        max_user_weight = max(self.user_weights)
+        max_ai_weight = max(self.ai_weights)
+        if max_user_weight == 0 and max_ai_weight == 0:
+            return random.choice(self.remaining_moves)
+
+        # there can be multiple indexes with max weight
+        def max_moves(seq, val):
+            return [i for i,w in enumerate(seq) if w == val]
+        max_user_moves = max_moves(self.user_weights, max_user_weight)
+        max_ai_moves = max_moves(self.ai_weights, max_ai_weight)
+
+        # randomize multiple indexes and choose best move based on weights
+        if max_user_weight >= max_ai_weight:
+            random.shuffle(max_user_moves)
+            return max(max_user_moves, key=lambda x: self.ai_weights[x])
+        else:
+            random.shuffle(max_ai_moves)
+            return max(max_ai_moves, key=lambda x: self.user_weights[x])
+
+    def update_weights(self):
+        def update(s, w, t, ot):
+            for i in square:
+                if self.board[i] == 0:
+                    w[i] += t * t + 1
+                    if ot == self.max_ai_sum:
+                        self.ai_winning_indexes.append(i)
+                    elif ot == self.max_user_sum:
+                        self.user_winning_indexes.append(i)
+
+        self.user_weights = [0] * self.total_cells
+        self.ai_weights = [0] * self.total_cells
+        self.user_winning_indexes = []
+        self.ai_winning_indexes = []
+        for square in self.all_squares:
+            total = sum(self.board[i] for i in square)
+            if total == 0:
+                update(square, self.user_weights, 0, 0)
+                update(square, self.ai_weights, 0, 0)
+            elif total <= self.max_ai_sum:
+                update(square, self.ai_weights, total, total)
+            else:
+                q, r = divmod(total, self.user['value'])
+                if r == 0:
+                    update(square, self.user_weights, q, total)
+</code></pre><h2 id=layout-changes><a class=header href=#layout-changes>Layout changes</a></h2><p>A new frame to choose between <code>Easy</code> and <code>Hard</code> difficulty level has been added. When <code>Easy</code> mode is chosen, the AI will make random moves. The weight based algorithm will come into play when <code>Hard</code> mode is active.<h2 id=weight-based-decision-making><a class=header href=#weight-based-decision-making>Weight based decision making</a></h2><p>Earlier, you saw one example of AI choosing the next move to be made. Here's the complete decision making possibilities explained:<ul><li>In addition to calculating the weights, the <code>update_weights()</code> method also creates two lists to save indexes with three moves already made. <ul><li>If AI has squares with three moves done, choose a random move among such indexes. This will result in AI winning.<li>Else, if user has squares with three moves done, again choose a random move. If there were multiple such indexes, user can win in the next move. User winning is possible with the current algorithm if the very first move is made by the user.</ul><li>If there are no winning moves, first check if there are any winning squares left at all. If none are remaining, return a random move.<li>Only two possible choices are left — user has higher maximum weight and AI has equal to or higher maximum weight. Also, there cannot be any square with three moves made by the same player, since that case is already covered. <ul><li>As seen earlier, there can be multiple indexes with the same maximum weight.<li>When user has the higher maximum weight, AI needs to choose the index where its own weights are the best.<li>When AI has equal to or higher maximum weight, the index where user's weight is the most is chosen so that user's future chances are reduced.</ul></ul></main><nav class=nav-wrapper aria-label="Page navigation"><a rel=prev href=../square_tic_tac_toe/square_tic_tac_toe_gui.html class="mobile-nav-chapters previous"title="Previous chapter"aria-label="Previous chapter"aria-keyshortcuts=Left> <i class="fa fa-angle-left"></i> </a><div style="clear: both"></div></nav></div></div><nav class=nav-wide-wrapper aria-label="Page navigation"><a rel=prev href=../square_tic_tac_toe/square_tic_tac_toe_gui.html class="nav-chapters previous"title="Previous chapter"aria-label="Previous chapter"aria-keyshortcuts=Left> <i class="fa fa-angle-left"></i> </a></nav></div><script>
+            window.playground_copyable = true;
+        </script><script src=../elasticlunr.min.js charset=utf-8></script><script src=../mark.min.js charset=utf-8></script><script src=../searcher.js charset=utf-8></script><script src=../clipboard.min.js charset=utf-8></script><script src=../highlight.js charset=utf-8></script><script src=../book.js charset=utf-8></script><script src=../sidebar.js></script>
