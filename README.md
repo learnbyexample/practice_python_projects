@@ -10,7 +10,8 @@ This is a **work-in-progress** book on basic to intermediate level Python projec
 
 * [Enhance your CLI experience with a custom Python calculator](https://learnbyexample.github.io/practice_python_projects/calculator/calculator.html)
 * [Analyzing poll data from a Reddit comment thread](https://learnbyexample.github.io/practice_python_projects/poll_data_analysis/poll_data_analysis.html)
-* [Evaluating multiple choice questions](https://learnbyexample.github.io/practice_python_projects/mcq/multiple_choice_questions.html)
+* [Creating a GUI for evaluating multiple choice questions](https://learnbyexample.github.io/practice_python_projects/mcq/multiple_choice_questions.html)
+* [Square Tic Tac Toe — creating a GUI game with AI](https://learnbyexample.github.io/practice_python_projects/square_tic_tac_toe/square_tic_tac_toe.html)
 
 *More to come*
 
