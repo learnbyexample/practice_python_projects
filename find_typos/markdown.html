@@ -1,0 +1,183 @@
+<!DOCTYPE HTML><html lang=en class="sidebar-visible no-js light"><head><meta charset=UTF-8><title>Markdown input - Practice Python Projects</title><meta content="text/html; charset=utf-8"http-equiv=Content-Type><meta name=description content="Book on basic to intermediate level Python projects"><meta name=viewport content="width=device-width, initial-scale=1"><meta name=theme-color content=#ffffff><link rel=icon href=../favicon.svg><link rel="shortcut icon"href=../favicon.png><link rel=stylesheet href=../css/variables.css><link rel=stylesheet href=../css/general.css><link rel=stylesheet href=../css/chrome.css><link rel=stylesheet href=../FontAwesome/css/font-awesome.css><link rel=stylesheet href=../fonts/fonts.css><link rel=stylesheet href=../highlight.css><link rel=stylesheet href=../tomorrow-night.css><link rel=stylesheet href=../ayu-highlight.css><link rel=stylesheet href=../style.css><body><script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script><script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script><script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script><script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script><nav id=sidebar class=sidebar aria-label="Table of contents"><div class=sidebar-scrollbox><ol class=chapter><li class="chapter-item expanded affix"><a href=../preface.html>Preface</a><li class="chapter-item expanded"><a href=../calculator/calculator.html><strong aria-hidden=true>1.</strong> CLI Calculator</a><li><ol class=section><li class="chapter-item expanded"><a href=../calculator/calc_bash_func.html><strong aria-hidden=true>1.1.</strong> Bash shortcuts</a><li class="chapter-item expanded"><a href=../calculator/calc_py_cli.html><strong aria-hidden=true>1.2.</strong> Python CLI application</a><li class="chapter-item expanded"><a href=../calculator/exercises.html><strong aria-hidden=true>1.3.</strong> Exercises</a></ol><li class="chapter-item expanded"><a href=../poll_data_analysis/poll_data_analysis.html><strong aria-hidden=true>2.</strong> Poll Data Analysis</a><li><ol class=section><li class="chapter-item expanded"><a href=../poll_data_analysis/praw.html><strong aria-hidden=true>2.1.</strong> Getting Reddit comments using praw</a><li class="chapter-item expanded"><a href=../poll_data_analysis/data_cleansing.html><strong aria-hidden=true>2.2.</strong> Data cleansing</a><li class="chapter-item expanded"><a href=../poll_data_analysis/data_similarity.html><strong aria-hidden=true>2.3.</strong> Data similarity</a><li class="chapter-item expanded"><a href=../poll_data_analysis/data_results.html><strong aria-hidden=true>2.4.</strong> Displaying results</a><li class="chapter-item expanded"><a href=../poll_data_analysis/exercises.html><strong aria-hidden=true>2.5.</strong> Exercises</a></ol><li class="chapter-item expanded"><a href=../find_typos/find_typos.html><strong aria-hidden=true>3.</strong> Finding typos</a><li><ol class=section><li class="chapter-item expanded"><a href=../find_typos/plain_text.html><strong aria-hidden=true>3.1.</strong> Plain text input</a><li class="chapter-item expanded"><a href=../find_typos/markdown.html class=active><strong aria-hidden=true>3.2.</strong> Markdown input</a><li class="chapter-item expanded"><a href=../find_typos/exercises.html><strong aria-hidden=true>3.3.</strong> Exercises</a></ol><li class="chapter-item expanded"><a href=../mcq/multiple_choice_questions.html><strong aria-hidden=true>4.</strong> Multiple choice questions</a><li><ol class=section><li class="chapter-item expanded"><a href=../mcq/input_mcq.html><strong aria-hidden=true>4.1.</strong> Using input function</a><li class="chapter-item expanded"><a href=../mcq/tkinter_intro.html><strong aria-hidden=true>4.2.</strong> Tkinter introduction</a><li class="chapter-item expanded"><a href=../mcq/gui_mcq.html><strong aria-hidden=true>4.3.</strong> MCQ GUI</a><li class="chapter-item expanded"><a href=../mcq/exercises.html><strong aria-hidden=true>4.4.</strong> Exercises</a></ol><li class="chapter-item expanded"><a href=../square_tic_tac_toe/square_tic_tac_toe.html><strong aria-hidden=true>5.</strong> Square Tic Tac Toe</a><li><ol class=section><li class="chapter-item expanded"><a href=../square_tic_tac_toe/grid_and_images.html><strong aria-hidden=true>5.1.</strong> Grid layout and images</a><li class="chapter-item expanded"><a href=../square_tic_tac_toe/tic_tac_toe_gui.html><strong aria-hidden=true>5.2.</strong> Tic Tac Toe GUI</a><li class="chapter-item expanded"><a href=../square_tic_tac_toe/square_tic_tac_toe_gui.html><strong aria-hidden=true>5.3.</strong> Square Tic Tac Toe GUI</a><li class="chapter-item expanded"><a href=../square_tic_tac_toe/square_tic_tac_toe_ai.html><strong aria-hidden=true>5.4.</strong> Square Tic Tac Toe AI</a><li class="chapter-item expanded"><a href=../square_tic_tac_toe/exercises.html><strong aria-hidden=true>5.5.</strong> Exercises</a></ol><li class="chapter-item expanded"><a href=../further_reading.html>Further Reading</a></li><br><hr><li class="chapter-item expanded"><i id=git-repository-button class="fa fa-github"></i><a href=https://github.com/learnbyexample/practice_python_projects>   Source code</a><li class="chapter-item expanded"><i id=home-button class="fa fa-home"></i><a href=https://learnbyexample.github.io/>   My Blog</a><li class="chapter-item expanded"><i id=book-button class="fa fa-book"></i><a href=https://learnbyexample.github.io/books/>   My Books</a></ol></div><div id=sidebar-resize-handle class=sidebar-resize-handle></div></nav><div id=page-wrapper class=page-wrapper><div class=page><div id=menu-bar-hover-placeholder></div><div id=menu-bar class="menu-bar sticky bordered"><div class=left-buttons><button id=sidebar-toggle class=icon-button type=button title="Toggle Table of Contents"aria-label="Toggle Table of Contents"aria-controls=sidebar><i class="fa fa-bars"></i></button><button id=theme-toggle class=icon-button type=button title="Change theme"aria-label="Change theme"aria-haspopup=true aria-expanded=false aria-controls=theme-list><i class="fa fa-paint-brush"></i></button><ul id=theme-list class=theme-popup aria-label=Themes role=menu><li role=none><button role=menuitem class=theme id=light>Light (default)</button><li role=none><button role=menuitem class=theme id=rust>Rust</button><li role=none><button role=menuitem class=theme id=coal>Coal</button><li role=none><button role=menuitem class=theme id=navy>Navy</button><li role=none><button role=menuitem class=theme id=ayu>Ayu</button></ul><button id=search-toggle class=icon-button type=button title="Search. (Shortkey: s)"aria-label="Toggle Searchbar"aria-expanded=false aria-keyshortcuts=S aria-controls=searchbar><i class="fa fa-search"></i></button></div><h1 class=menu-title>Practice Python Projects</h1><div class=right-buttons><a href=https://learnbyexample.github.io title=Blog aria-label=Blog> <i id=home-button class="fa fa-home"></i> </a><a href=https://github.com/learnbyexample/practice_python_projects title="Git repository"aria-label="Git repository"> <i id=git-repository-button class="fa fa-github"></i> </a></div></div><div id=search-wrapper class=hidden><form id=searchbar-outer class=searchbar-outer><input type=search name=search id=searchbar name=searchbar placeholder="Search this book ..."aria-controls=searchresults-outer aria-describedby=searchresults-header></form><div id=searchresults-outer class="searchresults-outer hidden"><div id=searchresults-header class=searchresults-header></div><ul id=searchresults></ul></div></div><script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script><div id=content class=content><main><div class=sidetoc><nav class=pagetoc></nav></div><h1 id=markdown-input><a class=header href=#markdown-input>Markdown input</a></h1><p>In this section you'll see how to check typos for Markdown input files. A complete Markdown parser is out of scope for this project, but you'll see how a few lines of code can help to avoid code snippets and hyperlinks from being checked for typos. You'll also see how to manage multiple input files.<p>From <a href=https://en.wikipedia.org/wiki/Markdown>wikipedia: Markdown</a>:<blockquote><p>Markdown is a lightweight markup language for creating formatted text using a plain-text editor. John Gruber and Aaron Swartz created Markdown in 2004 as a markup language that is appealing to human readers in its source code form. Markdown is widely used in blogging, instant messaging, online forums, collaborative software, documentation pages, and readme files.</blockquote><h2 id=single-markdown-file><a class=header href=#single-markdown-file>Single Markdown file</a></h2><p>There are different implementations of Markdown. I use GitHub Flavored Markdown, see <a href=https://github.github.com/gfm/>this Spec</a> for details.<p>Contents of <code>md_files/sample.md</code> is shown below. Code blocks (which can span multiple lines) are specified by surrounding them with lines starting with three or more backticks. A specific programming language can be given for syntax highlighting purposes. Lines starting with <code>#</code> character(s) are headers. Inline code can be formatted by surrounding it with backticks. Quotes start with the <code>></code> character. Hyperlinks are created using <code>[link text](hyperlink)</code> format and so on.<pre><code class=language-md># re introduction
+
+In this chapter, you'll get an introduction of `re` module  
+that is part of Python's standard library.
+
+## re.search
+
+Use `re.search` function to tesr if the the given regexp pattern  
+matches the input string. Syntax is shown below:
+
+>`re.search(pattern, string, flags=0)`
+
+```python
+>>> sentence = 'This is a sample string'
+>>> bool(re.search(r'is.*am', sentence))
+True
+>>> bool(re.search(r'str$', sentence))
+False
+```
+
+[My book](https://github.com/learnbyexample/py_regular_expressions)  
+on Python regexp has more details.
+
+</code></pre><p>Writing a parser to handle complete Markdown Spec is out of scope for this project. The main aim here is to find spelling issues for normal text. That means avoiding code blocks, inline code, hyperlinks, etc. Here's one such implementation:<pre><code class=language-python># markdown.py
+import re
+from string import punctuation
+
+def spell_check(words, text):
+    for w in text.split():
+        w = w.strip(punctuation + '—')
+        if w and w.lower() not in words:
+            yield w
+
+def process_md(words, md_file):
+    links = re.compile(r'\[([^]]+)\]\([^)]+\)')
+    inline_code = re.compile(r'`[^`]+`')
+    hist = {}
+    code_block = False
+    with open(md_file) as f:
+        for line in f:
+            if line.startswith('```'):
+                code_block = not code_block
+            elif not code_block:
+                line = links.sub(r'\1', line)
+                line = inline_code.sub('', line)
+                for w in spell_check(words, line):
+                    hist[w] = hist.get(w, 0) + 1
+    return hist
+
+if __name__ == '__main__':
+    word_file = 'word_files/words.txt'
+    with open(word_file) as f:
+        words = {line.rstrip().lower() for line in f}
+
+    hist = process_md(words, 'md_files/sample.md')    
+    for k in sorted(hist, key=lambda k: (k.lower(), -hist[k])):
+        print(f'{k}: {hist[k]}')
+</code></pre><p>Here's explanation for the additional code compared to plain text implementation seen earlier:<ul><li>Em dash <code>—</code> is also scrubbed as a punctuation character.<li>The <code>words</code> set is passed to the <code>spell_check()</code> function as an argument instead of using global variables.<li><code>process_md()</code> function takes care of removing code blocks, hyperlinks, etc. <ul><li>The <code>code_block</code> flag is used here to skip code blocks. <ul><li>See <a href=https://softwareengineering.stackexchange.com/questions/47806/examples-of-finite-state-machines>softwareengineering: FSM examples</a> if you are not familiar with state machines.</ul><li>As mentioned earlier, the hyperlink formatting is <code>[link text](hyperlink)</code>. The <code>links</code> regexp <code>\[([^]]+)\]\([^)]+\)</code> handles this case. The portion between <code>[</code> and <code>]</code> characters is captured and rest of the text gets deleted. <ul><li>You can use sites like <a href=https://regex101.com/>regex101</a> and <a href=https://www.debuggex.com>debuggex</a> to understand this regexp better. See my <a href=https://learnbyexample.github.io/py_regular_expressions/>Python re(gex)?</a> ebook if you want to learn more about regular expressions.</ul><li>The <code>inline_code</code> regexp <code>`[^`]+`</code> deletes inline code from input text.<li>After these processing steps, the remaining text is passed to the <code>spell_check()</code> function.<li>Typos (especially false mismatches) might be repeated multiple times in the given input file. So, a histogram is created here to save the potential typos as keys and their number of occurrences as values.<li>Since a dictionary data type is being used to handle the potential list of typos, the <code>spell_check()</code> function has been changed to <code>yield</code> the words one by one instead of returning a list of words. <ul><li>See <a href=https://stackoverflow.com/q/231767/4082052>stackoverflow: What does the yield keyword do?</a> if you want to know more about the <code>yield</code> keyword.</ul></ul><li>Finally, the potential typos are displayed in alphabetical order.</ul><pre><code class=language-bash>$ python3.9 markdown.py
+re.search: 1
+regexp: 2
+tesr: 1
+</code></pre><p>Even with this narrowed version of Markdown parsing, there are cases that aren't handled properly:<ul><li>When content of the code block to be displayed can have lines starting with triple backticks, the code block markers will use more number of backticks. That's how the contents of <code>md_files/sample.md</code> was displayed above. This scenario will not be properly parsed with the above implementation. <ul><li>As a workaround, you can save the length of backticks of the starting marker and look for ending marker with the same number of backticks.</ul><li>Similarly, inline code can have backtick characters and hyperlinks can have <code>()</code> characters. Again, this isn't handled with the above implementation. <ul><li>You can use regexp to handle a few levels of nesting. Or, you can even implement a recursive regexp with the third party <code>regex</code> module. See <a href=https://learnbyexample.github.io/py_regular_expressions/regex-module.html#recursive-matching>Recursive matching section</a> from my regexp ebook for details on both these workarounds.</ul></ul><h2 id=multiple-files><a class=header href=#multiple-files>Multiple files</a></h2><p>A project could have multiple markdown files, and they might not necessarily be all grouped together in a single directory. Another improvement that can be added is maintaining extra word files that cover false mismatches like programming terms, or even valid words that are not present in the reference dictionary file.<p>Here's one such implementation:<pre><code class=language-python># typos.py
+import glob
+import re
+from string import punctuation
+
+def reference_words(word_files):
+    words = set()
+    for word_file in word_files:
+        with open(word_file) as f:
+            words.update(line.rsplit(':', 1)[0].rstrip().lower() for line in f)
+    return words
+
+def spell_check(words, text):
+    for w in text.split():
+        w = w.strip(punctuation + '—')
+        if w and w.lower() not in words:
+            yield w
+
+def process_md(words, md_file):
+    links = re.compile(r'\[([^]]+)\]\([^)]+\)')
+    inline_code = re.compile(r'`[^`]+`')
+    hist = {}
+    code_block = False
+    with open(md_file) as f:
+        for line in f:
+            if line.startswith('```'):
+                code_block = not code_block
+            elif not code_block:
+                line = links.sub(r'\1', line)
+                line = inline_code.sub('', line)
+                for w in spell_check(words, line):
+                    hist[w] = hist.get(w, 0) + 1
+    return hist
+
+if __name__ == '__main__':
+    word_files = glob.glob('word_files/**/*.txt', recursive=True)
+    words = reference_words(word_files)
+
+    with open('typos.log', 'w') as opf:
+        for md in glob.glob('md_files/**/*.md', recursive=True):
+            hist = process_md(words, md)    
+            if hist:
+                opf.write(f'{md}\n')
+                for k in sorted(hist, key=lambda k: (k.lower(), -hist[k])):
+                    opf.write(f'{k}: {hist[k]}\n')
+                opf.write(f'{"-" * 50}\n\n')
+</code></pre><ul><li>The <code>glob</code> module is helpful to get all the filenames that match the given wildcard expression. <code>*.txt</code> will match all files ending with <code>.txt</code> extension. If you want to match filenames from sub-directories at any depth as well, prefix the expression with <code>**/</code> and set the <code>recursive</code> parameter to <code>True</code>. <ul><li>See <a href=https://en.wikipedia.org/wiki/Glob_(programming)>wikipedia: glob</a> for more details.</ul><li>The <code>reference_words()</code> function accepts a sequence of files from which the <code>words</code> set will be built. <ul><li>You might also notice that <code>rsplit()</code> processing has been added. This makes it easier to build extra reference files by copy pasting the false mismatches from the output of this program. Or, if you are not lazy like me, you could copy paste only the relevant string instead of whole lines and avoid this extra pre-processing step.</ul><li>The Markdown input files are also determined recursively using the <code>glob</code> module.<li>The output is now formatted with a filename prefix to make it easier to find and fix the typos.</ul><p>Here's a sample output with the <code>word_files</code> directory containing only the <code>words.txt</code> file:<pre><code class=language-bash>$ python3.9 typos.py
+
+$ cat typos.log
+md_files/sample.md
+re.search: 1
+regexp: 2
+tesr: 1
+--------------------------------------------------
+
+md_files/re/lookarounds.md
+groupins: 1
+lookahead: 2
+lookarounds: 3
+Lookarounds: 1
+lookbehind: 2
+--------------------------------------------------
+
+</code></pre><p>Some of the terms in the above output are false mismatches. Save such lines in a separate file as shown below:<pre><code class=language-bash>$ cat word_files/programming_terms.txt
+re.search: 1
+regexp: 2
+lookahead: 2
+lookarounds: 3
+lookbehind: 2
+</code></pre><p>Running the program again will give only the valid typos:<pre><code class=language-bash>$ python3.9 typos.py
+
+$ cat typos.log
+md_files/sample.md
+tesr: 1
+--------------------------------------------------
+
+md_files/re/lookarounds.md
+groupins: 1
+--------------------------------------------------
+</code></pre><h2 id=managing-word-files><a class=header href=#managing-word-files>Managing word files</a></h2><p>You can have any number of extra files to serve as word references. For example, if you are processing a text file of a novel, you might want to create a file for missing dictionary words, another for characters, yet another for fictional words, etc. That way, you can reuse specific files for future projects and this also makes it easier to manually review these files later for mistakes.<p>You can also speed up creating these extra files by filtering words with a minimum count, three for example. You would still have to manually review this, but it will help reduce the copy paste effort. With multiple input files, this minimum count will make more sense by maintaining a histogram of mismatches from all the input files and filtering at the end instead of per file basis.</main><nav class=nav-wrapper aria-label="Page navigation"><a rel=prev href=../find_typos/plain_text.html class="mobile-nav-chapters previous"title="Previous chapter"aria-label="Previous chapter"aria-keyshortcuts=Left> <i class="fa fa-angle-left"></i> </a><a rel=next href=../find_typos/exercises.html class="mobile-nav-chapters next"title="Next chapter"aria-label="Next chapter"aria-keyshortcuts=Right> <i class="fa fa-angle-right"></i> </a><div style="clear: both"></div></nav></div></div><nav class=nav-wide-wrapper aria-label="Page navigation"><a rel=prev href=../find_typos/plain_text.html class="nav-chapters previous"title="Previous chapter"aria-label="Previous chapter"aria-keyshortcuts=Left> <i class="fa fa-angle-left"></i> </a><a rel=next href=../find_typos/exercises.html class="nav-chapters next"title="Next chapter"aria-label="Next chapter"aria-keyshortcuts=Right> <i class="fa fa-angle-right"></i> </a></nav></div><script>
+            window.playground_copyable = true;
+        </script><script src=../elasticlunr.min.js charset=utf-8></script><script src=../mark.min.js charset=utf-8></script><script src=../searcher.js charset=utf-8></script><script src=../clipboard.min.js charset=utf-8></script><script src=../highlight.js charset=utf-8></script><script src=../book.js charset=utf-8></script><script src=../sidebar.js></script>
