@@ -41,7 +41,7 @@
                 </script><div id=content class=content><main><div class=sidetoc><nav class=pagetoc></nav></div><h1 id=data-similarity><a class=header href=#data-similarity>Data similarity</a></h1><p>Now that you have all the author names, the next task is to take care of typos. You'll see how to use <code>rapidfuzz</code> module for calculating the similarity between two strings. This helps to remove majority of the typos — for example <em>Courtney Schaefer</em> and <em>Courtney Shafer</em>. But, this would also introduce new error if similar looking names are actually different authors and not typos — for example <em>R.J. Barker</em> and <em>R.J. Parker</em>.<p>From <a href=https://pypi.org/project/rapidfuzz/>pypi: rapidfuzz</a>:<blockquote><p>RapidFuzz is a fast string matching library for Python and C++, which is using the string similarity calculations from <a href=https://pypi.org/project/fuzzywuzzy/>FuzzyWuzzy</a>.</blockquote><p>From <a href=https://pypi.org/project/fuzzywuzzy/>pypi: fuzzywuzzy</a>:<blockquote><p>It uses <a href=https://en.wikipedia.org/wiki/Levenshtein_distance>Levenshtein Distance</a> to calculate the differences between sequences in a simple-to-use package.</blockquote><pre><code class=language-bash># virtual environment
 $ pip install rapidfuzz
 
-# if you don't want to use virtual environment
+# normal environment
 # use py instead of python3.9 for Windows
 $ python3.9 -m pip install --user rapidfuzz
 </code></pre><h2 id=examples><a class=header href=#examples>Examples</a></h2><p>Here's some examples of using <code>fuzz.ratio()</code> to calculate similarity between two strings. Output of <code>100.0</code> means exact match.<pre><code class=language-python>>>> from rapidfuzz import fuzz
