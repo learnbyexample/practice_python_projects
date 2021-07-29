@@ -51,7 +51,7 @@
 ['tpyo']
 >>> spell_check('How are you?')
 ['How', 'you?']
-</code></pre><p><code>set</code> data type uses <strong>hash</strong> based membership lookup, which takes constant amount of time irrespective of the number of elements (see <a href=https://greenteapress.com/thinkpython2/html/thinkpython2022.html#sec255>Hashtables</a> for details). So, it is the ideal data type to store dictionary words for this project.<p>The input lines from the dictionary file will have line ending characters, so the <code>rstrip()</code> string method is used to remove them. You can use <code>strip()</code> method if there can be spurious whitespace characters at the start of the line as well.<p>The <code>spell_check()</code> function accepts a string input and returns a list of words not found in the dictionary. In this naive implementation, the input text is split on whitespaces and the resulting words are compared. As seen from the sample tests, punctuation characters and the case of input string can result in false mismatches.<blockquote><p><img src=../images/info.svg alt=info> <code>/usr/share/dict/words</code> is used as <code>words.txt</code> for this project. See <a href=https://en.wikipedia.org/wiki/Words_(Unix)>wikipedia: words</a> for a bit of information about <code>words</code> file in different Linux distributions. See <a href=https://users.cs.duke.edu/%7Eola/ap/linuxwords>linuxwords</a> if you want to view or download a smaller dictionary file for this project.</blockquote><blockquote><p><img src=../images/info.svg alt=info> You can use <a href=http://app.aspell.net/create>app.aspell.net</a> to create dictionary files based on specific country, diacritic handling, etc.</blockquote><h2 id=data-scrubbing><a class=header href=#data-scrubbing>Data scrubbing</a></h2><p>Here's an improved version that removes punctuation and ignores case for word comparisons:<pre><code class=language-python># plain_text.py
+</code></pre><p><code>set</code> data type uses <strong>hash</strong> based membership lookup, which takes constant amount of time irrespective of the number of elements (see <a href=https://greenteapress.com/thinkpython2/html/thinkpython2022.html#sec255>Hashtables</a> for details). So, it is the ideal data type to store dictionary words for this project.<p>The input lines from the dictionary file will have line ending characters, so the <code>rstrip()</code> string method is used to remove them. You can use <code>strip()</code> method if there can be spurious whitespace characters at the start of the line as well.<p>The <code>spell_check()</code> function accepts a string input and returns a list of words not found in the dictionary. In this naive implementation, the input text is split on whitespaces and the resulting words are compared. As seen from the sample tests, punctuation characters and the case of input string can result in false mismatches.<blockquote><p><img src=../images/info.svg alt=info> <code>/usr/share/dict/words</code> is used as <code>words.txt</code> for this project. See <a href=https://en.wikipedia.org/wiki/Words_(Unix)>wikipedia: words</a> for a bit of information about the <code>words</code> file in different Linux distributions. See <a href=https://users.cs.duke.edu/%7Eola/ap/linuxwords>linuxwords</a> if you want to view or download a smaller dictionary file for this project.</blockquote><blockquote><p><img src=../images/info.svg alt=info> You can use <a href=http://app.aspell.net/create>app.aspell.net</a> to create dictionary files based on specific country, diacritic handling, etc.</blockquote><h2 id=data-scrubbing><a class=header href=#data-scrubbing>Data scrubbing</a></h2><p>Here's an improved version that removes punctuation and ignores case for word comparisons:<pre><code class=language-python># plain_text.py
 from string import punctuation
 
 def spell_check(text):
@@ -80,12 +80,11 @@ with open(word_file) as f:
 >>> text = '“Should I get this gadget?”'
 >>> spell_check(text)
 ['“Should', 'gadget?”']
-
 # punctuation has only ASCII characters, hence the issue
 >>> [w.strip(punctuation) for w in text.split()]
 ['“Should', 'I', 'get', 'this', 'gadget?”']
 
-# using regex module to remove Unicode punctuations
+# regex module comes in handy for Unicode punctuations
 >>> import regex
 >>> [regex.sub(r'^\p{P}+|\p{P}+$', '', w) for w in text.split()]
 ['Should', 'I', 'get', 'this', 'gadget']
