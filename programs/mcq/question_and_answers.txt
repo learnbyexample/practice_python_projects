@@ -1,0 +1,24 @@
+1) Which of these programming paradigms does Python support?
+a) structured
+b) object-oriented
+c) functional
+--> d) all of these choices
+
+2) How would you specify literal characters { and } in f-strings?
+--> a) {{ and }} respectively
+b) \{ and \} respectively
+
+3) If you define a function with arguments as total(n1, n2), can you still call this function using keywords, for example total(n2=5, n1=100)?
+a) False
+--> b) True
+
+4) Given a sequence object named seq and a positive integer n, which of these is equivalent to seq[-n]?
+a) seq[len(seq) - n + 1]
+b) seq[len(seq) - n - 1]
+--> c) seq[len(seq) - n]
+
+5) Given a dict object named fruits and you have a loop for k in fruits, what does k get in each iteration?
+--> a) key
+b) value
+c) key-value pair as a tuple object
+
