@@ -20,7 +20,19 @@ See [Version_changes.md](./Version_changes.md) to keep track of changes made to 
 
 # E-book
 
-TODO: PDF/EPUB versions and sample chapters
+You can purchase the book using these links:
+
+* https://leanpub.com/py_projects
+* https://learnbyexample.gumroad.com/l/py_projects
+
+You can also get the book as part of **Learn by example Python bundle**:
+
+* https://leanpub.com/b/python-bundle
+* https://learnbyexample.gumroad.com/l/python-bundle
+
+See https://learnbyexample.github.io/books/ for list of other books
+
+For a preview of the book, see [sample chapters](https://github.com/learnbyexample/practice_python_projects/blob/main/sample_chapters/practice_python_projects_sample.pdf)
 
 The book can also be [viewed as a single markdown file in this repo](./practice_python_projects.md). See my blogpost on [generating pdf/epub from markdown using pandoc](https://learnbyexample.github.io/customizing-pandoc/) if you are interested in the ebook creation process.
 

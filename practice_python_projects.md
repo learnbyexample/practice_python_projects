@@ -30,7 +30,7 @@ If you are new to programming or Python, I'd highly recommend my [comprehensive 
 * Code snippets that are copy pasted from the Python REPL shell have been modified for presentation purposes. For example, comments to provide context and explanations, blank lines to improve readability and so on.
 * A comment with filename will be shown as the first line for program files.
 * External links are provided for further exploration throughout the book. They have been chosen with care to provide more detailed resources on those topics as well as resources on related topics.
-* The [practice_python_projects repo](https://github.com/learnbyexample/practice_python_projects/tree/main/programs) has all the programs presented in this book, organized by project for convenience.
+* The [practice_python_projects repo](https://github.com/learnbyexample/practice_python_projects/tree/main/programs) has all the programs and related example files presented in this book, organized by project for convenience.
 
 ## Acknowledgements
 
@@ -631,7 +631,7 @@ Modify the scripts such that these additional features are also implemented.
 
 * Go through [docs.python: ArgumentParser](https://docs.python.org/3/library/argparse.html#argparse.ArgumentParser) and experiment with parameters like `description`, `epilog`, etc.
 
-### Further Reading
+## Further Reading
 
 Python has a rich ecosystem in addition to the impressive standard library. You can find plenty of modules to choose for common tasks, including alternatives for standard modules. Check out these projects for CLI related applications.
 
@@ -1118,7 +1118,7 @@ Here's the result for **2021** poll:
     * You'll have to fuzzy match the author names since the spelling that won could be different between the two lists.
 * Find out top-5 authors who had at least **5** votes in both the lists and had the biggest gain in 2021 compared to the 2019 data. You can decide how to calculate the gain — vote count or percentage increase.
 
-### Further Reading
+## Further Reading
 
 * `praw`
     * [praw.readthedocs.io](https://praw.readthedocs.io/en/latest/)
@@ -1509,7 +1509,7 @@ You can also speed up creating these extra files by filtering words with a minim
     * You can also use packages like [Gooey](https://github.com/chriskiehl/Gooey) to create a GUI from this CLI program.
 * Change the `typos.py` program so that it works for both plain text and Markdown input files based on filename extensions.
 
-### Further Reading
+## Further Reading
 
 * Spell checkers and related:
     * [wikipedia: Spell checker](https://en.wikipedia.org/wiki/Spell_checker)
@@ -2091,7 +2091,7 @@ Here's some screenshots:
 * Read this [tkdocs: Checkbutton](https://tkdocs.com/tutorial/widgets.html#checkbutton) tutorial and implement a solution for cases requiring multiple choices to be selected for a given question.
 * Implement `mcq_gui.py` without using classes if you are still not convinced that OOP is better for GUI applications.
 
-### Further Reading
+## Further Reading
 
 * [tkdocs](https://tkdocs.com/index.html) — tutorials, best practices and more
 * [wiki.python: TkInter](https://wiki.python.org/moin/TkInter) — learning resources, extensions, etc
@@ -2996,7 +2996,7 @@ Earlier, you saw one example of AI choosing the next move to be made. Here's the
     * Read [PEP 8: Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/).
     * Use [pylint](https://pypi.org/project/pylint/) and/or [black](https://pypi.org/project/black/) to detect code smells, formatting inconsistencies, etc for these projects.
 
-### Further Reading
+## Further Reading
 
 * [Pygame learning resources](https://www.pygame.org/wiki/resources) — better suited package for creating games
 * [List of Game Development resources](https://github.com/ellisonleao/magictools)
