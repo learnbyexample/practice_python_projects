@@ -8,7 +8,7 @@ This book presents five beginner to intermediate level projects inspired by real
 * [Creating a GUI for evaluating multiple choice questions](https://learnbyexample.github.io/practice_python_projects/mcq/multiple_choice_questions.html)
 * [Square Tic Tac Toe — creating a GUI game with AI](https://learnbyexample.github.io/practice_python_projects/square_tic_tac_toe/square_tic_tac_toe.html)
 
-To test your understanding and to make it more interesting, you'll also be presented with exercises at the end of each project. Resources for further exploration are also mentioned throughout the book.
+To test your understanding and to make it more interesting, you'll also be presented with exercises at the end of each project. Resources for further exploration are also mentioned throughout the book. Visit https://youtu.be/5whwiiURWS8 for a short video about the book.
 
 <p align="center">
     <img src="./images/py_projects.png" width="320px" height="400px" />
