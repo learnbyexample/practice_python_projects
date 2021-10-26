@@ -20,15 +20,18 @@ See [Version_changes.md](./Version_changes.md) to keep track of changes made to 
 
 # E-book
 
-You can purchase the book using these links:
+You can purchase the pdf/epub versions of the book using these links:
 
 * https://leanpub.com/py_projects
 * https://learnbyexample.gumroad.com/l/py_projects
 
-You can also get the book as part of **Learn by example Python bundle**:
+You can also get the book as part of these bundles:
 
-* https://leanpub.com/b/python-bundle
-* https://learnbyexample.gumroad.com/l/python-bundle
+* **The Indie Python Extravaganza** bundle from https://leanpub.com/b/theindiepythonextravaganza
+    * Includes *Python 101*, *Pydon'ts*, *Python re(gex)?*, *Practice Python Projects* and *Clean Architectures in Python*
+* **Learn by example Python bundle** from https://leanpub.com/b/python-bundle or https://learnbyexample.gumroad.com/l/python-bundle
+* **All books bundle** bundle from https://learnbyexample.gumroad.com/l/all-books
+    * Includes all my programming books
 
 See https://learnbyexample.github.io/books/ for list of other books
 
