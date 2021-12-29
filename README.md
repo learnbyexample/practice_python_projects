@@ -43,6 +43,14 @@ For web version of the book, visit https://learnbyexample.github.io/practice_pyt
 
 <br>
 
+# Testimonials
+
+>Your Practice Python Projects book is really helping me to reinforce my knowledge and mastery of Python as I'm learning.
+>
+> — [feedback on twitter](https://twitter.com/tayporware/status/1446499855988400129)
+
+<br>
+
 # Feedback and Contributing
 
 Please open an [issue](https://github.com/learnbyexample/practice_python_projects/issues) if you spot any typo/errors.
