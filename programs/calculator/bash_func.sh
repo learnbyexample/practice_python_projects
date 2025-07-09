@@ -1,1 +1,1 @@
-pc() { python3.9 -c 'print('"$1"')' ; }
+pc() { python3.13 -c 'print('"$1"')' ; }

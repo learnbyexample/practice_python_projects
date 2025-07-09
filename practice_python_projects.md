@@ -4,9 +4,9 @@ Beginners who've finished a basic programming book or a course often wonder what
 
 After solving exercises that test your understanding of syntax and common logical problems, working on projects is often recommended as the next step in the programming journey.
 
-Working on projects that'll help you solve real world use cases would be ideal. You'll likely have enough incentive to push through difficulties instead of abandoning the project. 
+Working on projects that'll help you solve real world use cases would be ideal. You'll have enough incentive to push through difficulties instead of abandoning the project. 
 
-Sometimes though, you just don't know what to work on. Or, you have ideas, but not sure how to implement them, how to break down the project into manageable parts, etc. In such cases, a learning resource focused on projects can help.
+Sometimes though, you just don't know what to work on. Or, you have ideas, but not sure how to implement them, how to break down the project into manageable parts and so on. In such cases, a learning resource focused on projects can help.
 
 This book presents five beginner to intermediate level projects inspired by real world use cases:
 
@@ -14,19 +14,21 @@ This book presents five beginner to intermediate level projects inspired by real
 * [Analyzing poll data from a Reddit comment thread](#poll-data-analysis)
 * [Finding typos in plain text and Markdown files](#finding-typos)
 * [Creating a GUI for evaluating multiple choice questions](#multiple-choice-questions)
-* [Square Tic Tac Toe — creating a GUI game with AI](#square-tic-tac-toe)
+* [Square Tic Tac Toe — creating a GUI game with AI logic](#square-tic-tac-toe)
 
 To test your understanding and to make it more interesting, you'll also be presented with exercises at the end of each project. Resources for further exploration are also mentioned throughout the book.
 
 ## Prerequisites
 
-You should be comfortable with Python syntax and familiar with beginner to intermediate level programming concepts. For example, you should know how to use data types like `list`, `tuple`, `dict`, `set`, etc. Features like exceptions, file processing, sorting, comprehensions, generator expressions, etc. Classes, string methods and regular expressions will also be used in this book.
+You should be comfortable with Python syntax and familiar with beginner-to-intermediate level programming concepts. For example, you should know how to use data types like `list`, `tuple`, `dict`, `set`, etc. Features like exceptions, file processing, sorting, comprehensions, generator expressions, etc. Classes, string methods and regular expressions will also be used in this book.
+
+You are also expected to get comfortable with reading manuals, searching online, visiting external links provided for further reading, tinkering with the illustrated examples, asking for help when you are stuck and so on. In other words, be proactive and curious instead of just consuming the content passively.
 
 If you are new to programming or Python, I'd highly recommend my [comprehensive curated list on Python](https://learnbyexample.github.io/py_resources/) to get started.
 
 ## Conventions
 
-* The examples presented here have been tested with **Python version 3.9.5** and **GNU bash version 5.0.17**
+* The examples presented here have been tested with **Python version 3.13.3** and **GNU bash version 5.2.21**
 * Code snippets that are copy pasted from the Python REPL shell have been modified for presentation purposes. For example, comments to provide context and explanations, blank lines to improve readability and so on.
 * A comment with filename will be shown as the first line for program files.
 * External links are provided for further exploration throughout the book. They have been chosen with care to provide more detailed resources on those topics as well as resources on related topics.
@@ -35,63 +37,62 @@ If you are new to programming or Python, I'd highly recommend my [comprehensive 
 ## Acknowledgements
 
 * [Python documentation](https://docs.python.org/3/) — manuals and tutorials
-* [/r/learnpython/](https://www.reddit.com/r/learnpython/) and [/r/Python/](https://www.reddit.com/r/Python/) — helpful forums for Python programmers
+* [/r/learnpython/](https://old.reddit.com/r/learnpython/) and [/r/Python/](https://old.reddit.com/r/Python/) — helpful forums for Python programmers
 * [stackoverflow](https://stackoverflow.com/) and [unix.stackexchange](https://unix.stackexchange.com/) — for getting answers on Python, Bash and other pertinent questions 
 * [tex.stackexchange](https://tex.stackexchange.com/) — for help on [pandoc](https://github.com/jgm/pandoc/) and `tex` related questions
-* Cover image:
-    * [Programming](https://illlustrations.co/static/69eb724751d1cc0977d48fcc5f0d8326/day93-programing.svg) illustration by [Vijay Verma](https://illlustrations.co/license/)
-    * [command-window](https://www.svgrepo.com/svg/82541/command-window), [chart](https://www.svgrepo.com/svg/143589/chart), [game](https://www.svgrepo.com/svg/119527/game), [network](https://www.svgrepo.com/svg/130261/network), [question](https://www.svgrepo.com/svg/245858/question) and [snake](https://www.svgrepo.com/svg/70937/snake) icons from [svgrepo.com](https://www.svgrepo.com/page/licensing/)
-    * [LibreOffice Draw](https://www.libreoffice.org/discover/draw/) — background and title/author text
+* [canva](https://www.canva.com/) — cover image
+* [oxipng](https://github.com/shssoichiro/oxipng), [pngquant](https://pngquant.org/) and [svgcleaner](https://github.com/RazrFalcon/svgcleaner) — optimizing images
 * [Warning](https://commons.wikimedia.org/wiki/File:Warning_icon.svg) and [Info](https://commons.wikimedia.org/wiki/File:Info_icon_002.svg) icons by [Amada44](https://commons.wikimedia.org/wiki/User:Amada44)
-* [pngquant](https://pngquant.org/) and [svgcleaner](https://github.com/RazrFalcon/svgcleaner) for optimizing images
 
 ## Feedback and Errata
 
-I would highly appreciate if you'd let me know how you felt about this book, it would help to improve this book as well as my future attempts. Also, please do let me know if you spot any error or typo.
+I would highly appreciate it if you'd let me know how you felt about this book. It could be anything from a simple thank you, pointing out a typo, mistakes in code snippets, which aspects of the book worked for you (or didn't!) and so on. Reader feedback is essential and especially so for self-published authors.
 
-Issue Manager: [https://github.com/learnbyexample/practice_python_projects/issues](https://github.com/learnbyexample/practice_python_projects/issues)
+You can reach me via:
 
-E-mail: learnbyexample.net@gmail.com
-
-Twitter: [https://twitter.com/learn_byexample](https://twitter.com/learn_byexample)
+* Issue Manager: [https://github.com/learnbyexample/practice_python_projects/issues](https://github.com/learnbyexample/practice_python_projects/issues)
+* E-mail: learnbyexample.net@gmail.com
+* Twitter: [https://twitter.com/learn_byexample](https://twitter.com/learn_byexample)
 
 ## Author info
 
-Sundeep Agarwal is a freelance trainer, author and mentor. His previous experience includes working as a Design Engineer at Analog Devices for more than 5 years. You can find his other works, primarily focused on Linux command line, text processing, scripting languages and curated lists, at [https://github.com/learnbyexample](https://github.com/learnbyexample). He has also been a technical reviewer for [Command Line Fundamentals](https://www.packtpub.com/application-development/command-line-fundamentals) book and video course published by Packt.
+Sundeep Agarwal is a lazy being who prefers to work just enough to support his modest lifestyle. He accumulated vast wealth working as a Design Engineer at Analog Devices and retired from the corporate world at the ripe age of twenty-eight. Unfortunately, he squandered his savings within a few years and had to scramble trying to earn a living. Against all odds, selling programming ebooks saved his lazy self from having to look for a job again. He can now afford all the fantasy ebooks he wants to read and spends unhealthy amount of time browsing the internet.
+
+When the creative muse strikes, he can be found working on yet another programming ebook (which invariably ends up having at least one example with regular expressions). Researching materials for his ebooks and everyday social media usage drowned his bookmarks, so he maintains curated resource lists for sanity sake. He is thankful for free learning resources and open source tools. His own contributions can be found at [https://github.com/learnbyexample](https://github.com/learnbyexample).
 
 **List of books:** [https://learnbyexample.github.io/books/](https://learnbyexample.github.io/books/)
 
 ## License
 
-This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-Code snippets are available under [MIT License](https://github.com/learnbyexample/practice_python_projects/blob/main/LICENSE)
+Code snippets are available under [MIT License](https://github.com/learnbyexample/practice_python_projects/blob/main/LICENSE).
 
-Images mentioned in Acknowledgements section above are available under original licenses.
+Resources mentioned in the Acknowledgements section above are available under original licenses.
 
 ## Book version
 
-1.0
+1.5
 
 See [Version_changes.md](https://github.com/learnbyexample/practice_python_projects/blob/main/Version_changes.md) to track changes across book versions.
 
 # CLI Calculator
 
-In this project, you'll learn to create a tool that can be used from a command line interface (CLI). First, you'll see how you can directly pass Python code from the command line and create `bash` shortcuts to simplify the invocation. Second, you'll see how to use Python features to create a custom CLI application. Finally, you'll be given exercises to test your understanding and resource links for further exploration. The links to these sections are given below:
+In this project, you'll learn to write a tool that can be used from a command line interface (CLI). First, you'll see how to directly pass Python code from the command line and create shell shortcuts to simplify the invocation. Next, you'll learn how to create a custom CLI application with Python. Finally, you'll be given exercises to test your understanding and resource links for further exploration. The links to these sections are given below:
 
 * [Bash shortcuts](#bash-shortcuts)
 * [Python CLI application](#python-cli-application)
 * [Exercises](#exercises)
 
->![info](images/info.svg) ![info](images/info.svg) If you are on Windows, you can still follow along most of this project by skipping the `bash` specific portions. The CLI tool creation using `argparse` isn't tied to a specific OS. Use `py` instead of `python3.9` for program execution. See [docs.python: Windows command-line](https://docs.python.org/3/using/windows.html#from-the-command-line) and the rest of that page for more details. Alternatively, you can use [Windows Subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux).
+>![info](images/info.svg) ![info](images/info.svg) If you are on Windows, you can still follow along most of this project by skipping the `bash` specific portions. The CLI tool creation using `argparse` isn't tied to a specific operating system. Use `py` instead of `python3.13` for program execution. See [docs.python: Windows command-line](https://docs.python.org/3/using/windows.html#from-the-command-line) and the rest of that page for more details. Alternatively, you can use [Windows Subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux).
 
 ## Project summary
 
 * Execute Python instructions from the command line
-* Use shell shortcuts to simplify command line typing
+* Use shell shortcuts to simplify typing on the command line
 * Evaluate string content as Python code
 * Create user friendly command line interfaces
-* Allow `stdin` as source of user input
+* Allow `stdin` as a source for user input
 
 The following modules and concepts will be utilized in this project:
 
@@ -105,7 +106,7 @@ The following modules and concepts will be utilized in this project:
 
 I had two main reasons to implement this project:
 
-* learn how to write a CLI application
+* learn how to write a CLI application with Python
 * a simple CLI calculator for personal use
 
 There are powerful tools like [bc](https://en.wikipedia.org/wiki/Bc_(programming_language)) but I wanted easier syntax without fiddling with settings like `scale`. Instead of writing a shell script to customize `bc` for my use cases, I went with Python since I wanted to learn about the `argparse` module too.
@@ -116,22 +117,22 @@ In this section, you'll see how to execute Python instructions from the command 
 
 ### Python CLI options
 
-Passing a file to the interpreter from the command line is one of the ways to execute a Python program. You can also use `-c` option to directly pass instructions to be executed as an argument. This is suitable for small programs, like getting the result of a mathematical expression. Here's an example:
+Passing a file to the interpreter from the command line is one of the ways to execute a Python program. You can also use the `-c` option to directly pass instructions to be executed as an argument. This is suitable for small programs, like getting the result of a mathematical expression. Here's an example:
 
 ```bash
-# use py instead of python3.9 for Windows
-$ python3.9 -c 'print(5 ** 2)'
+# use py instead of python3.13 for Windows
+$ python3.13 -c 'print(5 ** 2)'
 25
 ```
 
->![info](images/info.svg) Use `python3.9 -h` to see all the available options. See [docs.python: Command line and environment](https://docs.python.org/3/using/cmdline.html) for documentation.
+>![info](images/info.svg) Use `python3.13 -h` to see all the available options. See [docs.python: Command line and environment](https://docs.python.org/3/using/cmdline.html) for documentation.
 
 ### Python REPL
 
-If you call the interpreter without passing instructions to be executed, you'll get an interactive console known as REPL (stands for **R**ead **E**valuate **P**rint **L**oop). This is typically used to execute instructions for learning and debugging purposes. REPL is well suited to act as a calculator too. Since the result of an expression is automatically printed, you don't need to explicitly call `print()` function. A special variable `_` holds the result of the last executed expression. Here's some examples:
+If you call the interpreter without passing instructions to be executed, you'll get an interactive shell known as REPL (stands for **R**ead **E**valuate **P**rint **L**oop). This is typically used to execute instructions for learning and debugging purposes. REPL is well suited to act as a calculator too. Since the result of an expression is automatically printed, you don't need to explicitly call the `print()` function. A special variable `_` holds the result of the last executed expression. Here are some examples:
 
 ```bash
-$ python3.9 -q
+$ python3.13 -q
 >>> 2 * 31 - 3
 59
 >>> _ * 2
@@ -147,34 +148,34 @@ See also:
 
 ### Bash function
 
-Calling `print()` function via `-c` option from the command line is simple enough. But you could further simplify by creating a CLI application using a `bash` function as shown below.
+Calling the `print()` function via the `-c` option from the command line is simple enough. But you could further simplify by creating a CLI application using a `bash` function as shown below:
 
 ```bash
 # bash_func.sh
-pc() { python3.9 -c 'print('"$1"')' ; }
+pc() { python3.13 -c 'print('"$1"')' ; }
 ```
 
-You can type that on your current active terminal or add it your `.bashrc` file so that the shortcut is always available for use (assuming `pc` isn't an existing command). The function is named `pc` (short for Python Calculator). The first argument passed to `pc` in turn is passed along as the argument for Python's `print()` function. To see how `bash` processes this user defined function, you can use `set -x` as shown below. See [unix.stackexchange: How to debug a bash script?](https://unix.stackexchange.com/questions/155551/how-to-debug-a-bash-script) for more details.
+You can type that on your current active terminal or add it your `.bashrc` file so that the shortcut is always available for use (assuming `pc` isn't an existing command). The function is named `pc` (short for Python Calculator). The first argument passed to `pc` in turn is passed along as the argument for Python's `print()` function. To see how `bash` processes this user defined function, you can use `set -x` as shown below. See [unix.stackexchange: How to debug a bash script?](https://unix.stackexchange.com/q/155551/109046) for more details.
 
 ```bash
 $ set -x
 $ pc '40 + 2'
 + pc '40 + 2'
-+ python3.9 -c 'print(40 + 2)'
++ python3.13 -c 'print(40 + 2)'
 42
 
 # don't forget to quote your argument, otherwise spaces
-# and other shell metacharacters will cause issues
+# and other shell metacharacters will cause issues like this example
 $ pc 40 + 2
 + pc 40 + 2
-+ python3.9 -c 'print(40)'
++ python3.13 -c 'print(40)'
 40
 
 $ set +x
 + set +x
 ```
 
-Here's some more examples of using `pc` as a handy calculator from the command line.
+Here are some more examples of using `pc` as a handy calculator from the command line.
 
 ```bash
 $ pc '2 * 31 - 3'
@@ -189,11 +190,11 @@ $ pc '76 // 13'
 5
 ```
 
->![info](images/info.svg) See also [unix.stackexchange: when to use alias, functions and scripts](https://unix.stackexchange.com/questions/30925/in-bash-when-to-alias-when-to-script-and-when-to-write-a-function/)
+>![info](images/info.svg) See also [unix.stackexchange: when to use alias, functions and scripts](https://unix.stackexchange.com/q/30925/109046).
 
 ### Accepting stdin
 
-Many CLI applications allow you to pass `stdin` data as input. To add that functionality, you can use `if` statement to read a line from standard input if the number of arguments is zero or `-` character is passed as the argument. The modified `pc` function is shown below:
+Many CLI applications allow you to pass `stdin` data as input. To add that functionality, you can use an `if` statement to read a line from standard input if the number of arguments is zero or the `-` character is passed as the argument. The modified `pc` function is shown below:
 
 ```bash
 # bash_func_stdin.sh
@@ -203,11 +204,11 @@ pc()
     if [[ $# -eq 0 || $1 = '-' ]]; then
         read -r ip_expr
     fi
-    python3.9 -c 'print('"$ip_expr"')'
+    python3.13 -c 'print('"$ip_expr"')'
 }
 ```
 
-Here's some examples. Use `set -x` if you wish to see how the function gets evaluated for these examples.
+Here are some examples. Use `set -x` if you wish to see how the function gets evaluated for these examples.
 
 ```bash
 $ source bash_func_stdin.sh
@@ -226,39 +227,39 @@ $ pc '32 ** 12'
 
 ## Python CLI application
 
-In this section, you'll see how to implement a CLI application using Python features, instead of relying on shell features. First, you'll learn how to work with command line arguments using the `sys` module. Followed by `argparse` module, which is specifically designed for creating CLI applications.
+In this section, you'll see how to implement a CLI application using Python features, instead of relying on the shell. First, you'll learn how to work with command line arguments using the `sys` module. Followed by the `argparse` module, which is specifically designed for creating CLI applications.
 
 ### sys.argv
 
-Command line arguments passed when executing a Python program can be accessed using the `sys.argv` list. The first element (index `0`) contains the name of the Python script or `-c` or empty string, depending on how the interpreter was called. See [docs.python: sys.argv](https://docs.python.org/3/library/sys.html#sys.argv) for details.
+Command line arguments passed when executing a Python program can be accessed using the `sys.argv` list. The first element (index `0`) contains the name of the Python script or `-c` or an empty string, depending on how the interpreter was called. See [docs.python: sys.argv](https://docs.python.org/3/library/sys.html#sys.argv) for details.
 
-Rest of the elements will have the command line arguments, if any were passed along the script to be executed. The data type of `sys.argv` elements is `str` class. The `eval()` function allows you to execute a string as a Python instruction. Here's an example:
+Rest of the elements will have the command line arguments, if any were passed along the script to be executed. The data type of the `sys.argv` elements is `str` class. The `eval()` function allows you to execute a string as a Python instruction. Here's an example:
 
 ```bash
-$ python3.9 -c 'import sys; print(eval(sys.argv[1]))' '23 ** 2'
+$ python3.13 -c 'import sys; print(eval(sys.argv[1]))' '23 ** 2'
 529
 
 # bash shortcut
-$ pc() { python3.9 -c 'import sys; print(eval(sys.argv[1]))' "$1" ; }
+$ pc() { python3.13 -c 'import sys; print(eval(sys.argv[1]))' "$1" ; }
 $ pc '23 ** 2'
 529
 $ pc '0x2F'
 47
 ```
 
->![warning](images/warning.svg) ![warning](images/warning.svg) Using `eval()` function isn't recommended if the input passed to it isn't under your control, for example an input typed by a user from a website application. The arbitrary code execution issue would apply to the `bash` shortcuts seen in previous section as well, because the input argument is interpreted without any sanity check.
+>![warning](images/warning.svg) ![warning](images/warning.svg) Using the `eval()` function isn't recommended if the input passed to it isn't under your control, for example an input typed by a user from a website application. The arbitrary code execution issue would apply to the `bash` shortcuts seen in the previous section as well, because the input argument is interpreted without any sanity check.
 >
->However, for the purpose of this calculator project, it is assumed that you are the sole user of the application. See [stackoverflow: evaluating a mathematical expression](https://stackoverflow.com/q/2371436/4082052) for more details about the dangers of using `eval()` function and alternate ways to evaluate a string as mathematical expression.
+>However, for this calculator project used for personal purposes, such security considerations aren't applicable. See [stackoverflow: evaluating a mathematical expression](https://stackoverflow.com/q/2371436/4082052) for more details about the dangers of using the `eval()` function and alternate ways to evaluate a string as code.
 
 ### argparse
 
 Quoting from [docs.python: argparse](https://docs.python.org/3/library/argparse.html):
 
->The `argparse` module makes it easy to write user-friendly command-line interfaces. The program defines what arguments it requires, and `argparse` will figure out how to parse those out of `sys.argv`. The `argparse` module also automatically generates help and usage messages and issues errors when users give the program invalid arguments.
+>The `argparse` module makes it easy to write user-friendly command-line interfaces. The program defines what arguments it requires, and `argparse` will figure out how to parse those out of `sys.argv`. The `argparse` module also automatically generates help and usage messages. The module will also issue errors when users give the program invalid arguments.
 
 ### argparse initialization
 
-If this is your first time using the `argparse` module, it is recommended to understand the initialization instructions and see the effect they provide by default. Quoting from [docs.python: argparse](https://docs.python.org/3/library/argparse.html):
+If this is your first time using the `argparse` module, it is recommended to understand the initialization instructions and effects provided by default. Quoting from [docs.python: argparse](https://docs.python.org/3.11/library/argparse.html):
 
 >The `ArgumentParser` object will hold all the information necessary to parse the command line into Python data types.
 >
@@ -272,32 +273,32 @@ parser = argparse.ArgumentParser()
 args = parser.parse_args()
 ```
 
-The documentation for the CLI application is generated automatically based on the information passed to the parser. You can use help options (which is added automatically too) to view the content, as shown below:
+The documentation for the CLI application is generated automatically based on the information passed to the parser. You can use the help option (which is automatically added) to view the content, as shown below:
 
 ```bash
-$ python3.9 arg_help.py -h
+$ python3.13 arg_help.py -h
 usage: arg_help.py [-h]
 
 optional arguments:
   -h, --help  show this help message and exit
 ```
 
-In addition, any option or argument that are not defined will generate an error.
+In addition, options or arguments that are not defined will generate an error.
 
 ```bash
-$ python3.9 arg_help.py -c
+$ python3.13 arg_help.py -c
 usage: arg_help.py [-h]
 arg_help.py: error: unrecognized arguments: -c
 
-$ python3.9 arg_help.py '2 + 3'
+$ python3.13 arg_help.py '2 + 3'
 usage: arg_help.py [-h]
 arg_help.py: error: unrecognized arguments: 2 + 3
 ```
 
-A required argument wasn't declared in this program, so there's no error for the below usage.
+A required argument wasn't declared in this program, so there's no error for the below usage:
 
 ```bash
-$ python3.9 arg_help.py
+$ python3.13 arg_help.py
 ```
 
 >![info](images/info.svg) See also [docs.python: Argparse Tutorial](https://docs.python.org/3/howto/argparse.html).
@@ -327,7 +328,7 @@ The value for `ip_expr` passed by the user will be available as an attribute of 
 The help documentation for this script is shown below:
 
 ```bash
-$ python3.9 single_arg.py -h
+$ python3.13 single_arg.py -h
 usage: single_arg.py [-h] ip_expr
 
 positional arguments:
@@ -337,33 +338,33 @@ optional arguments:
   -h, --help  show this help message and exit
 ```
 
-Note that the script uses `try-except` block to give user friendly feedback for some of the common issues. Passing a string to `sys.exit()` gets printed to the `stderr` stream and sets the exit status as `1` to indicate something has gone wrong. See [docs.python: sys.exit](https://docs.python.org/3/library/sys.html#sys.exit) for documentation. Here's some usage examples:
+Note that the script uses a `try-except` block to give user friendly feedback for some of the common issues. Passing a string to `sys.exit()` gets printed to the `stderr` stream and sets the exit status as `1` to indicate something has gone wrong. See [docs.python: sys.exit](https://docs.python.org/3/library/sys.html#sys.exit) for documentation. Here are some usage examples:
 
 ```bash
-$ python3.9 single_arg.py '40 + 2'
+$ python3.13 single_arg.py '40 + 2'
 42
 
 # if no argument is passed to the script
-$ python3.9 single_arg.py
+$ python3.13 single_arg.py
 usage: single_arg.py [-h] ip_expr
 single_arg.py: error: the following arguments are required: ip_expr
 $ echo $?
 2
 
 # SyntaxError
-$ python3.9 single_arg.py '5 \ 2'
+$ python3.13 single_arg.py '5 \ 2'
 Error: Not a valid input expression
 $ echo $?
 1
 
 # NameError
-$ python3.9 single_arg.py '5 + num'
+$ python3.13 single_arg.py '5 + num'
 Error: Not a valid input expression
 ```
 
 ### Adding optional flags
 
-To add an option, use `-<char>` for short option and `--<name>` for long option. You can add both as well, `'-v', '--verbose'` for example. If you use both short and long options, the attribute name will be whichever option is the latest. For the CLI application, five short options have been added, as shown below.
+To add an option, use `-<char>` for short options and `--<name>` for long options. You can add both as well, for example `'-v', '--verbose'`. If you use both short and long options, the attribute name will be whichever option is the latest. For the CLI application, five short options have been added, as shown below.
 
 ```python
 # options.py
@@ -404,14 +405,14 @@ except (NameError, SyntaxError):
     sys.exit("Error: Not a valid input expression")
 ```
 
-The `type` parameter for `add_argument()` method allows you to specify what data type should be applied for that option. The `-f` option is used here to set the precision for floating-point output. The code doesn't actually check if the output is floating-point type, that is left as an exercise for you.
+The `type` parameter for the `add_argument()` method allows you to specify what data type should be applied for that option. The `-f` option is used here to set the precision for floating-point output. The code doesn't actually check if the output is a floating-point value — that is left as an exercise for you.
 
 The `-b`, `-o`, `-x` and `-v` options are intended as boolean data types. Using `action="store_true"` indicates that the associated attribute should be set to `False` as their default value. When the option is used from the command line, their value will be set to `True`. The `-b`, `-o` and `-x` options are used here to get the output in binary, octal and hexadecimal formats respectively. The `-v` option will print both the input expression and the evaluated result.
 
 The help documentation for this script is shown below. By default, uppercase of the option name will be used to describe the value expected for that option. Which is why you see `-f F` here. You can use `metavar='precision'` to change it to `-f precision` instead.
 
 ```bash
-$ python3.9 options.py -h
+$ python3.13 options.py -h
 usage: options.py [-h] [-f F] [-b] [-o] [-x] [-v] ip_expr
 
 positional arguments:
@@ -426,49 +427,47 @@ optional arguments:
   -v          verbose mode, shows both input and output
 ```
 
-Here's some usage examples:
+Here are some usage examples:
 
 ```bash
-$ python3.9 options.py '22 / 7'
+$ python3.13 options.py '22 / 7'
 3.142857142857143
-$ python3.9 options.py -f3 '22 / 7'
+$ python3.13 options.py -f3 '22 / 7'
 3.143
-$ python3.9 options.py -f2 '32 ** 2'
+$ python3.13 options.py -f2 '32 ** 2'
 1024.00
 
-$ python3.9 options.py -bv '543 * 2'
+$ python3.13 options.py -bv '543 * 2'
 543 * 2 = 0b10000111110
-
-$ python3.9 options.py -x '0x1F * 0xA'
+$ python3.13 options.py -x '0x1F * 0xA'
 0x136
-
-$ python3.9 options.py -o '0xdeadbeef'
+$ python3.13 options.py -o '0xdeadbeef'
 0o33653337357
 ```
 
-Since `-f` option expects an `int` value, you'll get an error if you don't pass a value or if the value passed isn't a valid integer.
+Since the `-f` option expects an `int` value, you'll get an error if you don't pass a value or if the value passed isn't a valid integer.
 
 ```bash
-$ python3.9 options.py -fa '22 / 7'
+$ python3.13 options.py -fa '22 / 7'
 usage: options.py [-h] [-f F] [-b] [-o] [-x] [-v] ip_expr
 options.py: error: argument -f: invalid int value: 'a'
 
-$ python3.9 options.py -f
+$ python3.13 options.py -f
 usage: options.py [-h] [-f F] [-b] [-o] [-x] [-v] ip_expr
 options.py: error: argument -f: expected one argument
 
-$ python3.9 options.py -f '22 / 7'
+$ python3.13 options.py -f '22 / 7'
 usage: options.py [-h] [-f F] [-b] [-o] [-x] [-v] ip_expr
 options.py: error: argument -f: invalid int value: '22 / 7'
 
-$ python3.9 options.py -f '22'
+$ python3.13 options.py -f '22'
 usage: options.py [-h] [-f F] [-b] [-o] [-x] [-v] ip_expr
 options.py: error: the following arguments are required: ip_expr
 ```
 
 ### Accepting stdin
 
-The final feature to be added is the ability to accept both `stdin` and argument value as the input expression. The `sys.stdin` filehandle can be used to read `stdin` data. The modified script is shown below.
+The final feature to be added is the ability to accept `stdin` as the input expression. The `sys.stdin` filehandle can be used to read `stdin` data. The modified script is shown below.
 
 ```python
 # py_calc.py
@@ -514,12 +513,12 @@ except (NameError, SyntaxError):
 
 The `nargs` parameter allows to specify how many arguments can be accepted with a single action. You can use an integer value to get that many arguments as a list or use specific regular expression like metacharacters to indicate varying number of arguments. The `ip_expr` argument is made optional here by setting `nargs` to `?`.
 
-If `ip_expr` isn't passed as an argument by the user, the attribute will get `None` as the value. The `-` character is often used to indicate `stdin` as the input data. So, if `ip_expr` is `None` or `-`, the code will try to read a line from `stdin` as the input expression. The `strip()` string method is applied to the `stdin` data mainly to prevent newline from messing up the output for `-v` option. Rest of the code is the same as seen before.
+If `ip_expr` isn't passed as an argument by the user, the attribute will get `None` as the value. The `-` character is often used to indicate `stdin` as the input data. So, if `ip_expr` is `None` or `-`, the code will try to read a line from `stdin` as the input expression. The `strip()` string method is applied to the `stdin` data mainly to prevent newline from messing up the output for the `-v` option. Rest of the code is the same as seen before.
 
 The help documentation for this script is shown below. The only difference is that the input expression is now optional as indicated by `[ip_expr]`.
 
 ```bash
-$ python3.9 py_calc.py -h
+$ python3.13 py_calc.py -h
 usage: py_calc.py [-h] [-f F] [-b] [-o] [-x] [-v] [ip_expr]
 
 positional arguments:
@@ -534,27 +533,27 @@ optional arguments:
   -v          verbose mode, shows both input and output
 ```
 
-Here's some usage examples:
+Here are some usage examples:
 
 ```bash
-# stdin from output of another command
-$ echo '40 + 2' | python3.9 py_calc.py
+# stdin from the output of another command
+$ echo '40 + 2' | python3.13 py_calc.py
 42
 
-# manual stdin data after pressing enter key
-$ python3.9 py_calc.py
+# providing stdin data manually after pressing the Enter key
+$ python3.13 py_calc.py
 43 / 5
 8.6
 
-# strip() will remove whitespace from start/end of string
-$ echo ' 0b101 + 3' | python3.9 py_calc.py -vx
+# strip() will remove whitespace from the start/end of strings
+$ echo ' 0b101 + 3' | python3.13 py_calc.py -vx
 0b101 + 3 = 0x8
 
-$ echo '0b101 + 3' | python3.9 py_calc.py -vx -
+$ echo '0b101 + 3' | python3.13 py_calc.py -vx -
 0b101 + 3 = 0x8
 
-# expression passed as argument, works the same as seen before
-$ python3.9 py_calc.py '5 % 2'
+# expression passed as an argument, works the same as seen before
+$ python3.13 py_calc.py '5 % 2'
 1
 ```
 
@@ -562,20 +561,20 @@ $ python3.9 py_calc.py '5 % 2'
 
 To simplify calling the Python CLI calculator, you can create an alias or an executable Python script.
 
-Use absolute path of the script to create the alias and add it to `.bashrc`, so that it will work from any working directory. The path used below would differ for you.
+Use the absolute path of the script to create the alias and add it to `.bashrc`, so that it will work from any working directory. The path used below would differ for you.
 
 ```bash
-alias pc='python3.9 /home/learnbyexample/python_projs/py_calc.py'
+alias pc='python3.13 /home/learnbyexample/python_projs/py_calc.py'
 ```
 
-To create an executable, you'll have to first add a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) as the first line of the Python script. You can use `type` built-in command to get the path of the Python interpreter.
+To create an executable, you'll have to first add a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) as the first line of the Python script. You can use the `type` built-in command to get the path of the Python interpreter.
 
 ```bash
-$ type python3.9
-python3.9 is /usr/local/bin/python3.9
+$ type python3.13
+python3.13 is /usr/local/bin/python3.13
 ```
 
-So, the `shebang` for this case will be `#!/usr/local/bin/python3.9`. After adding execute permission, copy the file to one of the `PATH` directories. I have `~/cbin/` as one of the paths. See [unix.stackexchange: How to correctly modify PATH variable](https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path) for more details about the `PATH` environment variable.
+So, the `shebang` for this case will be `#!/usr/local/bin/python3.13`. After adding the execute permission, copy the file to one of the `PATH` directories. I have `~/cbin/` as one of the paths. See [unix.stackexchange: How to correctly add a path to PATH?](https://unix.stackexchange.com/q/26047/109046) for more details about the `PATH` environment variable.
 
 ```bash
 $ chmod +x py_calc.py
@@ -592,7 +591,7 @@ With that, the lessons for this project comes to an end. Solve the practice prob
 
 Modify the scripts such that these additional features are also implemented.
 
-* If the output is of `float` data type, apply `.2f` precision by default. This should be overridden if a value is passed along with `-f` option. Also, add a new option `-F` to turn off the default `.2f` precision.
+* If the output is of the `float` data type, apply `.2f` precision by default. This should be overridden if a value is passed along with the `-f` option. Also, add a new option `-F` to turn off the default `.2f` precision.
 
     ```bash
     $ pc '4 / 3'
@@ -609,7 +608,7 @@ Modify the scripts such that these additional features are also implemented.
     8916100448256
     ```
 
-* Use `math` module to allow mathematical methods and constants like `sin`, `pi`, etc.
+* Use the `math` module to allow mathematical methods and constants like `sin`, `pi`, etc.
 
     ```bash
     $ pc 'sin(radians(90))'
@@ -622,7 +621,7 @@ Modify the scripts such that these additional features are also implemented.
     120
     ```
 
-* If the input expression has a sequence of numbers followed by `!` character, replace such a sequence with the factorial value. Assume that input will not have `!` applied to negative or floating-point numbers. Or, you can issue an error if such numbers are detected.
+* If the input expression has a sequence of numbers followed by the `!` character, replace such a sequence with the factorial value. Assume that the input will not have `!` applied to negative or floating-point numbers. Alternatively, you can issue an error if such numbers are detected.
 
     ```python
     $ pc '2 + 5!'
@@ -633,20 +632,21 @@ Modify the scripts such that these additional features are also implemented.
 
 ## Further Reading
 
-Python has a rich ecosystem in addition to the impressive standard library. You can find plenty of modules to choose for common tasks, including alternatives for standard modules. Check out these projects for CLI related applications.
+Python has a rich ecosystem in addition to the impressive standard library. You can find plenty of modules to choose for common tasks, including alternatives for the standard modules. Check out these projects for CLI related applications.
 
 * [click](https://pypi.org/project/click/) — Python package for creating beautiful command line interfaces in a composable way with as little code as necessary
+* [rich](https://pypi.org/project/rich/) — library for *rich* text and beautiful formatting in the terminal
+* [SimpleParsing](https://github.com/lebrice/SimpleParsing ) — Simple, Elegant, Typed Argument Parsing with `argparse`
 * [Gooey](https://github.com/chriskiehl/Gooey) — turn Python command line program into a full GUI application
 * [CLI Guidelines](https://clig.dev/) — an opinionated guide to help you write better CLI programs
 
 # Poll Data Analysis
 
-In this project, you'll learn how to use application programming interface (API) to fetch data. From this raw data, you'll extract data of interest and then apply heuristic rules to correct possible mistakes (at the cost of introducing new bugs). Finally, you'll see options to display the results.
+In this project, you'll learn how to use an application programming interface (API) to fetch data. From this raw data, you'll extract data of interest and then apply heuristic rules to correct possible mistakes (at the cost of introducing new bugs).
 
 * [Getting Reddit comments using PRAW](#getting-reddit-comments-using-praw)
 * [Data cleansing](#data-cleansing)
 * [Data similarity](#data-similarity)
-* [Displaying results](#displaying-results)
 * [Exercises](#exercises-1)
 
 ## Project summary
@@ -654,7 +654,6 @@ In this project, you'll learn how to use application programming interface (API)
 * Get top level comments from Reddit threads
 * Use regular expressions to explore data inconsistencies and extract author names
 * Correct typos by comparing similarity between names
-* Display results as a word cloud
 
 The following modules and concepts will be utilized in this project:
 
@@ -663,27 +662,26 @@ The following modules and concepts will be utilized in this project:
 * [Data cleansing](https://en.wikipedia.org/wiki/Data_cleansing)
 * [docs.python: re](https://docs.python.org/3/library/re.html)
 * [pypi: rapidfuzz](https://pypi.org/project/rapidfuzz/)
-* [pypi: stylecloud](https://pypi.org/project/stylecloud/)
 
 ## Real world influence
 
-I read a lot of fantasy novels and [/r/Fantasy/](https://www.reddit.com/r/Fantasy/) is one of my favorite social forums. They conduct a few polls every year for best novels, novellas, standalones, etc. These polls help me pick new books to read.
+I read a lot of fantasy novels and [/r/Fantasy/](https://old.reddit.com/r/Fantasy/) is one of my favorite social forums. They conduct a few polls every year for best novels, novellas, standalones, etc. These polls help me pick new books to read.
 
-The poll results are manually tallied, since there can be typos, bad entries, etc. I wanted to see if this process can be automated and gave me an excuse to get familiar with using APIs and some of the third-party Python modules.
+The poll results are manually tallied, since there can be typos, bad entries and so on. I wanted to see if this process can be automated and gave me an excuse to get familiar with using APIs and some of the third-party Python modules.
 
 I learned a lot, especially about the challenges in data analysis. I hope you'll learn a lot too.
 
 ## Getting Reddit comments using PRAW
 
-In this section, you'll learn to use `praw` for extracting comments from a given Reddit thread. You'll also see how to fetch only the top level comments.
+In this section, you'll learn to use the `praw` module for extracting comments from a given Reddit thread. You'll also see how to fetch only the top level comments.
 
 From [pypi: praw](https://pypi.org/project/praw/):
 
->PRAW, an acronym for "Python Reddit API Wrapper", is a Python package that allows for simple access to Reddit's API. PRAW aims to be easy to use and internally follows all of Reddit's API rules. With PRAW there's no need to introduce sleep calls in your code. Give your client an appropriate user agent and you're set.
+>PRAW, an acronym for "Python Reddit API Wrapper", is a Python package that allows for simple access to Reddit's API. PRAW aims to be easy to use and internally follows all of Reddit's API rules. With PRAW there's no need to introduce `sleep` calls in your code. Give your client an appropriate user agent and you're set.
 
 From [wikipedia: API](https://en.wikipedia.org/wiki/API):
 
->In computing, an application programming interface (API) is an interface that defines interactions between multiple software applications or mixed hardware-software intermediaries. It defines the kinds of calls or requests that can be made, how to make them, the data formats that should be used, the conventions to follow, etc. It can also provide extension mechanisms so that users can extend existing functionality in various ways and to varying degrees. An API can be entirely custom, specific to a component, or designed based on an industry-standard to ensure interoperability. Through information hiding, APIs enable modular programming, allowing users to use the interface independently of the implementation.
+>An application programming interface (API) is a connection between computers or between computer programs. It is a type of software interface, offering a service to other pieces of software. A document or standard that describes how to build such a connection or interface is called an API specification. A computer system that meets this standard is said to implement or expose an API. The term API may refer either to the specification or to the implementation.
 
 ### Installation
 
@@ -694,8 +692,8 @@ You can install [praw](https://pypi.org/project/praw/) using the following comma
 $ pip install praw
 
 # normal environment
-# use py instead of python3.9 for Windows
-$ python3.9 -m pip install --user praw
+# use py instead of python3.13 for Windows
+$ python3.13 -m pip install --user praw
 ```
 
 >![info](images/info.svg) I'd highly recommend using virtual environments to manage projects that use third party modules. See [Installing modules and Virtual environments](https://learnbyexample.github.io/100_page_python_intro/installing-modules-and-virtual-environments.html) chapter from my Python introduction ebook if you are not familiar with installing modules.
@@ -719,32 +717,35 @@ This section will give you an example of extracting comments from a particular d
 
 >If you are only analyzing public comments, entering a username and password is optional.
 
-The sample discussion thread used here is from [the /r/booksuggestions subreddit](https://www.reddit.com/r/booksuggestions/comments/nsm98m/good_murder_mysteries_that_really_draw_you_in/). You can use this URL in the code or just the `nsm98m` id.
+The sample discussion thread used here is from [the /r/booksuggestions subreddit](https://old.reddit.com/r/booksuggestions/comments/nsm98m/good_murder_mysteries_that_really_draw_you_in/). You can use this URL in the code or just the `nsm98m` id.
 
-From the app you created in the previous section, you need to copy `client_id` and `client_secret` details. You'll find the **id** at the top of the app details (usually 14 characters) and the **secret** field is clearly marked. With those details collected, here's how you can get all the comments:
+From the app you created in the previous section, you need to copy the `client_id` and `client_secret` details. You'll find the **id** at the top of the app details (usually 14 characters) and the **secret** field is clearly marked. With those details collected, here's how you can get all the comments:
 
 ```python
 >>> import praw
 
 >>> reddit = praw.Reddit(
-...     user_agent="Get Comments by /u/name",   #change 'name' to your username
-...     client_id="XXX",                        #change 'XXX' to your id
-...     client_secret="XXX",                    #change 'XXX' to your secret
+...     user_agent="Get Comments by /u/name",  #change 'name' to your username
+...     client_id="XXX",                       #change 'XXX' to your id
+...     client_secret="XXX",                   #change 'XXX' to your secret
 ... )
 
-# use url keyword argument if you want to pass a link instead of id
+# use the url keyword argument if you want to pass a link instead of id
 >>> submission = reddit.submission(id='nsm98m')
 >>> submission.comments.replace_more(limit=None)
 []
-# only first comment output is shown here
->>> for comment in submission.comments.list():
-...     print(comment.body + '\n')
-... 
+# all comments are saved in a list here for illustration purposes
+>>> comments = submission.comments.list()
+# content of the first comment
+>>> print(comments[0].body)
 The Murder of Roger Ackroyd by Agatha Christie still has the
 best twist I’ve ever read.
+# fourth comment and so on
+>>> comments[3].body
+'The Silent Patient'
 ```
 
-Use `submission.comments` instead of `submission.comments.list()` in the above `for` loop to fetch only the top level comments.
+Use `submission.comments` instead of `submission.comments.list()` to fetch only the top level comments.
 
 ### API secrets
 
@@ -756,17 +757,17 @@ To avoid accidentally revealing API secrets online (publishing your code on GitH
 
 ## Data cleansing
 
-Now that you know how to use `praw`, you'll start this project by getting the top level comments from two Reddit threads. These threads were used to conduct a poll about favorite speculative fiction written by women. From the raw data so obtained, author names have to be extracted. But the data format isn't always as expected. You'll use regular expressions to explore inconsistencies, remove unwanted characters from the names and ignore entries that couldn't be parsed in the format required. 
+Now that you've seen a basic example with the `praw` module, you'll start this project by getting the top level comments from two Reddit threads. These threads were used to conduct a poll about favorite speculative fiction written by women. From the raw data so obtained, author names have to be extracted. But the data format isn't always as expected. You'll use regular expressions to explore inconsistencies, remove unwanted characters from the names and ignore entries that couldn't be parsed in the format required. 
 
 From [wikipedia: Data cleansing](https://en.wikipedia.org/wiki/Data_cleansing):
 
->Data cleansing or data cleaning is the process of detecting and correcting (or removing) corrupt or inaccurate records from a record set, table, or database and refers to identifying incomplete, incorrect, inaccurate or irrelevant parts of the data and then replacing, modifying, or deleting the dirty or coarse data. Data cleansing may be performed interactively with data wrangling tools, or as batch processing through scripting.
+>Data cleansing or data cleaning is the process of identifying and correcting (or removing) corrupt, inaccurate, or irrelevant records from a dataset, table, or database. It involves detecting incomplete, incorrect, or inaccurate parts of the data and then replacing, modifying, or deleting the affected data. Data cleansing can be performed interactively using data wrangling tools, or through batch processing often via scripts or a data quality firewall.
 
 ### Collecting data
 
-The two poll threads being analyzed for this project are [2019](https://www.reddit.com/r/Fantasy/comments/cib77j/the_rfantasy_top_female_authored_works_2019/) and [2021](https://www.reddit.com/r/Fantasy/comments/m20rd1/the_rfantasy_top_books_by_women_2021_edition/). The poll asked users to specify their favorite speculative fictional books written by women, with a maximum of 10 entries. The voting comment was restricted to contain only book title and author(s). Any other discussion had to be placed under those entries as comments.
+The two poll threads being analyzed for this project are [2019](https://old.reddit.com/r/Fantasy/comments/cib77j/the_rfantasy_top_female_authored_works_2019/) and [2021](https://old.reddit.com/r/Fantasy/comments/m20rd1/the_rfantasy_top_books_by_women_2021_edition/). The poll asked users to specify their favorite speculative fictional books written by women, with a maximum of 10 entries. The voting comment was restricted to contain only book titles and authors. Any other discussion had to be placed under those entries as comments.
 
-The below program builds on the example shown earlier. A `tuple` object stores the voting thread *year* and *id* values. And then a loop goes over each entry and writes only the top level comments to respective output files.
+The below program builds on the example shown earlier. A `tuple` object stores the voting thread *year* and the corresponding *id* values. And then a loop goes over each entry and writes only the top level comments to the respective output files.
 
 ```python
 # save_top_comments.py
@@ -794,7 +795,7 @@ for year, thread_id in thread_details:
             f.write(top_level_comment.body + '\n')
 ```
 
-The `tokens.json` file contains the information that needs to be passed to the `praw.Reddit()` method. A sample is shown below, you'll need to replace the values with your own valid information.
+The `tokens.json` file contains the information passed to the `praw.Reddit()` method. The data structure is shown below — you'll need to replace the values with your own valid information.
 
 ```bash
 $ cat .secrets/tokens.json 
@@ -825,13 +826,13 @@ with open(file) as f:
             print(line, end='')
 ```
 
-The `re.fullmatch` regexp is used to ignore all lines containing only whitespaces. The next regexp checks if hyphen (or em dash) or `by` surrounded by whitespace characters is present in the line. Case is also ignored when `by` is matched. Matching whitespace is important because book or author name could contain `by` or hyphens. While this can still give false matches, the goal is to reduce errors as much as possible, not 100% accuracy. If a line doesn't match this condition, it will be displayed on the screen. About a hundred such lines are found in the `top_comments_2019.txt` file.
+The `re.fullmatch` regexp is used to ignore all lines containing only whitespaces. The next regexp checks if hyphen (or em dash) or `by` surrounded by whitespace characters is present in the line. Case is also ignored when `by` is matched. Matching the whitespace characters is important because the book titles or author names could contain `by` or hyphens. While this can still give false matches, the goal is to reduce errors as much as possible, not 100% accuracy. If a line doesn't match this condition, it will be displayed on the screen. About a hundred such lines are found in the `top_comments_2019.txt` file.
 
-Here's a visual representation of the second regexp:
+Here's a visual representation of the `pat` regexp:
 
 ![Regexp matching railroad diagram](images/poll_data_analysis/regexp_matching.png)
 
->![info](images/info.svg) The above railroad diagram for the `r'\s(?:[–-]|by)\s'` pattern was created using [debuggex](https://www.debuggex.com). You can also visit this [regex101 link](https://regex101.com/r/NPuLfF/1), which is another popular way to experiment and understand regexp patterns. See my [Python re(gex)?](https://learnbyexample.github.io/py_regular_expressions/) ebook if you want to learn more about regular expressions.
+>![info](images/info.svg) The above railroad diagram for the `r'\s(?:[–-]|by)\s'` pattern was created using the [debuggex](https://www.debuggex.com) site. You can also visit this [regex101 link](https://regex101.com/r/NPuLfF/1), which is another popular way to experiment and understand regexp patterns. See my [Python re(gex)?](https://learnbyexample.github.io/py_regular_expressions/) ebook if you want to learn more about regular expressions.
 
 And here's a sample of the mismatching lines:
 
@@ -842,9 +843,9 @@ And here's a sample of the mismatching lines:
 Empire of Sand, Tasha Suri
 ```
 
-So, some votes used a slightly different markdown style and some used `,` as the separator. The first two cases can be allowed by optionally matching `\` or `*`. The last two cases will require breaking the whitespace matching rule. For now, this will be allowed so as to proceed further. But in the next section you will see how to apply regexp on a priority basis so that the different rules are applied only for mismatching lines.
+So, some entries used a slightly different markdown style and some used `,` as the separator. The first two cases can be allowed by optionally matching the `\` or `*` characters. The last two cases will require breaking the whitespace matching rule. For now, this will be allowed so as to proceed further. But in the next section you will see how to apply regexp on a priority basis so that the different rules are applied only for the mismatching lines.
 
-The modified program is shown below. The `re.X` flag allows you to use literal whitespaces for readability purposes. You can also add comments after `#` character if you wish.
+The modified program is shown below. The `re.X` flag allows you to use literal whitespaces for readability purposes. You can also add comments after the `#` character if you wish.
 
 ```python
 # analyze.py
@@ -865,9 +866,9 @@ with open(file) as f:
             print(line, end='')
 ```
 
-After applying this rule, there are less than 50 mismatching lines. Some of them are comments irrelevant to the voting, but some of the entries can still be salvaged by manual modification (for example entries that have the book title and author names in reversed order). These will be completely ignored for this project, but you can try to improve as you wish.
+After applying this rule, there are less than 50 mismatching lines. Some of them are comments irrelevant to the voting, but some of the entries can still be salvaged by manual modification (for example, entries that have the book title and author names in reversed order). These will be completely ignored for this project, but you can try to correct them if you wish.
 
-Changing the input file to `top_comments_2021.txt` gives new kind of mismatches. Some mismatches are shown below:
+Changing the input file to `top_comments_2021.txt` gives new kind of mismatches. Some of the mismatches are shown below:
 
 ```abc
 The Blue Sword-Robin McKinley
@@ -881,7 +882,7 @@ These can be accommodated by modifying the matching criteria, but since the tota
 
 ### Extracting author names
 
-It is time to extract only the author names and save them for further analysis. The regexp patterns seen in the previous section needs to modified to capture author names at the end of the lines. Also, `.*` is added at the start so that only the furthest match in the line is extracted. To give priority for the best case matches, the patterns are first stored separately as different elements in a `tuple`. By looping over these patterns, you can then quit once the earliest declared match is found.
+It is time to extract only the author names and save them for further analysis. The regexp patterns seen in the previous section needs to modified to capture author names at the end of the lines. Also, `.*` is added at the start so that only the furthest match in the line is extracted. To give priority for the best case matches, the patterns are first stored separately as different elements in a `tuple`. By looping over these patterns, you can then quit once the earliest match is found.
 
 ```python
 # extract_author_names.py
@@ -945,13 +946,13 @@ From [pypi: fuzzywuzzy](https://pypi.org/project/fuzzywuzzy/):
 $ pip install rapidfuzz
 
 # normal environment
-# use py instead of python3.9 for Windows
-$ python3.9 -m pip install --user rapidfuzz
+# use py instead of python3.13 for Windows
+$ python3.13 -m pip install --user rapidfuzz
 ```
 
 ### Examples
 
-Here's some examples of using `fuzz.ratio()` to calculate the similarity between two strings. Output of `100.0` means exact match.
+Here are some examples of using the `fuzz.ratio()` method to calculate the similarity between two strings. Output of `100.0` means exact match.
 
 ```python
 >>> from rapidfuzz import fuzz
@@ -962,7 +963,7 @@ Here's some examples of using `fuzz.ratio()` to calculate the similarity between
 93.75
 ```
 
-If you decide `90` as the cut-off limit, here's some cases that will be missed.
+If you decide `90` as the cut-off limit, here are some cases that will be missed.
 
 ```python
 >>> fuzz.ratio('Ursella LeGuin', 'Ursula K. LeGuin')
@@ -970,19 +971,19 @@ If you decide `90` as the cut-off limit, here's some cases that will be missed.
 >>> fuzz.ratio('robin hobb', 'Robin Hobb')
 80.0
 >>> fuzz.ratio('R. F. Kuang', 'RF Kuang')
-84.21052631578948
+84.21052631578947
 ```
 
-Ignoring string case and removing `.` before comparing the author names helps in some cases.
+Ignoring string case and removing the `.` characters before comparison helps in some cases.
 
 ```python
 >>> fuzz.ratio('robin hobb'.lower(), 'Robin Hobb'.lower())
 100.0
 >>> fuzz.ratio('R. F. Kuang'.replace('.', ''), 'RF Kuang'.replace('.', ''))
-94.11764705882354
+94.11764705882352
 ```
 
-Here's an example where two different authors have only a single character difference. This would result in a false positive, which can be improved if book names are also compared.
+Here's an example where two different authors have only a single character difference. This would result in a false positive, which can be improved if the book names are also compared.
 
 ```python
 >>> fuzz.ratio('R.J. Barker', 'R.J. Parker')
@@ -1025,13 +1026,13 @@ for ip_file, op_file in zip(ip_files, op_files):
                 opf.write(f'{name},{votes}\n')
 ```
 
-First, a naive histogram is created with author name as key and total number of exact matches as the value.
+First, a naive histogram is created with the author name as the *key* and the total number of exact matches as the *value*.
 
 Then, `rapidfuzz` is used to merge similar author names. The `sorted()` function is used to allow the most popular spelling to win.
 
 Finally, the fuzzed dictionary is sorted again by highest votes and written to output files. The result is written in `csv` format with a header and a cut-off limit of minimum `5` votes.
 
-Here's a table of top-10 authors:
+Here's a table of the top-10 authors:
 
 | 2021 | Votes | 2019 | Votes |
 | ---- | ----- | ---- | ----- |
@@ -1046,69 +1047,12 @@ Here's a table of top-10 authors:
 | Katherine Addison | 74 | Martha Wells | 30 |
 | Madeline Miller | 72 | Jacqueline Carey | 29 |
 
-If you wish to compare with the actual results, visit the threads linked below (see comment section for author name based counts). The top-10 list shown above happens to match the actual results for both the polls, but with slightly different order and vote counts.
+>![info](images/info.svg) Note that the results you get might be different than what is shown here due to modification of the Reddit comments under analysis. Or, users might have deleted their comments and so on.
 
-* [2021 poll results](https://www.reddit.com/r/Fantasy/comments/n713om/rfantasys_top_books_by_women_2021_results/)
-* [2019 poll results](https://www.reddit.com/r/Fantasy/comments/cp4lls/rfantasys_top_female_authored_seriesbooks_2019/)
+If you wish to compare with the actual results, visit the threads linked below (see the comment section for author name based counts). The top-10 list shown above happens to match the actual results for both the polls, but with a slightly different order and vote counts.
 
-## Displaying results
-
-The final task is to show the results. The `csv` files generated in the previous section is good enough for most cases, but sometimes a visual display can be more appealing. In this section, you'll see how to use the `stylecloud` module for generating word clouds.
-
-From [pypi: stylecloud](https://pypi.org/project/stylecloud/):
-
->Python package + CLI to generate stylistic wordclouds, including gradients and icon shapes!
->
->`stylecloud` is a Python package that leverages the popular [word_cloud](https://github.com/amueller/word_cloud) package, adding useful features to create truly unique word clouds!
-
-```bash
-# virtual environment
-$ pip install stylecloud
-
-# normal environment
-# use py instead of python3.9 for Windows
-$ python3.9 -m pip install --user stylecloud
-```
-
-**Note** that the `stylecloud` module depends on many other modules, so don't be surprised if you see them getting installed.
-
-```bash
-$ pip show stylecloud | grep '^Requires:'
-Requires: wordcloud, icon-font-to-png, palettable, fire, matplotlib
-
-# wordcloud in turn depends on other modules and so on
-$ pip show wordcloud | grep '^Requires:'
-Requires: numpy, pillow, matplotlib
-```
-
-### Word cloud
-
-The program below is based on examples provided in the [stylecloud GitHub repo](https://github.com/minimaxir/stylecloud). The `csv` files generated earlier can be directly passed to the `file_path` argument. The second column with number of votes will be considered as **weights** for the first column data. The shape of the word cloud image generated can be specified using the `icon_name` argument. One of the *book* icons listed in the [free Font Awesome icons list](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) is used here.
-
-Rest of the arguments are self explanatory. See the GitHub repo linked above for more details and customization options.
-
-```python
-# author_cloud.py
-import stylecloud
-
-ip_files = ('top_authors_2019.csv', 'top_authors_2021.csv')
-op_files = ('top_authors_2019.png', 'top_authors_2021.png')
-
-for ip_file, op_file in zip(ip_files, op_files):
-    stylecloud.gen_stylecloud(file_path=ip_file,
-                              icon_name='fas fa-book-open',
-                              background_color='black',
-                              gradient='horizontal',
-                              output_name=op_file)
-```
-
-Here's the result for **2019** poll:
-
-![Word cloud for 2019 women author poll](images/poll_data_analysis/top_authors_2019.png)
-
-Here's the result for **2021** poll:
-
-![Word cloud for 2021 women author poll](images/poll_data_analysis/top_authors_2021.png)
+* [2021 poll results](https://old.reddit.com/r/Fantasy/comments/n713om/rfantasys_top_books_by_women_2021_results/)
+* [2019 poll results](https://old.reddit.com/r/Fantasy/comments/cp4lls/rfantasys_top_female_authored_seriesbooks_2019/)
 
 ## Exercises
 
@@ -1116,7 +1060,8 @@ Here's the result for **2021** poll:
 * Give your best shot at salvaging some of the vote entries that were discarded in the above scripts.
 * Display a list of author names who got at least **10** votes in 2021 but less than **5** votes in 2019.
     * You'll have to fuzzy match the author names since the spelling that won could be different between the two lists.
-* Find out top-5 authors who had at least **5** votes in both the lists and had the biggest gain in 2021 compared to the 2019 data. You can decide how to calculate the gain — vote count or percentage increase.
+* Find out the top-5 authors who had at least **5** votes in both the lists and had the biggest gain in 2021 compared to the 2019 data. You can decide how to calculate the gain — vote count or percentage increase.
+* Explore the [word_cloud](https://github.com/amueller/word_cloud) package for visually displaying the results.
 
 ## Further Reading
 
@@ -1124,10 +1069,8 @@ Here's the result for **2021** poll:
     * [praw.readthedocs.io](https://praw.readthedocs.io/en/latest/)
     * [Authenticating via OAuth](https://praw.readthedocs.io/en/latest/getting_started/authentication.html)
     * [Comment Extraction and Parsing](https://praw.readthedocs.io/en/latest/tutorials/comments.html)
-    * [/r/redditdev/](https://www.reddit.com/r/redditdev/) — subreddit for discussion of reddit API clients
+    * [/r/redditdev/](https://old.reddit.com/r/redditdev/) — subreddit for discussion of reddit API clients
     * [stackoverflow: top praw Q&A](https://stackoverflow.com/questions/tagged/praw?tab=Votes)
-    * [Exploring Reddit's AMA Using the PRAW API Wrapper](https://towardsdatascience.com/exploring-reddits-ask-me-anything-using-the-praw-api-wrapper-129cf64c5d65)
-    * Testing subs — [/r/test/](https://www.reddit.com/r/test/) and [/r/testingground4bots/](https://www.reddit.com/r/testingground4bots/)
 * [Python re(gex)?](https://learnbyexample.github.io/py_regular_expressions/) — my ebook on Regular Expressions
 * [My list of resources for Data Science and Data Analysis](https://learnbyexample.github.io/py_resources/domain.html#data-science-and-data-analysis)
 * [rich](https://pypi.org/project/rich/) — library for *rich* text and beautiful formatting in the terminal
@@ -1166,7 +1109,7 @@ I used the project for the Markdown files of this ebook too. Found typos like `e
 
 ## Plain text input
 
-In this section, you'll see how to match each word of plain text input against a known set of words. Any input word that is not found in this set will be displayed as part of the output. You'll see how to build the reference set of words from a dictionary file and what kind of data scrubbing is needed for this task.
+In this section, you'll see how to match each word from a plain text file against a known set of words. Any input word that is not found in this set will be displayed as part of the output. You'll see how to build the reference set of words from a dictionary file and what kind of data scrubbing is needed for this task.
 
 ### Naive split
 
@@ -1188,15 +1131,15 @@ Here's a simple implementation that attempts to catch typos if input words are n
 ['How', 'you?']
 ```
 
-`set` data type uses **hash** based membership lookup, which takes constant amount of time irrespective of the number of elements (see [Hashtables](https://greenteapress.com/thinkpython2/html/thinkpython2022.html#sec255) for details). So, it is the ideal data type to store dictionary words for this project.
+The `set` data type uses a **hash** based membership lookup, which takes constant amount of time irrespective of the number of elements (see [Hashtables](https://greenteapress.com/thinkpython2/html/thinkpython2022.html#sec255) for details). So, it is the ideal data type to store dictionary words for this project.
 
-The input lines from the dictionary file will have line ending characters, so the `rstrip()` string method is used to remove them. You can use `strip()` method if there can be spurious whitespace characters at the start of the line as well.
+The input lines from the dictionary file will have line ending characters, so the `rstrip()` string method is used to remove them. You can use the `strip()` method if there can be spurious whitespace characters at the start of the line as well.
 
-The `spell_check()` function accepts a string input and returns a list of words not found in the dictionary. In this naive implementation, the input text is split on whitespaces and the resulting words are compared. As seen from the sample tests, punctuation characters and the case of input string can result in false mismatches.
+The `spell_check()` function accepts a string input and returns a list of words not found in the dictionary. In this naive implementation, the input text is split on whitespaces and the resulting words are compared. As seen from the sample tests, punctuation characters and the case of the input string can result in false mismatches.
 
 >![info](images/info.svg) `/usr/share/dict/words` is used as `words.txt` for this project. See [wikipedia: words](https://en.wikipedia.org/wiki/Words_(Unix)) for a bit of information about the `words` file in different Linux distributions. See [linuxwords](https://users.cs.duke.edu/~ola/ap/linuxwords) if you want to view or download a smaller dictionary file for this project.
 
->![info](images/info.svg) You can use [app.aspell.net](http://app.aspell.net/create) to create dictionary files based on specific country, diacritic handling, etc.
+>![info](images/info.svg) You can also use [app.aspell.net](http://app.aspell.net/create) to create dictionary files based on a specific country, diacritic handling, etc.
 
 ### Data scrubbing
 
@@ -1221,9 +1164,9 @@ with open(word_file) as f:
 
 The `lower()` string method is applied for the lines of dictionary file as well as the input words. This reduces false mismatches at the cost of losing typos that are related to the case of the text.
 
-The other major change is removing punctuation characters at the start and end of input words. Built-in `string.punctuation` is passed to the `strip()` method and the modified input words are then compared against the dictionary words.
+The other major change is removing punctuation characters at the start and end of input words. The built-in `string.punctuation` value is passed to the `strip()` method and the modified input words are then compared against the dictionary words.
 
-Here's some sample test cases with this improved version:
+Here are some sample test cases with this improved version:
 
 ```python
 >>> from plain_text import *
@@ -1262,15 +1205,15 @@ However, unlike `string.punctuation`, the `\p{P}` set doesn't consider symbols l
 
 ```python
 >>> from string import punctuation
->>> text = '"+>foo=-'
+>>> text = '"+>cat=-'
 >>> text.strip(punctuation)
-'foo'
+'cat'
 
 >>> import regex
 >>> regex.sub(r'^\p{P}+|\p{P}+$', '', text)
-'+>foo='
+'+>cat='
 >>> regex.sub(r'^[\p{P}\p{S}]+|[\p{P}\p{S}]+$', '', text)
-'foo'
+'cat'
 ```
 
 >![info](images/info.svg) If you do not want to use the `regex` module, you can build all the Unicode punctuation/symbol characters using the `unicodedata` module. See [this stackoverflow thread](https://stackoverflow.com/q/60983836/4082052) for details.
@@ -1281,13 +1224,13 @@ In this section you'll see how to check typos for Markdown input files. A comple
 
 From [wikipedia: Markdown](https://en.wikipedia.org/wiki/Markdown):
 
->Markdown is a lightweight markup language for creating formatted text using a plain-text editor. John Gruber and Aaron Swartz created Markdown in 2004 as a markup language that is appealing to human readers in its source code form. Markdown is widely used in blogging, instant messaging, online forums, collaborative software, documentation pages, and readme files.
+>Markdown is a lightweight markup language for creating formatted text using a plain-text editor. John Gruber created Markdown in 2004 as an easy-to-read markup language. Markdown is widely used for blogging and instant messaging, and also used elsewhere in online forums, collaborative software, documentation pages, and readme files.
 
 ### Single Markdown file
 
 There are different implementations of Markdown. I use GitHub Flavored Markdown, see [this Spec](https://github.github.com/gfm/) for details.
 
-Contents of `md_files/sample.md` is shown below. Code blocks (which can span multiple lines) are specified by surrounding them with lines starting with three or more backticks. A specific programming language can be given for syntax highlighting purposes. Lines starting with `#` character(s) are headers. Inline code can be formatted by surrounding the code with backticks. Quotes start with the `>` character. Hyperlinks are created using `[link text](hyperlink)` format and so on.
+The contents of the `md_files/sample.md` file is shown below. Code blocks (which can span multiple lines) are specified by surrounding them with lines starting with three or more backticks. A specific programming language can be given for syntax highlighting purposes. Lines starting with the `#` character are headers. Inline code can be formatted by surrounding the code with backticks. Quotes start with the `>` character. Hyperlinks are created using the `[link text](hyperlink)` format and so on.
 
 ````md
 # re introduction
@@ -1297,7 +1240,7 @@ that is part of Python's standard library.
 
 ## re.search
 
-Use `re.search` function to tesr if the the given regexp pattern  
+Use `re.search` function to tesr if the the given regex pattern  
 matches the input string. Syntax is shown below:
 
 >`re.search(pattern, string, flags=0)`
@@ -1311,11 +1254,11 @@ False
 ```
 
 [My book](https://github.com/learnbyexample/py_regular_expressions)  
-on Python regexp has more details.
+on Python regex has more details.
 
 ````
 
-Writing a parser to handle complete Markdown Spec is out of scope for this project. The main aim here is to find spelling issues for normal text. That means avoiding code blocks, inline code, hyperlinks, etc. Here's one such implementation:
+Writing a parser to handle a complete Markdown specification is out of scope for this project. The main aim here is to find spelling issues for normal text. That means avoiding code blocks, inline code, hyperlinks, etc. Here's one such implementation:
 
 ```python
 # markdown.py
@@ -1354,16 +1297,16 @@ if __name__ == '__main__':
         print(f'{k}: {hist[k]}')
 ```
 
-Here's explanation for the additional code compared to the plain text implementation seen earlier:
+The additional code compared to the plain text implementation seen earlier is explained below:
 
 * Em dash `—` is also scrubbed as a punctuation character.
 * The `words` set is passed to the `spell_check()` function as an argument instead of using global variables.
-* `process_md()` function takes care of removing code blocks, hyperlinks, etc.
+* The `process_md()` function takes care of removing code blocks, hyperlinks, etc.
     * The `code_block` flag is used here to skip code blocks.
         * See [softwareengineering: FSM examples](https://softwareengineering.stackexchange.com/questions/47806/examples-of-finite-state-machines) if you are not familiar with state machines.
     * As mentioned earlier, the hyperlink formatting is `[link text](hyperlink)`. The `links` regexp `\[([^]]+)\]\([^)]+\)` handles this case. The portion between `[` and `]` characters is captured and rest of the text gets deleted.
         * You can use sites like [regex101](https://regex101.com/) and [debuggex](https://www.debuggex.com) to understand this regexp better. See my [Python re(gex)?](https://learnbyexample.github.io/py_regular_expressions/) ebook if you want to learn more about regular expressions.
-    * The `inline_code` regexp `` `[^`]+` `` deletes inline code from input text.
+    * The `inline_code` regexp `` `[^`]+` `` deletes inline code.
     * After these processing steps, the remaining text is passed to the `spell_check()` function.
     * Typos (especially false mismatches) might be repeated multiple times in the given input file. So, a histogram is created here to save the potential typos as keys and their number of occurrences as values.
     * Since a dictionary data type is being used to handle the potential list of typos, the `spell_check()` function has been changed to `yield` the words one by one instead of returning a list of words.
@@ -1371,16 +1314,16 @@ Here's explanation for the additional code compared to the plain text implementa
 * Finally, the potential typos are displayed in alphabetical order.
 
 ```bash
-$ python3.9 markdown.py
+$ python3.13 markdown.py
 re.search: 1
-regexp: 2
+regex: 2
 tesr: 1
 ```
 
 Even with this narrowed version of Markdown parsing, there are cases that aren't handled properly:
 
 * When content of the code block to be displayed can have lines starting with triple backticks, the code block markers will use more number of backticks. That's how the contents of `md_files/sample.md` was displayed above. This scenario will not be properly parsed with the above implementation.
-    * As a workaround, you can save the length of backticks of the starting marker and look for ending marker with the same number of backticks.
+    * As a workaround, you can save the length of backticks of the starting marker and look for an ending marker with the same number of backticks.
 * Similarly, inline code can have backtick characters and hyperlinks can have `()` characters. Again, this isn't handled with the above implementation.
     * You can use regexp to handle a few levels of nesting. Or, you can even implement a recursive regexp with the third party `regex` module. See [Recursive matching section](https://learnbyexample.github.io/py_regular_expressions/regex-module.html#recursive-matching) from my regexp ebook for details on both these workarounds.
 
@@ -1439,7 +1382,7 @@ if __name__ == '__main__':
                 opf.write(f'{"-" * 50}\n\n')
 ```
 
-* The `glob` module is helpful to get all the filenames that match the given wildcard expression. `*.txt` will match all files ending with `.txt` extension. If you want to match filenames from sub-directories at any depth as well, prefix the expression with `**/` and set the `recursive` parameter to `True`.
+* The `glob` module is helpful to get all the filenames that match the given wildcard expression. `*.txt` will match all files ending with the `.txt` extension. If you want to match filenames from sub-directories at any depth as well, prefix the expression with `**/` and set the `recursive` keyword parameter to `True`.
     * See [docs.python: glob](https://docs.python.org/3/library/glob.html) and [wikipedia: glob](https://en.wikipedia.org/wiki/Glob_(programming)) for more details.
 * The `reference_words()` function accepts a sequence of files from which the `words` set will be built.
     * You might also notice that `rsplit()` processing has been added. This makes it easier to build extra reference files by copy pasting the false mismatches from the output of this program. Or, if you are not lazy like me, you could copy paste only the relevant string instead of whole lines and avoid this extra pre-processing step.
@@ -1449,12 +1392,12 @@ if __name__ == '__main__':
 Here's a sample output with the `word_files` directory containing only the `words.txt` file:
 
 ```bash
-$ python3.9 typos.py
+$ python3.13 typos.py
 
 $ cat typos.log
 md_files/sample.md
 re.search: 1
-regexp: 2
+regex: 2
 tesr: 1
 --------------------------------------------------
 
@@ -1473,7 +1416,7 @@ Some of the terms in the above output are false mismatches. Save such lines in a
 ```bash
 $ cat word_files/programming_terms.txt
 re.search: 1
-regexp: 2
+regex: 2
 lookahead: 2
 lookarounds: 3
 lookbehind: 2
@@ -1482,7 +1425,7 @@ lookbehind: 2
 Running the program again will give only the valid typos: 
 
 ```bash
-$ python3.9 typos.py
+$ python3.13 typos.py
 
 $ cat typos.log
 md_files/sample.md
@@ -1533,9 +1476,9 @@ In this project, you'll learn to build a [Graphical User Interface](https://en.w
 
 * Decide a format to parse a file for questions, choices and the correct answer
 * Read the file, separate out questions, choices and save the answer for reference
-* Implement a solution using `input()` function
+* Implement a solution using the `input()` function
 * Randomize the order of questions and choices for fun
-* Learn basics of `tkinter` and understand why `class` is preferred for GUIs
+* Learn basics of `tkinter` and understand why object oriented programming is preferred for GUIs
 * Implement a GUI application
 
 The following modules and concepts will be utilized in this project:
@@ -1552,7 +1495,7 @@ The MCQ implementation here is just a tiny part of that idea. As the saying goes
 
 ## Using input function
 
-In this section, you'll see how to read a file containing questions, choices and the answer. Then using these details, you'll use `input()` function to interactively accept user's choice for each question. At the end, you'll display how many questions were correctly answered.
+In this section, you'll see how to read a file containing questions, choices and the answer. Then using these details, the `input()` function will be used to interactively accept user's choice for each question. At the end, you'll display how many questions were correctly answered.
 
 Two solutions are presented in this section. First one follows the same order as present in the input file and the second one randomizes the order of questions and choices.
 
@@ -1561,7 +1504,7 @@ Two solutions are presented in this section. First one follows the same order as
 To be able to parse the text file, a consistent format is needed to separate out questions, choices and the correct answer for that particular question. Here's one possible structure:
 
 ```bash
-# only first two question blocks are shown here
+# only the first two question blocks are shown here
 # there are total five such blocks
 $ cat question_and_answers.txt
 1) Which of these programming paradigms does Python support?
@@ -1617,19 +1560,19 @@ Here's an overview of the logic used in the above program:
 * The variables `total_questions` and `correct_answers` track how many question blocks are present in the given input file and the correct answers provided by the user respectively
 * If a line starts with `--> `
     * store the answer alphabet
-    * remove this indicator
+    * remove this prefix
     * increment the question counter
-* If a line is empty,
-    * ask for user's choice using the `input()` function
+* If a line is empty
+    * ask user's choice using the `input()` function
     * compare the user input against the answer saved earlier
-    * increment the answer counter if user's choice is correct
+    * increment the answer counter if the user's choice is correct
     * also, inform the user whether the choice was correct or not
 * Finally, give a summary of correct answers and total questions
 
 Here's a sample program execution. The string `...` indicates portion that has been excluded from the output shown.
 
 ```bash
-$ python3.9 mcq_input.py
+$ python3.13 mcq_input.py
 When prompted for an answer, type only the alphabet
 
 1) Which of these programming paradigms does Python support?
@@ -1697,21 +1640,21 @@ Here's an overview of the logic used in the above program:
 
 * The input file is assumed to be small enough to be processed as a single string
     * `rstrip()` method is used to remove excess whitespaces at the end of the file
-    * `split('\n\n')` consecutive newlines is used to get the question blocks
+    * `split('\n\n')` helps to get the question blocks using consecutive newlines as the separator
     * these question blocks are then randomized using `random.shuffle()`
-* Each question block has the question followed by choices. This is separated out by splitting on `\n` character
+* Each question block has the question followed by choices. This is separated out by splitting on the `\n` character
     * sequence unpacking is used to save the question in a string variable and choices as a list of strings
     * choice list is then randomized
 * Since the questions and choices are randomized, already present question number and choice alphabet cannot be used
-    * these are removed by finding the index of first space character and slicing syntax
+    * these are removed by finding the index of the first space character and slicing syntax
 * `total_questions` already tracks the number of questions, so this is used in place of the deleted question number
 * The `zip()` function is used on the list of choices and a string of first 10 alphabets (assuming max of 10 choices) to get the choice alphabet
     * `zip()` will quit when either of the sequence reaches the end
 
-Here's part of the output for one of the sample runs. Note that both the question and choices have been randomized.
+A part of the output for one of the sample runs is shown below. Note that both the question and choices have been randomized.
 
 ```bash
-$ python3.9 mcq_random.py
+$ python3.13 mcq_random.py
 When prompted for an answer, type only the alphabet
 
 1) How would you specify literal characters { and } in f-strings?
@@ -1732,9 +1675,9 @@ From [docs.python: Graphical User Interfaces with Tk](https://docs.python.org/3/
 >
 >tkinter is a set of wrappers that implement the Tk widgets as Python classes
 
-In this section, you'll see examples of **Button**, **Label** and **Radiobutton** widgets. You'll also learn how to customize some of the widget parameters and use **Frame** for organizing your widgets.
+In this section, you'll see examples for the **Button**, **Label** and **Radiobutton** widgets. You'll also learn how to customize some of the widget parameters and use a **Frame** for organizing your widgets.
 
->![info](images/info.svg) Did you know? [IDLE](https://docs.python.org/3/library/idle.html) and [Thonny IDE](https://thonny.org/) use `tkinter` for their GUI.
+>![info](images/info.svg) Did you know? The GUI applications [IDLE](https://docs.python.org/3/library/idle.html) and [Thonny IDE](https://thonny.org/) were built using the `tkinter` module.
 
 >![info](images/info.svg) The screenshots shown here is from a Linux distribution. The appearance can vary for you, especially on Windows and MacOS.
 
@@ -1743,7 +1686,7 @@ In this section, you'll see examples of **Button**, **Label** and **Radiobutton*
 If you invoke the `tkinter` module from the command line, a sample GUI will be presented.
 
 ```bash
-$ python3.9 -m tkinter
+$ python3.13 -m tkinter
 ```
 ![Built-in example](images/mcq/tkinter_builtin_example.png)
 
@@ -1755,7 +1698,7 @@ Go ahead, click the buttons and see what happens!
 
 ### A single Button example
 
-Here's a small program to get started with coding a GUI with `tkinter`:
+Here's a small program to get started with coding a GUI using `tkinter`:
 
 ```python
 # button.py
@@ -1781,14 +1724,14 @@ The `tk.Button()` method helps you create a button. The `command` parameter lets
 ![Button click example](images/mcq/button_click.png)
 
 ```bash
-$ python3.9 button.py
+$ python3.13 button.py
 Button clicked!
 Button clicked!
 ```
 
 After creating the button, you can use methods like `pack()` and `grid()` to control its placement. More details will be discussed later.
 
-The `mainloop()` method is the preferred way to block the Python program from exiting (see what happens if you don't have this line). The user can then interact with the window as needed. Note that this example doesn't explicitly provide a widget to exit the window. Depending on your OS and desktop environment, you can use the window close options (usually on the top left and/or top right).
+The `mainloop()` method is the preferred way to block the Python program from exiting (as an exercise, check what happens if you don't have this line). The user can then interact with the window as needed. Note that this example doesn't explicitly provide a widget to exit the window. Depending on your OS and desktop environment, you can use the window close options (usually on the top left and/or top right).
 
 >![info](images/info.svg) You can also pass [lambda expressions](https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions) to the `command` parameter. `lambda` is also helpful if the function to be called requires arguments.
 
@@ -1799,7 +1742,7 @@ The `mainloop()` method is the preferred way to block the Python program from ex
 The below program extends the previous example by adding two more widgets:
 
 * a Label widget to display information
-* a Button widget to exit the window
+* a Button widget to exit the application
 
 ```python
 # buttons_and_labels.py
@@ -1828,9 +1771,9 @@ quit.pack(side=tk.RIGHT)
 root.mainloop()
 ```
 
-The two buttons are placed next to each other by using the `side` parameter. By default, they would have been stacked vertically (as is the case here for the Label widget). As seen in the screenshot below, the layout is bad though. You'll see how Frame helps in a later example.
+The two buttons are placed next to each other by using the `side` parameter. By default, they would have been stacked vertically (as is the case here for the Label widget). As seen in the screenshot below, the layout is bad though. You'll see how using a Frame helps in a later example.
 
-You can change the parameters similar to using `dict` keys on the variable that points to the widget object. `fg` parameter controls the foreground color. `pady` parameter controls the vertical spacing around the widget.
+You can change the parameters similar to using `dict` keys on the variable that points to the widget object. The `fg` parameter controls the foreground color. The `pady` parameter controls the vertical spacing around the widget.
 
 The `destroy()` method can be called on any widget, including the main window. In addition to the quit button, the user can still use window close options mentioned earlier. See this [stackoverflow thread](https://stackoverflow.com/q/111155/4082052) if you want to handle those window close events yourself.
 
@@ -1838,7 +1781,7 @@ The `destroy()` method can be called on any widget, including the main window. I
 
 ![Label updated after button clicked](images/mcq/buttons_and_labels_after_click.png)
 
-But first, this program will be re-written using `class` instead of using functions and global variables. A GUI program usually requires widgets to refer to each other, which gets difficult to handle without using `class`.
+But first, this program will be re-written using a `class` instead of using functions and global variables. A GUI program usually requires widgets to refer to each other, which gets difficult to handle without using classes.
 
 ```python
 # class_example.py
@@ -1916,11 +1859,11 @@ To add a widget to a particular Frame instead of the main window, pass the frame
 
 ![Frame example](images/mcq/frame.png)
 
->![info](images/info.svg) See [this stackoverflow Q&A thread](https://stackoverflow.com/q/28089942/4082052) for more details about `expand` and `fill` parameters.
+>![info](images/info.svg) See [this stackoverflow Q&A thread](https://stackoverflow.com/q/28089942/4082052) for more details about the `expand` and `fill` parameters.
 
 ### Radio buttons
 
-The final example in this introduction section uses Radiobutton widget.
+The final example in this introduction section uses the Radiobutton widget.
 
 ```python
 # radio_buttons.py
@@ -1965,7 +1908,7 @@ When the user selects a choice, the integer associated with that choice is fetch
 
 ## MCQ GUI
 
-In this section, you'll implement a GUI for evaluating multiple choice questions. This will reuse some of the code already presented in earlier sections. The main change from `input()` function implementation is that the user can select and change their choice as many times as they want. The answer would be recorded only when a button is clicked. Another difference is that the questions are asked one at a time, easier to implement here since you have total control over the display screen.
+In this section, you'll implement a GUI for evaluating multiple choice questions. This will reuse some of the code already presented previously. The main change from the `input()` function implementation is that the user can select and change their choice as many times as they want. The answer would be recorded only when a button is clicked. Another difference is that the questions are asked one at a time — easier to implement here since you have total control over the display screen.
 
 ### Code and explanations
 
@@ -2064,7 +2007,7 @@ if __name__ == '__main__':
     root.mainloop()
 ```
 
-Most of the widget creation and code logic should be familiar to you from the previous sections. Here's some details specific to this program:
+Most of the widget creation and code logic should be familiar to you from the previous sections. Here are some details specific to this program:
 
 * `wraplength` is used to force a long question into multiple lines.
 * `TkFixedFont` (monospace) is used because there are code snippets in some of the questions and answers.
@@ -2075,7 +2018,7 @@ Most of the widget creation and code logic should be familiar to you from the pr
 
 ### Screenshots
 
-Here's some screenshots:
+Here are some screenshots:
 
 ![GUI correct answer](images/mcq/mcq_gui_correct_answer.png)
 
@@ -2085,7 +2028,7 @@ Here's some screenshots:
 
 ## Exercises
 
-* Change the window icon, you can use [this stackoverflow thread](https://stackoverflow.com/q/33137829/4082052) for reference.
+* Change the window icon — you can use [this stackoverflow thread](https://stackoverflow.com/q/33137829/4082052) for reference.
 * Read this [tkdocs: Grid Geometry Manager](https://tkdocs.com/tutorial/grid.html) tutorial and redo the final GUI program `mcq_gui.py` using `grid()` instead of the `pack()` method.
 * Read this [tkdocs: Styles and Themes](https://tkdocs.com/tutorial/styles.html) tutorial and [docs.python: tkinter.ttk](https://docs.python.org/3/library/tkinter.ttk.html) to experiment with changing the appearance of your GUI programs.
 * Read this [tkdocs: Checkbutton](https://tkdocs.com/tutorial/widgets.html#checkbutton) tutorial and implement a solution for cases requiring multiple choices to be selected for a given question.
@@ -2117,10 +2060,10 @@ To make it more interesting and challenging, you'll also extend the game to aim 
 ## Project summary
 
 * Learn to use `grid()` layout
-* Create clickable `Label` with image background
+* Create clickable `Label` with image backgrounds
 * Implement GUI for the Tic Tac Toe game
 * Make minimal changes to the Tic Tac Toe GUI so that the players have to form a square on a 4x4 board
-* Program a game AI using weight based algorithm
+* Program a game AI using a weight based algorithm
 
 The following modules and concepts will be utilized in this project:
 
@@ -2178,9 +2121,9 @@ if __name__ == '__main__':
     root.mainloop()
 ```
 
-* The `divmod()` function gives you both the quotient and the remainder. Helpful here to assign row and column for a particular button. 
-* As mentioned before, `lambda` expression helps when you need to pass arguments to the command function. Needed here because a single function handles click event for all of the buttons.
-* The click function randomly sets one of the two characters. To avoid the layout from changing due to difference in button text, monospace font is used. The default is single space character (which is invisible on the screen) and valid characters are `x` and `o`.
+* The `divmod()` function gives you both the quotient and the remainder. Helpful here to assign row and column values for a particular button. 
+* As mentioned before, `lambda` expressions help when you need to pass arguments to the command function. Needed here because a single function handles click event for all of the buttons.
+* The click function randomly sets one of the two characters. To avoid the layout from changing due to differences in button text, monospace font is used. The default is a single space character (which is invisible on the screen) and valid characters are `x` and `o`.
 
 ![Grid layout](images/square_tic_tac_toe/grid_layout.png)
 
@@ -2188,11 +2131,11 @@ if __name__ == '__main__':
 
 ### Image Labels
 
-By default, a button widget changes appearance based on whether it is held down, mouse is hovering over it, etc. This works well for cases where a button can be clicked multiple times, but not for a single click requirement in a game. For example, after a particular button is clicked on the game board, there should be no more effects since that button cannot be clicked again. You cannot use `disabled` state, since it will grey out the button.
+By default, a button widget changes appearance based on whether it is held down, mouse is hovering over it, etc. This works well for cases where a button can be clicked multiple times, but not for a single click requirement in a game. For example, after a particular button is clicked on the game board, there should be no more effects since that button cannot be clicked again. You cannot use the `disabled` state, since it will grey out the button.
 
-You can programmatically handle those button events so that it behaves as you want. Adding click functionality to a label widget is far easier. The downside is that you'll need to add code for changing appearance of a label if is held down, etc. That is left as an exercise for you.
+You can programmatically handle those button events so that it behaves as you want. However, adding click functionality to a label widget is far easier. The downside is that you'll need to add code for changing the appearance of a label if is held down, etc. That is left as an exercise for you.
 
-Here's an example of using images for labels and adding click event for these labels.
+Here's an example of using images for labels and adding a click event for them.
 
 ```python
 # image_labels.py
@@ -2236,13 +2179,13 @@ if __name__ == '__main__':
     root.mainloop()
 ```
 
-* The `bind()` method allows you to handle that particular event. `<Button-1>` event handles left click of the mouse. The specified event gets passed as the first argument to the command function, so the label index is passed as the second argument.
+* The `bind()` method allows you to handle that particular event. `<Button-1>` event handles the left click of the mouse. The specified event gets passed as the first argument to the command function, so the label index is passed as the second argument.
 * The `highlightthickness` parameter specifies the area surrounding the widget. By default, this is `0` for labels and `1` for buttons. By setting this parameter to `1` and changing the background, you'll get the desired grid with a visible separator between the cells.
     * You can use the `highlightbackground` parameter to change the color of this area.
 * Clicking anywhere on these labels will randomly set one of the two images. The background color is also changed, so that you can keep track of which label was clicked most recently.
 * The `tk.PhotoImage()` method helps here to process [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics) image files. 
     * When no file is passed, `tk.PhotoImage()` creates an empty image. Used here to initialize the labels.
-* `width` and `height` parameters are used to set the size of the label.
+* The `width` and `height` parameters are used to set the size of the label.
 
 ![Image labels](images/square_tic_tac_toe/image_labels.png)
 
@@ -2271,7 +2214,7 @@ There are several ways to prepare before you start coding your GUI. Creating a r
 * Display information about the current game status
 * The game board
 
-Both `grid()` and `pack()` layout techniques will be used here. You cannot mix different layout methods, but you can use different frames to group and isolate widgets based on layout requirements.
+Both the `grid()` and `pack()` layout techniques will be used here. You cannot mix different layout methods, but you can use different frames to group and isolate widgets based on layout requirements.
 
 ### Code
 
@@ -2648,17 +2591,16 @@ Quoting from [wikipedia: Artificial intelligence in video games](https://en.wiki
 
 >AI in video games is a distinct subfield and differs from academic AI. It serves to improve the game-player experience rather than machine learning or decision making.
 >
->However, "game AI" does not, in general, as might be thought and sometimes is depicted to be the case, mean a realization of an artificial person corresponding to an NPC, in the manner of say, the Turing test or an artificial general intelligence.
+>In general, game AI does not, as might be thought and sometimes is depicted to be the case, mean a realization of an artificial person corresponding to an NPC in the manner of the Turing test or an artificial general intelligence.
 
 ### Weight based algorithm
 
-Minimax is one of the popular algorithms to implement an AI for Tic Tac Toe. Here's some resources to get started:
+Minimax is one of the popular algorithms to implement an AI for Tic Tac Toe. Here are some resources to get started:
 
 * [wikipedia: Minimax](https://en.wikipedia.org/wiki/Minimax)
 * [Tic Tac Toe implementation in Python using Minimax](https://github.com/Cledersonbc/tic-tac-toe-minimax)
-* [The Minimax Algorithm Explained](https://towardsdatascience.com/how-a-chess-playing-computer-thinks-about-its-next-move-8f028bd0e7b1)
 
-The algorithm presented here borrows a few things from Minimax, but decisions are based on current state of the game alone. So, there's no need for recursive calculations and other complexities related to the number of future moves. Here's a rough explanation of the algorithm:
+The algorithm presented here borrows a few things from Minimax, but decisions are based on current state of the game alone. So, there's no need for recursive calculations and other complexities related to the number of future moves. Here is a rough explanation of the algorithm:
 
 * Loop over all the valid squares, which is 20 squares for a 4x4 board.
 * If all the corners of a square are empty, each empty cell gets `1` weight for both the players.
@@ -2667,7 +2609,7 @@ The algorithm presented here borrows a few things from Minimax, but decisions ar
     * `t * t + 1` will thus work for all corners empty case as well.
     * I wanted to use a formula that grows exponentially with number of moves already made. Squaring fits thematically with the game name and seems to work well enough for this game.
 
-Here's the initial weights for all the cells. Since no player has made a move yet, this will apply for both the players. Also, the numbers will be exactly equal to the number of possible squares from that particular cell.
+Here are the initial weights for all the cells. Since no player has made a move yet, this will apply for both the players. Also, the numbers will be exactly equal to the number of possible squares from that particular cell.
 
 ```abc
 3  5  5  3
@@ -2680,7 +2622,7 @@ Here's a screenshot where the user has made 3 moves, and the AI has to make the 
 
 ![User and AI weights example](images/square_tic_tac_toe/user_ai_weights.png)
 
-Here's some weight calculations for two of the empty cells:
+Here are some weight calculations for two of the empty cells:
 
 * **User at index 4**
     * As seen from initial weight matrix, there are `5` possible squares from index `4`.
@@ -2701,8 +2643,8 @@ Here's some weight calculations for two of the empty cells:
 
 The full decision algorithm will be explained later. In this particular game situation:
 
-* As seen from the illustration above, user has maximum weight of `8` at index `4`, `6` and `7`.
-* AI has maximum weight of `4` at index `2` and `8`.
+* As seen from the illustration above, user has a maximum weight of `8` at index `4`, `6` and `7`.
+* AI has a maximum weight of `4` at index `2` and `8`.
 * AI will need to choose among the three indexes with maximum user weights. AI will try to maximize its own chances. AI weights are `1`, `3` and `3` for those three user indexes respectively. So, the final choice will be randomly picked between indexes `6` and `7`.
 
 ### Code
@@ -2960,7 +2902,7 @@ class Square():
 
 ### Layout changes
 
-A new frame to choose between `Easy` and `Hard` difficulty level has been added. When `Easy` mode is chosen, the AI will make random moves. The weight based algorithm will come into play when `Hard` mode is active.
+A new frame to choose between `Easy` and `Hard` difficulty level has been added. When `Easy` mode is chosen, the AI will make random moves. The weight based algorithm will come into play only when the `Hard` mode is active.
 
 ### Weight based decision making
 
@@ -2970,7 +2912,7 @@ Earlier, you saw one example of AI choosing the next move to be made. Here's the
     * If AI has squares with three moves done, choose a random move among such indexes. This will result in AI winning.
     * Else, if user has squares with three moves done, again choose a random move. If there were multiple such indexes, user can win in the next move. User winning is possible with the current algorithm if the very first move is made by the user.
 * If there are no winning moves, first check if there are any winning squares left at all. If none are remaining, return a random move.
-* Only two possible choices are left — user has higher maximum weight and AI has equal to or higher maximum weight. Also, there cannot be any square with three moves made by the same player, since that case is already covered.
+* Only two possible choices are left — user has a higher maximum weight and AI has equal to or higher maximum weight. Also, there cannot be any square with three moves made by the same player, since that case was already covered.
     * As seen earlier, there can be multiple indexes with the same maximum weight.
     * When user has the higher maximum weight, AI needs to choose the index where its own weights are the best.
     * When AI has equal to or higher maximum weight, the index where user's weight is the most is chosen so that user's future chances are reduced.
@@ -2978,23 +2920,23 @@ Earlier, you saw one example of AI choosing the next move to be made. Here's the
 ## Exercises
 
 * Use `Button` instead of clickable `Label` and add logic that prevents such a button to react to mouse actions after a move is made by any player.
-* Tic Tac Toe
+* Tic Tac Toe:
     * Change the code to keep track of last user and computer moves separately so that the last moves of both the players are always highlighted.
     * Add 4x4 board. This will require to connect 4 cells to form a line.
     * Add 'Easy', 'Medium' and 'Hard' modes.
-* Square Tic Tac Toe
+* Square Tic Tac Toe:
     * Add 'Medium' mode which will have algorithm based AI moves but with much better chances for the user to score a win.
     * Write tests to find at least two different sequence of plays which will result in AI losing when the very first move is made by the user.
     * Extend the tests to check if there's a case where the AI loses even when it makes the very first move.
     * See if you can tweak the AI decision making algorithm to be more defensive and never lose (with/without changing the weight calculation).
-* New game
-    * Implement [Connect Four](https://en.wikipedia.org/wiki/Connect_Four) game.
+* New game:
+    * Implement the [Connect Four](https://en.wikipedia.org/wiki/Connect_Four) game.
     * Implement a GUI that allows the user to choose among Tic Tac Toe, Square Tic Tac Toe and Connect Four games.
 * Add sound effects for these projects.
 * Keep track of number of wins/losses for the user and display them. Try to make this information persistent if the user closes the GUI window and opens again later.
-* Coding style
-    * Read [PEP 8: Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/).
-    * Use [pylint](https://pypi.org/project/pylint/) and/or [black](https://pypi.org/project/black/) to detect code smells, formatting inconsistencies, etc for these projects.
+* Coding style:
+    * Read [PEP 8: Style Guide for Python Code](https://peps.python.org/pep-0008/).
+    * Use linters like [ruff](https://github.com/astral-sh/ruff) or [pylint](https://pypi.org/project/pylint/) to detect code smells, formatting inconsistencies, etc for these projects.
 
 ## Further Reading
 
@@ -3006,40 +2948,75 @@ Earlier, you saw one example of AI choosing the next move to be made. Here's the
 
 # What next?
 
-Here's some resources to help you become a better Python programmer.
+This book presented a few projects to get started with writing applications to solve real-world problems. There are plenty of other kinds of projects you can get inspirations from. Also, some major topics like type-hinting, tests, coding styles and packaging weren't discussed in this book. You'll find resources for these mentioned below.
+
+## TUI
+
+[Textual](https://github.com/Textualize/textual) is a Text User Interface (TUI) framework for Python inspired by modern web development. I've written several [TUI apps](https://github.com/learnbyexample/TUI-apps) that provides interactive exercises and tutorials for Linux text processing tools, Python regular expressions and more. And of course, I wrote one for the *Square Tic Tac Toe* game as well.
+
+![Screenshot for my interactive TUI app for Python regex exercises](images/pyregex_exercises.png)
+
+See also:
+
+* [Textual Tutorial](https://textual.textualize.io/tutorial/)
+* [Textual based applications and third-party tools](https://github.com/davep/transcendent-textual)
+* [List of projects that provide terminal user interfaces](https://github.com/rothgar/awesome-tuis)
+
+## Web applications
+
+* [realpython: Web Development Tutorials](https://realpython.com/tutorials/web-dev/) — testing, integrating, deployment, containers, API, authentication, performance, etc
+* [calmcode: fastapi](https://calmcode.io/course/fastapi/hello-world) — FastAPI is a modern, fast (high-performance), web framework for building APIs with Python based on standard Python type hints
+* [anvil](https://anvil.works/learn) — build seriously powerful web apps with all the flexibility of Python
 
 ## Project planning
 
-* [How to Plan and Build a Programming Project](https://peterlunch.com/how-to-plan-and-build-a-programming-project/)
-* [Somepackage](https://github.com/bast/somepackage) — Show how to structure a Python project
+* [How to Plan and Build a Programming Project](https://www.peterlunch.com/blog/how-to-plan-and-build-a-programming-project)
+* [Comprehensive guide to Python project management and packaging](https://reinforcedknowledge.com/a-comprehensive-guide-to-python-project-management-and-packaging-concepts-illustrated-with-uv-part-i/) — what was used before, why it needed to change, and how the changes provided by the PEPs solved the issues
+* [Python Developer Tooling Handbook](https://pydevtools.com/handbook/) — to help you understand the ecosystem of tools used to make Python development easier and more productive
+* [The Good Research Code Handbook](https://goodresearch.dev/) — how to organize your code so that it is easy to understand and works reliably (aimed at researchers)
+* [Writing Toy Software Is A Joy](https://blog.jsbarretto.com/post/software-is-joy)
 
 ## Books on Python projects
 
 * [The Big Book of Small Python Projects](https://inventwithpython.com/bigbookpython/)
 * [Tiny Python Projects](https://www.manning.com/books/tiny-python-projects)
-* [Impractical Python Projects](https://nostarch.com/impracticalpythonprojects) and [Real world Python](https://nostarch.com/real-world-python)
+* [Real world Python](https://nostarch.com/real-world-python)
+* [Projectbook](https://projectbook.code.brettchalupa.com/) — collection of over 100 software project ideas for people looking to learn a given language or technology
 
 ## Project lists and tutorials
 
-* [Project based learning](https://github.com/tuvtran/project-based-learning#python)
+* [Project based learning](https://github.com/practical-tutorials/project-based-learning#python)
 * [Python Projects You Can Build](https://realpython.com/tutorials/projects/)
 * [Pytudes by Peter Norvig](https://github.com/norvig/pytudes)
-* [/r/learnpython: What do you automate with Python at home?](https://www.reddit.com/r/learnpython/comments/k5k1h0/what_do_you_automate_with_python_at_home/)
-* [Build your own (insert technology here)](https://github.com/danistefanovic/build-your-own-x)
+* [/r/learnpython: What do you automate with Python at home?](https://old.reddit.com/r/learnpython/comments/k5k1h0/what_do_you_automate_with_python_at_home/)
+* [Build your own (insert technology here)](https://github.com/codecrafters-io/build-your-own-x)
 
 ## Intermediate
 
 * [Beyond the Basic Stuff with Python](https://inventwithpython.com/beyond/chapter0.html) — Best Practices, Tools, and Techniques, OOP, Practice Projects
-* Testing and Style guides
-    * [Calmcode](https://calmcode.io/) — videos on testing, code style, args kwargs, data science, etc
-    * [Python testing style guide](https://blog.thea.codes/my-python-testing-style-guide/)
-    * [Getting started with testing in Python](https://realpython.com/python-testing/)
-    * [Pydon'ts: Write elegant Python code](https://mathspp.com/blog/pydonts)
-* [Problem solving with algorithms and data structures](https://runestone.academy/runestone/books/published/pythonds/index.html) 
+* [Practical Python Programming](https://dabeaz-course.github.io/practical-python/Notes/Contents.html) — covers foundational aspects of Python programming with an emphasis on script writing, data manipulation, and program organization
+* [Pydon'ts](https://mathspp.gumroad.com/l/pydonts) — Write elegant Python code, make the best use of the core Python features
+* [Python Distilled](https://www.oreilly.com/library/view/python-distilled/9780134173399/) — this pragmatic guide provides a concise narrative related to fundamental programming topics such as data abstraction, control flow, program structure, functions, objects, and modules
+* [Problem solving with algorithms and data structures](https://runestone.academy/ns/books/published/pythonds3/index.html)
+* [Classic Computer Science Problems in Python](https://www.manning.com/books/classic-computer-science-problems-in-python) — deepens your knowledge of problem solving techniques from the realm of computer science by challenging you with time-tested scenarios, exercises, and algorithms
+
+## Testing
+
+* [Getting started with testing in Python](https://realpython.com/python-testing/)
+* [Python testing style guide](https://blog.thea.codes/my-python-testing-style-guide/)
+* [calmcode](https://calmcode.io/) — videos on testing, code style, args kwargs, data science, etc
+* [TDD in Python with pytest](https://www.thedigitalcatonline.com/blog/2020/09/10/tdd-in-python-with-pytest-part-1/)
+* [Obey the Testing Goat](https://www.obeythetestinggoat.com/) — TDD for the Web, with Python, Selenium, Django, JavaScript and pals
+
+## Type annotations
+
+* [The Comprehensive Guide to mypy](https://tush.ar/post/mypy/)
+* [Hypermodern Python: Typing](https://cjolowicz.github.io/posts/hypermodern-python-04-typing/)
+* [Python Type Checking](https://realpython.com/python-type-checking/)
 
 ## Advanced
 
-* [Fluent Python](https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/) — takes you through Python’s core language features and libraries, and shows you how to make your code shorter, faster, and more readable at the same time
+* [Fluent Python](https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/) — takes you through Python's core language features and libraries, and shows you how to make your code shorter, faster, and more readable at the same time
 * [Serious Python](https://nostarch.com/seriouspython) — deployment, scalability, testing, and more
 * [Practices of the Python Pro](https://www.manning.com/books/practices-of-the-python-pro) — learn to design professional-level, clean, easily maintainable software at scale, includes examples for software development best practices
 * [Intuitive Python](https://pragprog.com/titles/dmpython/intuitive-python/) — productive development for projects that last

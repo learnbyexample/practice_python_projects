@@ -13,3 +13,4 @@ with open(file) as f:
             continue
         elif not pat.search(line):
             print(line, end='')
+

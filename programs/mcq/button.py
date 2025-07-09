@@ -11,3 +11,4 @@ button = tk.Button(text='Click this', command=button_click)
 button.pack()
 
 root.mainloop()
+

@@ -5,7 +5,7 @@ that is part of Python's standard library.
 
 ## re.search
 
-Use `re.search` function to tesr if the the given regexp pattern  
+Use `re.search` function to tesr if the the given regex pattern  
 matches the input string. Syntax is shown below:
 
 >`re.search(pattern, string, flags=0)`
@@ -19,5 +19,5 @@ False
 ```
 
 [My book](https://github.com/learnbyexample/py_regular_expressions)  
-on Python regexp has more details.
+on Python regex has more details.
 

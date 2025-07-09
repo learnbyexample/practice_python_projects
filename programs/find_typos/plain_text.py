@@ -11,3 +11,4 @@ def spell_check(text):
 word_file = 'word_files/words.txt'
 with open(word_file) as f:
     words = {line.rstrip().lower() for line in f}
+

@@ -20,3 +20,4 @@ for year, thread_id in thread_details:
     with open(op_file, 'w') as f:
         for top_level_comment in submission.comments:
             f.write(top_level_comment.body + '\n')
+

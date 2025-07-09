@@ -26,3 +26,4 @@ for ip_file, op_file in zip(ip_files, op_files):
             votes = fuzzed[name]
             if votes >= 5:
                 opf.write(f'{name},{votes}\n')
+

@@ -28,3 +28,4 @@ for block in question_blocks:
     print('-' * 50 + '\n')
 
 print(f'You answered {correct_answers}/{total_questions} correctly.\n')
+

@@ -4,5 +4,5 @@ pc()
     if [[ $# -eq 0 || $1 = '-' ]]; then
         read -r ip_expr
     fi
-    python3.9 -c 'print('"$ip_expr"')'
+    python3.13 -c 'print('"$ip_expr"')'
 }

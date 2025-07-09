@@ -21,3 +21,4 @@ with open(ip_file) as ipf:
             print('-' * 50 + '\n')
 
 print(f'You answered {correct_answers}/{total_questions} correctly.\n')
+

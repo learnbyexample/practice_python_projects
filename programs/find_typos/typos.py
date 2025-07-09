@@ -43,3 +43,4 @@ if __name__ == '__main__':
                 for k in sorted(hist, key=lambda k: (k.lower(), -hist[k])):
                     opf.write(f'{k}: {hist[k]}\n')
                 opf.write(f'{"-" * 50}\n\n')
+

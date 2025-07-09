@@ -17,3 +17,4 @@ for ip_file, op_file in zip(ip_files, op_files):
                 if m := re.search(pat, line, flags=re.I):
                     opf.write(m[1].strip('*\t ') + '\n')
                     break
+

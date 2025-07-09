@@ -104,3 +104,4 @@ class Square():
                 q, r = divmod(total, self.user['value'])
                 if r == 0:
                     update(square, self.user_weights, q, total)
+
